@@ -85,7 +85,9 @@ $ exit
 Connection closed.
 ```
 I moving on to the web server, but because the text is in chinese and I can't read it, I need this to be translated.
+
 ![alt text](image.png)
+
 From that, I could see some of information like:
 - The file paths is generated using md5(time()-rand(1,1000))
 - Only gif/jpg/png with size <= 1MB is accepted
