@@ -1,7 +1,6 @@
 # Aria
 
-Author: SubLarge
-Category: Beginner
+Author: Sublarge | Category: Beginner
 
 ---
 

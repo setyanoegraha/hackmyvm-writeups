@@ -1,7 +1,6 @@
 # Hunter
 
-Author: sml
-Category: Beginner
+Author: sml | Category: Beginner
 
 ---
 
