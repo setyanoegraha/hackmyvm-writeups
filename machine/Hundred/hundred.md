@@ -2,9 +2,10 @@
 
 ## Executive Summary
 
-**Machine:** Hundred <br>
-**Author:** sml <br>
-**Category:** Beginner <br>
+| Machine | Author | Category | Platform |
+| :--- | :--- | :--- | :--- |
+| **Hundred** | **sml** | **Beginner** | **HackMyVM** |
+
 **Summary:** Hundred is a beginner-level Boot2Root machine that focuses on information gathering, cryptographic decryption, and identifying critical system misconfigurations. The attack chain begins with Anonymous FTP Access to retrieve sensitive files, followed by RSA Decryption to reveal hidden web directories. Initial access to the user account is achieved through Steganography on a web asset and SSH Key Authentication. The final objective is completed via Privilege Escalation by exploiting a World-Writable `/etc/shadow` file.
 
 ---

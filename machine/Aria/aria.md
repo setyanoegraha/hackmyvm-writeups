@@ -1,6 +1,12 @@
 # Aria
 
-Author: Sublarge | Category: Beginner
+## Executive Summary
+
+| Machine | Author | Category | Platform |
+| :--- | :--- | :--- | :--- |
+| **Aria** | **Sublarge** | **Beginner** | **HackMyVM** |
+
+**Summary:** Aria is a beginner-level Boot2Root machine that tests skills in interacting with custom shells, bypassing web filters, and exploiting misconfigured RPC services. The attack begins with the discovery of a Custom Debug Shell on port 1337, which leaks internal upload paths. This information is combined with an Unrestricted File Upload vulnerability on a PHP-based web server, where a Polyglot GIF/PHP file is used to bypass content filters and achieve Remote Code Execution (RCE). After gaining initial access, Zero-Width Steganography is identified within the user flag to retrieve a hidden authentication token. Privilege Escalation is performed by abusing an Aria2 RPC Service running as root, using the discovered token to perform an SSH Key Injection for full system compromise.
 
 ---
 
