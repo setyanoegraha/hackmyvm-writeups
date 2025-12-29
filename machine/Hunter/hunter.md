@@ -1,6 +1,11 @@
 # Hunter
 
-Author: sml | Category: Beginner
+## Executive Summary
+
+**Machine:** Hunter <br>
+**Author:** sml <br>
+**Category:** Beginner <br>
+**Summary:** Hunter is a beginner-level Boot2Root machine that emphasizes web enumeration, lateral movement, and the exploitation of binary configuration checks. The attack begins with identifying a Golang-based web server on port 8080, where a POST request to a hidden endpoint reveals credentials via an HTTP Response Header Leak. After gaining initial SSH access, Lateral Movement is performed by discovering credentials for a secondary user stored in a local directory. Final Privilege Escalation is achieved by abusing the `rkhunter` binary, specifically using its Configuration Check feature to perform an Arbitrary File Read on the root flag.
 
 ---
 
