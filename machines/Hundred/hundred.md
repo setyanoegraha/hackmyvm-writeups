@@ -127,10 +127,12 @@ ftp> exit
 221 Goodbye.
 ```
 
-After reading it, the `id_rsa` is just a trash. The others? Look quite good.
+After reading it, the `id_rsa` is just, idk. The others? Look quite good.
+
 ![alt text](image.png)
 
 But in the `users.txt`, I suspected `hmv` was the user of the target.
+
 ![alt text](image-1.png)
 
 The interesting fact is I can't login via ssh using `id_rsa.pem`. 
