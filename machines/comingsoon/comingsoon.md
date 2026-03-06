@@ -101,7 +101,8 @@ The cookie `EnableUploader=false` acts as a server-side feature flag that contro
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/comingsoon]
-└─$ echo -n "true" | base64                               dHJ1ZQ==
+└─$ echo -n "true" | base64
+dHJ1ZQ==
 ```
 
 ---
