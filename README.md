@@ -3,7 +3,7 @@
 <div align="center">
 
 ![Platform](https://img.shields.io/badge/Platform-HackMyVM-critical?style=flat-square)
-![Machines](https://img.shields.io/badge/Machines-51-blue?style=flat-square)
+![Machines](https://img.shields.io/badge/Machines-116-blue?style=flat-square)
 ![Hades Lab](https://img.shields.io/badge/Hades_Lab-32_Modules-informational?style=flat-square)
 ![Venus Lab](https://img.shields.io/badge/Venus_Lab-50_Modules-informational?style=flat-square)
 ![Documentation](https://img.shields.io/badge/Status-Active-success?style=flat-square)
@@ -17,7 +17,7 @@
 
 ## Overview
 
-This repository contains comprehensive technical documentation for penetration testing exercises conducted on the HackMyVM platform. The collection represents systematic security analysis across 51 virtual machines and 82 laboratory modules, emphasizing methodological rigor and professional reporting standards over simple flag acquisition.
+This repository contains comprehensive technical documentation for penetration testing exercises conducted on the HackMyVM platform. The collection represents systematic security analysis across 116 virtual machines and 82 laboratory modules, emphasizing methodological rigor and professional reporting standards over simple flag acquisition.
 
 ## Portfolio Philosophy
 
@@ -43,14 +43,14 @@ These reports are designed for security engineers, penetration testers, red team
 ```
 hackmyvm-writeups/
 │
-├── machines/                    # 51 Virtual Machine Penetration Tests
+├── machines/                    # 116 Virtual Machine Penetration Tests
 │   ├── Alzheimer/
 │   │   ├── alzheimer.md         # Complete technical writeup
 │   │   └── image*.png           # Visual evidence and screenshots
 │   ├── Aria/
 │   ├── Thirteen/
 │   ├── Observer/
-│   └── [47 additional machines...]
+│   └── [112 additional machines...]
 │
 ├── labs/                        # Progressive Laboratory Series
 │   ├── hades/
@@ -63,7 +63,7 @@ hackmyvm-writeups/
 
 **Repository Statistics:**
 
-- 51 completed machine writeups with full technical documentation
+- 116 completed machine writeups with full technical documentation
 - 32 Hades laboratory modules focused on Linux privilege escalation
 - 50 Venus laboratory modules covering web and system exploitation
 - Comprehensive visual evidence integrated throughout all reports
@@ -132,7 +132,7 @@ The repository employs a structured documentation pipeline that ensures consiste
 - Visual proof verified for accuracy and completeness
 - Final report formatted according to standardized template
 
-This workflow ensures that each of the 51 machine reports maintains consistent quality and professional presentation standards.
+This workflow ensures that each of the 116 machine reports maintains consistent quality and professional presentation standards.
 
 
 ---
@@ -191,7 +191,7 @@ The writeups in this repository demonstrate proficiency across the complete pene
 
 ## Machines Inventory
 
-### Completed Virtual Machines (51)
+### Completed Virtual Machines (116)
 
 <details>
 <summary><b>View Complete Machine List</b></summary>
@@ -201,24 +201,36 @@ The writeups in this repository demonstrate proficiency across the complete pene
 | Alzheimer | Beginner | Password forensics, privilege escalation |
 | Aria | Beginner | Custom shell interaction, file upload bypass, RPC exploitation, steganography |
 | Art | Beginner | File upload vulnerabilities, web exploitation |
+| Azer | Beginner | Web exploitation techniques |
 | Bah | Beginner | Local File Inclusion, SSH key extraction |
 | Baseme | Beginner | Base64 encoding manipulation, command injection |
+| Coffeeshop | Beginner | Web application vulnerabilities |
+| Convert | Beginner | File conversion exploitation |
 | Coolpg | Beginner | PostgreSQL exploitation, SQL injection |
 | Crack | Beginner | Hash cracking, password analysis |
+| Decode | Beginner | Encoding analysis and decryption |
 | Devoops | Intermediate | Git repository exploitation, DevOps misconfigurations |
 | Doc | Beginner | Document processing vulnerabilities |
 | Doll | Intermediate | Binary exploitation, buffer overflow |
-| DriftingBlues3 | Series | Web application exploitation chain |
-| DriftingBlues5 | Series | Advanced enumeration techniques |
-| DriftingBlues6 | Series | Database attack vectors |
-| DriftingBlues7 | Series | Multi-stage privilege escalation |
+| DoubleTrouble | Intermediate | Multi-stage exploitation |
+| Driftingblues3 | Series | Web application exploitation chain |
+| Driftingblues5 | Series | Advanced enumeration techniques |
+| Driftingblues6 | Series | Database attack vectors |
+| Driftingblues7 | Series | Multi-stage privilege escalation |
+| Driftingblues8 | Series | Advanced web exploitation |
+| Driftingblues9 | Series | Complex attack chains |
+| DrippingBlues | Series | Web security challenges |
 | Fuzzz | Intermediate | Web fuzzing, input validation bypass |
 | Gameshell | Beginner | Interactive shell exploitation |
 | Gameshell2 | Beginner | Advanced shell manipulation |
+| Gameshell3 | Beginner | Shell escape techniques |
 | Gift | Beginner | File transfer protocols, steganography |
+| Gigachad | Intermediate | Advanced exploitation scenarios |
 | Hannah | Beginner | User enumeration, lateral movement |
 | Helium | Intermediate | Container escape, Docker exploitation |
+| Helpdesk | Beginner | Support system vulnerabilities |
 | Hommie | Beginner | SUID binary abuse |
+| Hostname | Beginner | DNS and hostname manipulation |
 | Hotel | Beginner | Web service exploitation |
 | Hundred | Beginner | Multi-user enumeration |
 | Hunter | Beginner | OSINT techniques, reconnaissance |
@@ -228,15 +240,21 @@ The writeups in this repository demonstrate proficiency across the complete pene
 | Locker | Beginner | Encryption bypass techniques |
 | Luz | Beginner | Steganography, cryptographic analysis |
 | Meltdown | Advanced | Kernel vulnerability exploitation (CVE-2017-5754) |
+| Method | Beginner | Methodical enumeration |
+| Motto | Beginner | Configuration analysis |
 | Noob | Beginner | Fundamental penetration testing methodology |
 | Observer | Beginner | LFI via custom Golang application, SSH key extraction, bash history privilege escalation |
 | Oliva | Beginner | Web framework vulnerabilities |
 | Pdf | Beginner | PDF metadata exploitation |
+| Preload | Intermediate | Library preloading exploitation |
+| Pwned | Beginner | Multi-vector exploitation |
 | React | Intermediate | React.js application security testing |
 | Skid | Beginner | Script analysis, enumeration techniques |
 | Sysadmin | Beginner | System administration misconfiguration exploitation |
+| System | Beginner | System service exploitation |
 | T800 | Advanced | Complex privilege escalation scenarios |
 | Talk | Beginner | Inter-process communication vulnerabilities |
+| Thefinals | Intermediate | CTF-style challenges |
 | Thirteen | Beginner | ROT13 encoding LFI, FTP default credentials, Python FTP server RCE |
 | Todd | Beginner | Credential harvesting techniques |
 | Tpn | Intermediate | VPN configuration exploitation |
@@ -244,18 +262,67 @@ The writeups in this repository demonstrate proficiency across the complete pene
 | Twisted | Intermediate | Python application framework exploitation |
 | University | Beginner | Educational platform attack vectors |
 | Victorique | Beginner | Custom binary analysis |
+| Vinylizer | Beginner | Media processing vulnerabilities |
 | Visions | Beginner | Visual cryptography challenges |
 | Vulny | Beginner | Intentionally vulnerable service exploitation |
 | Warez | Beginner | File sharing service exploitation |
 | Warrior | Intermediate | Advanced attack scenario simulation |
 | Webmaster | Beginner | Web server misconfiguration exploitation |
+| arroutada | Beginner | Web routing vulnerabilities |
+| atom | Beginner | Text editor exploitation |
+| aurora | Beginner | Service enumeration |
+| beloved | Beginner | Relationship-based challenges |
+| blackhat | Intermediate | Advanced hacking scenarios |
+| breakout | Intermediate | Container/jail escape |
+| buster | Beginner | Brute-force techniques |
+| comingsoon | Beginner | Placeholder page exploitation |
+| connection | Beginner | Network service abuse |
+| crazymed | Beginner | Medical system vulnerabilities |
+| crossroads | Beginner | Path traversal challenges |
+| cve1 | Intermediate | CVE exploitation practice |
+| dejavu | Beginner | Pattern recognition |
+| demons | Intermediate | Multi-service exploitation |
+| djinn | Advanced | Complex multi-stage attacks |
+| ephemeral3 | Series | Temporary service exploitation |
+| faust | Intermediate | Literature-themed challenges |
+| find | Beginner | File discovery techniques |
+| first | Beginner | Introductory challenges |
+| flower | Beginner | Themed web exploitation |
+| flute | Beginner | Music-themed challenges |
+| friendly | Beginner | Social engineering vectors |
+| friendly2 | Beginner | Advanced social engineering |
+| friendly3 | Beginner | Multi-stage social engineering |
+| hidden | Beginner | Steganography and hidden data |
+| insomnia | Intermediate | Sleep-based vulnerabilities |
+| isengard | Intermediate | Fantasy-themed exploitation |
+| jabita | Beginner | Web service challenges |
+| lazzycorp | Beginner | Corporate infrastructure |
+| mathdop | Beginner | Mathematical challenges |
+| medusa | Intermediate | Multi-headed attack vectors |
+| ripper | Intermediate | Data extraction techniques |
+| roosterrun | Beginner | Race condition exploitation |
+| stars | Beginner | Rating system vulnerabilities |
+| superhuman | Advanced | Complex privilege escalation |
+| teacher | Beginner | Educational platform exploitation |
+| thewall | Intermediate | Barrier bypass techniques |
+| tron | Intermediate | Grid-based challenges |
+| twelve | Beginner | Numeric-themed exploitation |
+| umz | Beginner | Custom service exploitation |
+| uvalde | Beginner | Geographic-themed challenges |
+| w140 | Beginner | Numeric identifier challenges |
+| wmessage | Beginner | Messaging service exploitation |
+| yuan111 | Series | Progressive difficulty series |
+| yuan112 | Series | Advanced series challenges |
+| yuan113 | Series | Expert series challenges |
 
 </details>
 
 **Notable Series:**
 
-- **DriftingBlues Series** (3, 5, 6, 7): Progressive difficulty challenges focusing on web application security
-- **Gameshell Series** (1, 2): Interactive shell-based exploitation scenarios
+- **DriftingBlues Series** (3, 5, 6, 7, 8, 9) + DrippingBlues: Progressive difficulty challenges focusing on web application security
+- **Gameshell Series** (1, 2, 3): Interactive shell-based exploitation scenarios
+- **Friendly Series** (1, 2, 3): Social engineering and enumeration techniques
+- **Yuan Series** (111, 112, 113): Progressive exploitation challenges
 
 ---
 
@@ -402,9 +469,9 @@ For professional inquiries or collaboration proposals, contact information can b
 
 ## Repository Roadmap
 
-### Current Status (February 2026)
+### Current Status (April 2026)
 
-- 51 machine writeups completed with full documentation
+- 116 machine writeups completed with full documentation
 - 32 Hades laboratory modules documented
 - 50 Venus laboratory modules documented
 - Standardized executive summary format implemented across all reports
@@ -430,7 +497,7 @@ For professional inquiries or collaboration proposals, contact information can b
 <div align="center">
 
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen?style=flat-square)
-![Last Updated](https://img.shields.io/badge/Last_Updated-February_2026-blue?style=flat-square)
+![Last Updated](https://img.shields.io/badge/Last_Updated-April_2026-blue?style=flat-square)
 
 **Professional Penetration Testing Documentation**
 
