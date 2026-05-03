@@ -144,7 +144,7 @@ PONG
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/artig]
-└─$ wpscan --url http://artig.hvm --api-token sJN9kFWicAhPVJiGrIG4UP8sK6rcqyIPJ1uq7nYkm8I --enumerate vp,vt,tt,cb,dbe,u --plugins-detection aggressive --force --random-user-agent                        _______________________________________________________________
+└─$ wpscan --url http://artig.hvm --api-token ... --enumerate vp,vt,tt,cb,dbe,u --plugins-detection aggressive --force --random-user-agent                        _______________________________________________________________
          __          _______   _____
          \ \        / /  __ \ / ____|
           \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
