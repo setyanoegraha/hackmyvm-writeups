@@ -3,7 +3,7 @@
 <div align="center">
 
 ![Platform](https://img.shields.io/badge/Platform-HackMyVM-critical?style=flat-square)
-![Machines](https://img.shields.io/badge/Machines-155-blue?style=flat-square)
+![Machines](https://img.shields.io/badge/Machines-156-blue?style=flat-square)
 ![Hades Lab](https://img.shields.io/badge/Hades_Lab-32_Modules-informational?style=flat-square)
 ![Venus Lab](https://img.shields.io/badge/Venus_Lab-50_Modules-informational?style=flat-square)
 ![Documentation](https://img.shields.io/badge/Status-Active-success?style=flat-square)
@@ -17,7 +17,7 @@
 
 ## Overview
 
-This repository contains comprehensive technical documentation for penetration testing exercises conducted on the HackMyVM platform. The collection represents systematic security analysis across 155 virtual machines and 82 laboratory modules, emphasizing methodological rigor and professional reporting standards over simple flag acquisition.
+This repository contains comprehensive technical documentation for penetration testing exercises conducted on the HackMyVM platform. The collection represents systematic security analysis across 156 virtual machines and 82 laboratory modules, emphasizing methodological rigor and professional reporting standards over simple flag acquisition.
 
 ## Portfolio Philosophy
 
@@ -43,7 +43,7 @@ These reports are designed for security engineers, penetration testers, red team
 ```
 hackmyvm-writeups/
 │
-├── machines/                    # 155 Virtual Machine Penetration Tests
+├── machines/                    # 156 Virtual Machine Penetration Tests
 │   ├── Alzheimer/
 │   │   ├── alzheimer.md         # Complete technical writeup
 │   │   └── image*.png           # Visual evidence and screenshots
@@ -63,7 +63,7 @@ hackmyvm-writeups/
 
 **Repository Statistics:**
 
-- 155 completed machine writeups with full technical documentation
+- 156 completed machine writeups with full technical documentation
 - 32 Hades laboratory modules focused on Linux privilege escalation
 - 50 Venus laboratory modules covering web and system exploitation
 - Comprehensive visual evidence integrated throughout all reports
@@ -132,7 +132,7 @@ The repository employs a structured documentation pipeline that ensures consiste
 - Visual proof verified for accuracy and completeness
 - Final report formatted according to standardized template
 
-This workflow ensures that each of the 155 machine reports maintains consistent quality and professional presentation standards.
+This workflow ensures that each of the 156 machine reports maintains consistent quality and professional presentation standards.
 
 
 ---
@@ -191,7 +191,7 @@ The writeups in this repository demonstrate proficiency across the complete pene
 
 ## Machines Inventory
 
-### Completed Virtual Machines (155)
+### Completed Virtual Machines (156)
 
 <details>
 <summary><b>View Complete Machine List</b></summary>
@@ -212,6 +212,7 @@ The writeups in this repository demonstrate proficiency across the complete pene
 | Baseme | Beginner | Base64 encoding manipulation, command injection |
 | beloved | Beginner | Relationship-based challenges |
 | blackhat | Intermediate | Advanced hacking scenarios |
+| banner | Beginner | FTP credential recovery, pickle deserialization, root shell via reverse shell |
 | breakout | Intermediate | Container/jail escape |
 | bruteforcelab | Beginner | SSH brute-force, hydra password recovery, sudo misconfiguration |
 | buster | Beginner | Brute-force techniques |
@@ -510,7 +511,7 @@ For professional inquiries or collaboration proposals, contact information can b
 
 ### Current Status (April 2026)
 
-- 155 machine writeups completed with full documentation
+- 156 machine writeups completed with full documentation
 - 32 Hades laboratory modules documented
 - 50 Venus laboratory modules documented
 - Standardized executive summary format implemented across all reports
