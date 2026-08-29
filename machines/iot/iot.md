@@ -5,7 +5,7 @@
 | :--- | :--- | :--- | :--- |
 | iot | M0rPH3U5 | beginner | hackmyvm |
 
-**Summary:** The iot machine presents an IoT themed challenge where an MQTT broker service leaks SSH credentials through a retained topic message. Reconnaissance via nmap identifies SSH on port 22 and a Mosquitto MQTT broker on port 1883. The nmap mqtt-subscribe script automatically subscribes to all topics and retrieves retained messages, one of which is published on the topic ssh/login and contains the cleartext credentials redteam:Pentest123!. These credentials are used to establish an SSH session as the redteam user. Post exploitation SUID enumeration reveals a rogue hidden SUID bash binary at /var/tmp/.suid_bash owned by root. Executing this binary with the privileged flag preserves the effective user ID of 0, granting root level access that allows direct retrieval of both the user and root flags.
+**Summary:** The iot machine presents an IoT themed challenge where an MQTT broker service leaks SSH credentials through a retained topic message. Reconnaissance via nmap identifies SSH on port 22 and a Mosquitto MQTT broker on port 1883. The nmap mqtt-subscribe script automatically subscribes to all topics and retrieves retained messages, one of which is published on the topic ssh/login and contains the cleartext credentials redteam:Pentest123!. These credentials are used to establish an SSH session as the redteam user. Post exploitation SUID enumeration reveals a rogue hidden SUID bash binary at /var/tmp/.suid_bash owned by root. Executing this binary with the privileged flag preserves the effective user ID of 0, and a subsequent Perl one-liner using POSIX setuid and setgid calls converts the effective root context into a full real root shell, allowing direct retrieval of both the user and root flags.
 
 ---
 
@@ -193,15 +193,21 @@ A nonstandard SUID binary was identified at `/var/tmp/.suid_bash`, a hidden bash
 redteam@iot:~$ /var/tmp/.suid_bash -p
 .suid_bash-5.2# id
 uid=1001(redteam) gid=1001(redteam) euid=0(root) groupes=1001(redteam),100(users)
-.suid_bash-5.2# cat /home/redteam/user.txt /root/root.txt
-4a8e67f8bb252d0b4feab103b8d58f553644f39d33314beff8b9214879451de1
+.suid_bash-5.2# which perl  
+/usr/bin/perl  
+.suid_bash-5.2# perl -e 'use POSIX qw(setuid setgid); $ENV{PATH}="/usr/bin:/bin"; POSIX::setgid(0); POSIX::setuid(  
+0); exec "/bin/bash";'  
+root@iot:~# su -  
+root@iot:~# id;whoami;hostname  
+uid=0(root) gid=0(root) groupes=0(root)  
+root  
+iot  
+root@iot:~# cat /home/redteam/user.txt /root/root.txt  
+4a8e67f8bb252d0b4feab103b8d58f553644f39d33314beff8b9214879451de1  
 cb0f023463e47a76f9d69e0b435a10882b6dd7489c5ca4d4b6ccac9c631a46d8
-.suid_bash-5.2# whoami;hostname
-root
-iot
 ```
 
-The SUID bash binary with the `-p` flag maintained the effective user ID as 0 (root), granting root level read access to both flag files. Both the user flag from `/home/redteam/user.txt` and the root flag from `/root/root.txt` were retrieved.
+The SUID bash binary with the `-p` flag maintained the effective user ID as 0 (root). To transition from an effective UID to a full real UID root shell, a Perl one-liner was used to call `POSIX::setgid(0)` and `POSIX::setuid(0)` before executing `/bin/bash`. A subsequent `su -` established a clean login shell with `uid=0(root) gid=0(root)`, and both the user flag from `/home/redteam/user.txt` and the root flag from `/root/root.txt` were retrieved.
 
 ---
 
@@ -211,4 +217,4 @@ The SUID bash binary with the `-p` flag maintained the effective user ID as 0 (r
 2. **Vulnerability Discovery**: Among the standard MQTT broker system topics, a custom topic named ssh/login was found containing the cleartext credentials redteam:Pentest123! as a retained message on the unauthenticated broker.
 3. **Exploitation**: The leaked credentials were used to establish an SSH session as the redteam user, gaining initial foothold on the Debian Linux system.
 4. **Internal Enumeration**: SUID binary enumeration revealed a rogue hidden bash binary at /var/tmp/.suid_bash owned by root with the SUID bit set, not part of the standard system installation.
-5. **Privilege Escalation**: Executing /var/tmp/.suid_bash with the privileged mode flag preserved the effective user ID as 0, granting root level access and allowing direct retrieval of both the user and root flags.
+5. **Privilege Escalation**: Executing /var/tmp/.suid_bash with the privileged mode flag preserved the effective user ID as 0, and a Perl POSIX setuid one-liner converted the effective root context into a full real root shell, allowing retrieval of both the user and root flags.
