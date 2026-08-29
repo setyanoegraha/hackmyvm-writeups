@@ -68,7 +68,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.80 seconds
 
 Visiting `http://192.168.100.127` in a browser reveals a near-empty page. The title in the browser tab confirms **"Cours PHP & MySQL"**, and the body shows a deliberate tease: **"Under construction... but not empty"**.
 
-![](image.png)
+![](machines/stars/image.png)
 
 The page source confirms the minimal HTML — no scripts, no forms, no links — but the hint "but not empty" signals there is something hidden elsewhere:
 

@@ -176,7 +176,7 @@ The **secret.txt** file provides a hexadecimal range (`0123456789ABCDEF`), indic
 
 To bypass this authentication mechanism, the network interface MAC address must be spoofed to match the required pattern. Using VirtualBox settings, the MAC address was manually changed to test various combinations:
 
-![](image.png)
+![](machines/Warrior/image.png)
 
 The MAC address was successfully changed to `0000000000AF` through VirtualBox's network adapter settings.
 

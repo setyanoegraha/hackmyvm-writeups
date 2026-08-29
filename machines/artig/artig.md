@@ -133,7 +133,7 @@ PONG
 
 4. I moved to web exploitation, resolved the virtual host, and enumerated WordPress in depth.
 
-![](image.png)
+![](machines/artig/image.png)
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/artig]

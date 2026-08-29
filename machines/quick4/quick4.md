@@ -281,7 +281,7 @@ GIF89a
 
 The shell is uploaded through the profile update page of an employee account, such as Nick Greenhorn.
 
-![](image.png)
+![](machines/quick4/image.png)
 
 A Netcat listener is established on the local machine to catch the incoming connection.
 

@@ -202,7 +202,7 @@ Three valuable intelligence pieces emerge. `creds.txt` contains a plaintext user
 
 Attempting to access port 1337 via a browser results in a browser-level protocol error because the service speaks a raw custom ASCII protocol over TCP, not HTTP.
 
-![](image.png)
+![](machines/djinn/image.png)
 
 The browser reports `ERR_INVALID_HTTP_RESPONSE` because the server is not an HTTP service — it is a raw TCP socket service that immediately pushes a plain-text ASCII banner the moment a connection is established.
 

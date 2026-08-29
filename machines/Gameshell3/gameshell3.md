@@ -370,7 +370,7 @@ Steghide failed because WAV files don't support steghide's steganography method 
 
 Research into DTMF analysis led to the discovery of online DTMF decoders. The audio file was uploaded to https://dtmf.netlify.app/ :
 
-![DTMF Decoder Output](image.png)
+![DTMF Decoder Output](machines/Gameshell3/image.png)
 
 The decoded string began with `*#*#6` followed by additional characters (redacted for security). This pattern strongly suggested a password or access code.
 

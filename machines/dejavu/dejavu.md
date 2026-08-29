@@ -98,7 +98,7 @@ Navigating to `http://192.168.100.149/info.php` and examining the `phpinfo()` ou
 
 The `SCRIPT_FILENAME` and `CONTEXT_DOCUMENT_ROOT` fields corroborate this, both resolving to the same hidden path.
 
-![](image.png)
+![](machines/dejavu/image.png)
 
 This is a deliberate obfuscation technique by the machine designer. The entire web application lives under a dot-prefixed directory name that would not show up in a standard `ls` on the server, and the Gobuster scan cannot find subdirectories relative to this concealed root using a typical wordlist alone.
 

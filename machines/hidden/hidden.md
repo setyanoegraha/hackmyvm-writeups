@@ -53,7 +53,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.07 seconds
 
 Visiting port 80 shows a "Welcome to level 1" message and an image asking to be decoded.
 
-![80](image.png)
+![80](machines/hidden/image.png)
 
 Checking the source code reveals a hint about the format `xxx.xxxxxx.xxx` and the image filename `decodethis_pls.png`.
 

@@ -65,7 +65,7 @@ The scan revealed multiple open ports, with port 80 (HTTP) and port 7066 (unknow
 ### Web Application Analysis
 Accessing the HTTP service on port 80 revealed a simple webpage with motivational content:
 
-![](image.png)
+![](machines/Todd/image.png)
 
 The webpage displays the message "THE QUIETER YOU BECOME, THE MORE YOU ARE ABLE TO HEAR" which relates to the theme of "Mindful Listening" as indicated by the page title.
 

@@ -76,7 +76,7 @@ Accessing the web application at `http://192.168.100.78`, we discover an "HMV Tr
 
 Testing for command injection vulnerabilities, we attempt to inject shell metacharacters into the translation input. When we send the payload `; id`, the application processes it and reveals unexpected behavior:
 
-![](image.png)
+![](machines/Translator/image.png)
 
 **Translation result:** `; rw`
 

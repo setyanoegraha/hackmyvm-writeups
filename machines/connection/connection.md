@@ -77,7 +77,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.31 seconds
 
 Visiting port 80 revealed the default Apache Debian page.
 
-![](image.png)
+![](machines/connection/image.png)
 
 ## Initial Access
 

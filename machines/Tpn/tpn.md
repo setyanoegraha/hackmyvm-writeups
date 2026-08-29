@@ -79,7 +79,7 @@ Nmap done: 1 IP address (1 host up) scanned in 19.04 seconds
 
 The line `Git repository found!` with the remote `https://github.com/LSP1025923/thinkphp.git` is like finding the blueprints to a bank vault. Here's why this is a game-changer:
 
-![git](image.png)
+![git](machines/Tpn/image.png)
 
 **Why I immediately got excited seeing this**: Most penetration tests involve "black box" testing where you don't know how the application works internally. But an exposed Git repository means we can do "white box" analysis - we can read the source code and understand exactly how the application works, where the vulnerabilities are, and how to exploit them.
 

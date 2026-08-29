@@ -235,7 +235,7 @@ Xxxxxxxxxx01
 
 The corporate website hosts an "About Us" section displaying company leadership with full names. Multiple team members are identified through both the about page and testimonials:
 
-![](image.png)
+![](machines/codeshield/image.png)
 
 ![](image-1.png)
 

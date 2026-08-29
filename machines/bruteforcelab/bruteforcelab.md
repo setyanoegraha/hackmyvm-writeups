@@ -111,7 +111,7 @@ This message disclosed the username "andrea" as a system user, providing valuabl
 
 Port 10000 hosted a Webmin administrative interface, which was accessed to gather additional information about the system configuration and users:
 
-![](image.png)
+![](machines/bruteforcelab/image.png)
 
 The Webmin interface provided visual confirmation of the system details and further validated the presence of the "andrea" user within the system.
 

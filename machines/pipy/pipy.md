@@ -54,7 +54,7 @@ Nmap done: 1 IP address (1 host up) scanned in 31.82 seconds
 
 3. I validated the web surface on port 80 and captured the page state below.
 
-![](image.png)
+![](machines/pipy/image.png)
 
 4. I searched for public exploit material against the detected SPIP version and pulled CVE-2023-27372 exploit code.
 

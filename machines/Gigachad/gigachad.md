@@ -138,7 +138,7 @@ go to /drippinchad.png
 
 The text file confirms the username is `chad` and directs us to `/drippinchad.png`. Following this lead, we check the web server for this image.
 
-![](image.png)
+![](machines/Gigachad/image.png)
 
 This image displays the **Maiden's Tower** (also known as **Kız Kulesi**) in Istanbul. Using this landmark name as a potential password, we attempt to SSH into the machine. The correct password is found to be `maidenstower` (or a variation like `kizkulesi` - logs confirm success).
 

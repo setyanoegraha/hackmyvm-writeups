@@ -105,7 +105,7 @@ local: README.txt remote: README.txt
 
 4. **Web Enumeration**: Navigating to the web server revealed a standard home page.
 
-![alt text](image.png)
+![alt text](machines/whitedoor/image.png)
 
 Further inspection of the web application led to the discovery of an entry point that appeared to allow for remote command execution.
 

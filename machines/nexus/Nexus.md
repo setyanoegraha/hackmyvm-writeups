@@ -89,7 +89,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 Upon exploring the discovered pages, I located an authorization panel on the site.
 
-![](image.png)
+![](machines/nexus/image.png)
 
 I tested the login form for potential SQL injection by submitting a single quote character in the username field. The application responded with a verbose MariaDB error message, confirming the vulnerability.
 

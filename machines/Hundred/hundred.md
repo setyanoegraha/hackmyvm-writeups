@@ -129,7 +129,7 @@ ftp> exit
 
 After reading it, the `id_rsa` is just, idk. The others? Look quite good.
 
-![alt text](image.png)
+![alt text](machines/Hundred/image.png)
 
 But in the `users.txt`, I suspected `hmv` was the user of the target.
 

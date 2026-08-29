@@ -53,7 +53,7 @@ Nmap done: 1 IP address (1 host up) scanned in 17.00 seconds
 
 Visiting the web server on port 80 displays the "Master Control Program" page.
 
-![](image.png)
+![](machines/tron/image.png)
 
 Inspecting the source code reveals an interesting comment hidden within the HTML:
 

@@ -352,7 +352,7 @@ User www-data may run the following commands on TheWall:
 
 The `www-data` user was permitted to run `/usr/bin/exiftool` as `john` without any password. ExifTool is a Perl-based metadata tool, and as documented on GTFOBins, it can be abused via its `-config` flag to load an arbitrary Perl configuration file that inherits and executes shell commands.
 
-![](image.png)
+![](machines/thewall/image.png)
 
 ### ExifTool Config Exploitation
 

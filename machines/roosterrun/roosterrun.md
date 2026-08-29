@@ -68,7 +68,7 @@ Nmap done: 1 IP address (1 host up) scanned in 20.17 seconds
 
 Browsing to `http://192.168.100.132/` revealed a blog powered by **CMS Made Simple**. The page footer confirmed the exact version:
 
-![](image.png)
+![](machines/roosterrun/image.png)
 
 The footer text reads: *"This site is powered by CMS Made Simple version **2.2.9.1**"*. This is a critical piece of information — a known CVE exists for this specific version line.
 

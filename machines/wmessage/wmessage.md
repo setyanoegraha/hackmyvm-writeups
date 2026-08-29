@@ -113,7 +113,7 @@ Key endpoints discovered:
 
 Navigating to `http://192.168.100.134/` redirects to the login page. It accepts an **Email Address** and **Password**, and user self-registration is available via `/sign-up`.
 
-![](image.png)
+![](machines/wmessage/image.png)
 
 A new account was registered via `/sign-up` and logged in successfully.
 

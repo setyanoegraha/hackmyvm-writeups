@@ -65,7 +65,7 @@ Nmap done: 1 IP address (1 host up) scanned in 26.64 seconds
 
 Initial access to the web application via IP address revealed the landing page:
 
-![](image.png)
+![](machines/Doc/image.png)
 
 ![](image-1.png)
 

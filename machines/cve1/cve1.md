@@ -72,7 +72,7 @@ Three ports were open: SSH on 22, a standard Apache instance on port 80, and a s
 
 Port 80 presented only the standard Apache2 Debian default page, containing no application logic or useful attack surface.
 
-![](image.png)
+![](machines/cve1/image.png)
 
 Port 9090, however, hosted a custom PHP application titled "Nuclei War Now!" that exposed two forms: one to save arbitrary content as a `.yaml` file on the server, and another to open and display a stored `.yaml` file by name.
 

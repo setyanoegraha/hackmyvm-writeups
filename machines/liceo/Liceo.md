@@ -181,7 +181,7 @@ With the discovery of the upload page, the objective shifted to gaining remote c
 
 1. **Preparing the Web Shell**: A simple PHP web shell was created to execute system commands.
 
-![](image.png)
+![](machines/liceo/image.png)
 
 2. **Bypassing the Extension Filter**: Initial attempts to upload files with the .php extension were blocked by the server's security logic. To circumvent this restriction, the shell was renamed to shell.phtml, which the server accepted and processed as a valid PHP file.
 

@@ -99,7 +99,7 @@ The enumeration discovered several endpoints:
 Manual examination of the discovered web application revealed a hacker-themed panel with three main functionalities.
 
 **Homepage (`/`):**
-![](image.png)
+![](machines/Skid/image.png)
 
 The homepage displays "Jeremy's Ultimate Hacker Panel" with the tagline "Only real hackers are allowed in my site" and contains navigation links to "Run Nmap Scan" and "Generate Reverse Shell" functionalities.
 

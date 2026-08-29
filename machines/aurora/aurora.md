@@ -201,7 +201,7 @@ The JWT signing secret is **`nopassword`**.
 
 With the signing secret known, a new JWT was crafted with `username: admin` and `role: admin` using [jwt.io](https://jwt.io). The image below shows the forged token being generated with the secret `nopassword`:
 
-![](image.png)
+![](machines/aurora/image.png)
 
 The forged token is:
 ```

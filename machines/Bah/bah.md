@@ -62,7 +62,7 @@ The scan revealed:
 
 Visiting port 80 confirmed the presence of a qdPM login page, version 9.2.
 
-![](image.png)
+![](machines/Bah/image.png)
 
 ## Vulnerability Discovery
 

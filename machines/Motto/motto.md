@@ -138,7 +138,7 @@ Nmap done: 1 IP address (1 host up) scanned in 84.84 seconds
 
 Accessing port 80 reveals a simple browser-based game titled "Mazesec" (点击方块小游戏 - "Click on the block mini-game"):
 
-![80](image.png)
+![80](machines/Motto/image.png)
 
 This appears to be a rabbit hole - a decoy application with no exploitable vulnerabilities or useful information for the attack path.
 

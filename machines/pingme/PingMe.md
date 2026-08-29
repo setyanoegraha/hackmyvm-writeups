@@ -64,7 +64,7 @@ Investigation of the web server on port 80 shows a basic utility for testing ICM
 
 Visual evidence from the packet analysis allows for the recovery of the username:
 
-![](image.png)
+![](machines/pingme/image.png)
 ![](image-1.png)
 
 Further analysis of the captured traffic leads to the discovery of the corresponding password for the pinger account:

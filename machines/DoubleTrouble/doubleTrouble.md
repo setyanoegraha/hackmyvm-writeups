@@ -67,7 +67,7 @@ Nmap done: 1 IP address (1 host up) scanned in 36.66 seconds
 
 Browsing to port 80 revealed a login page for **qdPM version 9.1**, a web-based project management tool.
 
-![](image.png)
+![](machines/DoubleTrouble/image.png)
 
 The application displayed a clear version number (qdPM 9.1), which became critical for identifying known vulnerabilities.
 

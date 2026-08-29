@@ -182,7 +182,7 @@ Additional details confirmed from the phpinfo output:
 - **User/Group:** www-data(33)/33
 - **Loaded Modules include:** `mod_backdoor` (highlighted)
 
-![phpinfo](image.png)
+![phpinfo](machines/blackhat/image.png)
 
 The presence of `mod_backdoor` in the loaded modules directly explains the hidden `check backboor` comment in the HTML source — the author intentionally left this breadcrumb.
 

@@ -615,7 +615,7 @@ selena@pwned:~$ which docker
 
 Consulting GTFOBins (https://gtfobins.org/gtfobins/docker/) for the Docker privilege escalation technique:
 
-![](image.png)
+![](machines/Pwned/image.png)
 
 The GTFOBins page confirms that Docker can spawn an interactive system shell. The technique involves:
 1. Running a Docker container with the `-v /:/mnt` flag to mount the entire host filesystem

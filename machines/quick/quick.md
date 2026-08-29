@@ -78,7 +78,7 @@ Starting gobuster in directory enumeration mode
 
 While navigating the website, the presence of a "page" parameter in the URL suggested a potential File Inclusion vulnerability.
 
-![](image.png)
+![](machines/quick/image.png)
 
 Initial tests for Local File Inclusion did not provide any useful data. Therefore, the focus shifted to testing for Remote File Inclusion by attempting to make the server request a file from an external source.
 

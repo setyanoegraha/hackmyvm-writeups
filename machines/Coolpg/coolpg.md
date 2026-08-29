@@ -55,7 +55,7 @@ The scan reveals two open ports:
 
 Navigating to the web application on port 80 reveals a login interface:
 
-![](image.png)
+![](machines/Coolpg/image.png)
 
 The initial web page presents a login form for "CoolPG Internal" with the message "Authorized staff only." Examining the source code reveals two critical pieces of information:
 

@@ -83,7 +83,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 1. The root directory contains an image upload interface.
 
-![](image.png)
+![](machines/up/image.png)
 
 2. Attempting to upload a PHP file directly results in an error message indicating that only JPG and GIF files are permitted.
 

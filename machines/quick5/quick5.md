@@ -51,7 +51,7 @@ Nmap done: 1 IP address (1 host up) scanned in 39.49 seconds
 
 The web server on port 80 was visited, displaying the primary landing page for Quick Automotive.
 
-![alt text](image.png)
+![alt text](machines/quick5/image.png)
 
 Further inspection of the web application suggested the presence of virtual hosting.
 

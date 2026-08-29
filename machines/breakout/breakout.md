@@ -350,7 +350,7 @@ This gives us a confirmed local username: **cyber**.
 
 With the username `cyber` from SMB enumeration and the decoded Brainfuck password `.2uqPEfj3D<P'a-3`, we navigated to the **Usermin** panel at `https://192.168.100.145:20000/`. Usermin is a web-based interface for Unix user-level tasks, distinct from the administrator-facing Webmin.
 
-![](image.png)
+![](machines/breakout/image.png)
 
 Authentication was performed using the credentials `cyber` / `.2uqPEfj3D<P'a-3`. The login succeeded and dropped us into the Usermin dashboard. The top navigation bar confirmed the session was authenticated as the `cyber` user.
 

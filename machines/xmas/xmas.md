@@ -68,7 +68,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.28 seconds
 └─$ url=http://christmas.hmv
 ```
 
-![](image.png)
+![](machines/xmas/image.png)
 
 4. I enumerated paths and found upload reachable endpoints.
 

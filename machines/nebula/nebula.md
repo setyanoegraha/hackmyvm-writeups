@@ -100,7 +100,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 Inspection of the discovered PDF file at `/joinus/application_form.pdf` yielded a significant find: a URL link containing embedded credentials.
 
-![](image.png)
+![](machines/nebula/image.png)
 
 These credentials allowed for a successful login into the restricted dashboard of the web application.
 

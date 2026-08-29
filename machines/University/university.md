@@ -92,7 +92,7 @@ Resolving deltas: 100% (19/19), done.
 
 Accessing the GitHub repository directly:
 
-![](image.png)
+![](machines/University/image.png)
 
 ---
 

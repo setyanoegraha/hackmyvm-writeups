@@ -80,7 +80,7 @@ The Nmap results showed SSH and HTTP services. A Nikto scan was then executed to
 
 The Nikto scan successfully identified a potential Local File Inclusion (LFI) vulnerability through directory traversal on the `index.php` page.
 
-![](image.png)
+![](machines/quick2/image.png)
 
 To further map the web application structure, a Gobuster directory brute force was conducted.
 

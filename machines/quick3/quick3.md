@@ -85,7 +85,7 @@ Starting gobuster in directory enumeration mode
 
 Navigating to the `/customer/` directory reveals a web portal for users. The first step involves registering a new account to observe the application behavior.
 
-![](image.png)
+![](machines/quick3/image.png)
 
 After successful registration and logging in, the user profile page is accessed. The URL structure suggests that user profiles are retrieved based on a numerical identifier.
 

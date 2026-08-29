@@ -66,7 +66,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.67 seconds
 
 Accessing the web server at `http://192.168.100.102` revealed a panda-themed interface with a form requesting a "Secret Word":
 
-![](image.png)
+![](machines/Hostname/image.png)
 
 #### HTML Source Code Analysis
 

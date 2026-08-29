@@ -352,7 +352,7 @@ User jack may run the following commands on jabita:
 
 The sudo rule allows `jack` to execute `/usr/bin/awk` as the user `jaba` without supplying any password. The `awk` binary is well-known on GTFOBins as a trivial shell escape vehicle. Consulting GTFOBins confirmed the exact technique:
 
-![](image.png)
+![](machines/jabita/image.png)
 
 As shown in the GTFOBins entry, `awk` is an alias of `mawk` on this system and falls under the **Shell**, **File write**, and **File read** categories. The Sudo tab explicitly notes that "this function is performed by the privileged user if executed via `sudo` because the acquired privileges are not dropped," and provides the payload `mawk 'BEGIN {system("/bin/sh")}'`. Adapting this to use `/bin/bash` for a more capable shell:
 

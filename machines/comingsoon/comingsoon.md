@@ -63,7 +63,7 @@ Nmap done: 1 IP address (1 host up) scanned in 21.64 seconds
 
 Browsing to `http://192.168.100.147/` presents a standard "Bolt - Coming Soon" landing page built on Bootstrap HTML5. The countdown timer was at **25 Days, 09 Hours, 48 Minutes, 10 Seconds** at time of capture. Notably, only "NOTIFY ME" and "ABOUT US" buttons are visible — no upload functionality is exposed to unauthenticated visitors.
 
-![](image.png)
+![](machines/comingsoon/image.png)
 
 ---
 

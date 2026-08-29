@@ -418,7 +418,7 @@ gogogo.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 8 bit, mono 11
 
 The audio file contains morse code that decodes to:
 
-![](image.png)
+![](machines/Twisted/image.png)
 
 The decoded message reads: **"GODEEPER...COMEWITHME...LITTLERABBIT..."**
 

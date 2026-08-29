@@ -68,7 +68,7 @@ Nmap done: 1 IP address (1 host up) scanned in 29.93 seconds
 
 Accessing the web server on port 80 displayed the default nginx welcome page:
 
-![80](image.png)
+![80](machines/Decode/image.png)
 
 The page confirms nginx is successfully installed but requires further configuration. Source code inspection revealed no additional information.
 

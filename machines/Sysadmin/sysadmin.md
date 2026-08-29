@@ -58,7 +58,7 @@ Nmap done: 1 IP address (1 host up) scanned in 20.87 seconds
 
 Browsing to the web application revealed a C code upload platform:
 
-![site](image.png)
+![site](machines/Sysadmin/image.png)
 
 **Web Application Features:**
 - File upload form accepting `.c` files only

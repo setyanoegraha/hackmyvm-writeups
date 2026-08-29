@@ -228,7 +228,7 @@ The string at the end of the output, a dense sequence of symbols from the printa
 
 The extracted Malbolge code was submitted to the dCode online interpreter at `https://www.dcode.fr/malbolge-language` for execution.
 
-![decode](image.png)
+![decode](machines/find/image.png)
 
 As visible in the screenshot above, the dCode Malbolge Interpreter executed the code and produced the output `missyred` in the Results panel on the left side. This string, previously unknown, is the username to target on the SSH service, which directly answers the `robots.txt` hint "find user :)".
 

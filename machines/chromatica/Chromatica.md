@@ -358,7 +358,7 @@ Connection to 192.168.100.187 closed.
 
 To escape this restricted environment, the terminal window size must be increased until the text overflows, triggering a pager like interface (likely `less`). From there, a shell can be spawned by typing `!/bin/bash`.
 
-![](image.png)
+![](machines/chromatica/image.png)
 
 Upon successful escape, a standard interactive shell is obtained for the dev user.
 

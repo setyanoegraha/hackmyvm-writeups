@@ -54,7 +54,7 @@ Nmap done: 1 IP address (1 host up) scanned in 15.69 seconds
 
 Initial access to the HTTP service on port 80 resulted in an access denied message, requiring domain access:
 
-![](image.png)
+![](machines/Victorique/image.png)
 
 ### Domain Configuration
 

@@ -741,7 +741,7 @@ drwxrwsr-x. 1 root mail   22 Mar 12  2025 ..
 
 The file `data.xlsx` became 0 bytes after the accidental transfer operation. The data was recovered from a community writeup reference. The spreadsheet contained quarterly sales data (年份=Year, 季度=Quarter, 时间代码=Time Code, 销售量=Sales Volume) from 2015 Q1 through 2020 Q4:
 
-![](image.png)
+![](machines/mathdop/image.png)
 
 ### Solving the Time Series Decomposition
 

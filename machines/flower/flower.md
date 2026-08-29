@@ -58,7 +58,7 @@ Content-Type: text/html; charset=UTF-8
 
 Visiting the website on port 80 presents a "Count Petals" application.
 
-![80](image.png)
+![80](machines/flower/image.png)
 
 ## Vulnerability Discovery
 

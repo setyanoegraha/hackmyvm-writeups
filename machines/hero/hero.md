@@ -156,7 +156,7 @@ BbdbAKYEtIX75k6CL27CAAAACnNoYXdhQGhlcm8BAgM=
 
 3. Analysis of port 5678 indicates the presence of n8n, a workflow automation tool. Accessing the web interface allows for the creation of a new account and subsequent login.
 
-![alt text](image.png)
+![alt text](machines/hero/image.png)
 
 4. A new workflow is constructed to facilitate remote command execution.
 

@@ -102,7 +102,7 @@ Downloading `index.html` and inspecting its contents confirmed that it was ident
 
 A minimal PHP webshell was crafted to accept a `cmd` GET parameter and execute it on the server. The payload used is shown below.
 
-![](image.png)
+![](machines/friendly/image.png)
 
 The shell was uploaded via the authenticated FTP session.
 

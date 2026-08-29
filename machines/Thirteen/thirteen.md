@@ -79,7 +79,7 @@ Nmap done: 1 IP address (1 host up) scanned in 21.10 seconds
 
 Accessing port 80 reveals an "iCloud Secure Vault" interface themed around iPhone 13 Pro Max:
 
-![](image.png)
+![](machines/Thirteen/image.png)
 
 The web interface presents three file access buttons: "Welcome List", "Sync Config", and "Help Manual". Inspecting the page source reveals ROT13-encoded file paths:
 

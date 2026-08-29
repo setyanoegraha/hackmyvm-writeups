@@ -189,7 +189,7 @@ The page source revealed references to a virtual host domain `za1.hmv`. This dom
 
 The blog interface rendered successfully after DNS resolution was established:
 
-![](image.png)
+![](machines/za1/image.png)
 
 ### Directory Enumeration
 

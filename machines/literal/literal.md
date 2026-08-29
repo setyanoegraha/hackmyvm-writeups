@@ -69,7 +69,7 @@ The nmap output reveals two open ports: SSH on port 22 and HTTP on port 80. Nota
 
 Accessing the web application at blog.literal.hmv reveals a personal blog interface with ASCII art content and a login functionality:
 
-![](image.png)
+![](machines/literal/image.png)
 
 The HTML source code displays a blog template for user "c4TLoUis" with several pages including a login endpoint at /login.php. Directory enumeration is conducted using feroxbuster to discover all accessible endpoints:
 

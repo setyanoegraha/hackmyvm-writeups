@@ -62,7 +62,7 @@ The scan identified:
 #### Port 80 - PDF Evolution Website
 The main website displays a professional presentation about PDF format evolution:
 
-![](image.png)
+![](machines/Pdf/image.png)
 
 The website presents a visually appealing timeline and information about PDF format development. Analysis of the source code revealed an interesting HTML comment hint:
 

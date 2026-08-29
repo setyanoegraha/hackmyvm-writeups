@@ -67,7 +67,7 @@ The web service on port 80 is the most promising attack vector, especially given
 
 Accessing the web service on port 80 reveals an HTML-to-PDF conversion interface:
 
-![](image.png)
+![](machines/Convert/image.png)
 
 The web application provides a simple interface for converting web pages to PDF documents. Let me examine the HTML source code to understand how it works:
 

@@ -68,7 +68,7 @@ Two ports were open: **SSH on port 22** (OpenSSH 8.4p1, Debian 11) and **HTTP on
 
 Browsing to `http://192.168.100.140/` revealed a flashy, taunting landing page themed around DDoS resilience — openly daring attackers to try flooding the service.
 
-![](image.png)
+![](machines/umz/image.png)
 
 The page included slogans such as *"your ddos means nothing"*, *"warning: we want your ddos attacks"*, and a live counter claiming *"∞ blocked"*. The HTML source code contained two telling comments:
 

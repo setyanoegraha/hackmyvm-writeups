@@ -85,7 +85,7 @@ The server responds with standard Apache headers. The `Last-Modified` date indic
 
 Accessing the web application through a browser revealed a marketplace for vinyl records:
 
-![](image.png)
+![](machines/Vinylizer/image.png)
 
 The homepage displays a professional-looking vinyl records marketplace with featured products and navigation menu.
 

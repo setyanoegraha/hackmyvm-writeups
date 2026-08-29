@@ -112,7 +112,7 @@ script.js               [Status: 200, Size: 13483, Words: 135, Lines: 2, Duratio
 
 The script.js file is opened and found to be heavily obfuscated with complex variable names and function calls.
 
-![](image.png)
+![](machines/gameshell5/image.png)
 
 A deobfuscation tool located at https://deobfuscate.relative.im/ is used to process the code. The resulting cleartext script reveals several constants, including a site name, a login name, and a master password.
 

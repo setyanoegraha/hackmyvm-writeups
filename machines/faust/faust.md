@@ -79,7 +79,7 @@ We connect to port 6660 to see the full message.
 
 Visiting the web server on Port 80 shows the default "cool_cms" page.
 
-![](image.png)
+![](machines/faust/image.png)
 
 Scrolling down the page reveals the version of the CMS.
 

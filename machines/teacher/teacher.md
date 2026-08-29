@@ -464,7 +464,7 @@ mrteacher    ALL=(ALL:ALL) NOPASSWD: ALL
 
 The screenshot below shows the final state of the `/etc/sudoers` file as edited in `gedit`:
 
-![sudoers](image.png)
+![sudoers](machines/teacher/image.png)
 
 As confirmed in the image: **line 23** reads `mrteacher    ALL=(ALL:ALL) NOPASSWD: ALL` — granting `mrteacher` unrestricted passwordless sudo access to all commands.
 

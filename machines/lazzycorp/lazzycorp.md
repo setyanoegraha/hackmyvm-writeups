@@ -250,7 +250,7 @@ The blog pages (`/blog/blog.php`, `/blog/blog1.php`) were notable. They containe
 
 **DevLog #1 — Credential Chaos**
 
-![](image.png)
+![](machines/lazzycorp/image.png)
 
 > *Hidden HTML source comment:* `<!-- Arvind: He used note.jpg again. Let's see how long it lasts this time. -->`
 >

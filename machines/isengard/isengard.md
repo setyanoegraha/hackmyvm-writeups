@@ -54,7 +54,7 @@ Nmap done: 1 IP address (1 IP address (1 host up) scanned in 38.28 seconds
 
 Browsing to port 80 reveals a Lord of the Rings themed page styled with green terminal text on a black background. Notably, the page also renders text written in **Tengwar** (the Elvish script referenced by the CSS comment), which encodes the hidden path `/y0ush4lln0tp4ss` as a thematic visual clue.
 
-![](image.png)
+![](machines/isengard/image.png)
 
 Inspecting the page's HTML source revealed minimal content and a reference to an embedded wizard image:
 

@@ -229,7 +229,7 @@ F(&m'D.Oi#De4!--ZgJT@;^00D.P7@8LJ?tF)N1B@:UuC/g+jUD'3nBEb-A+De'u)F!,")@:UuC/g(Km
 
 The content is clearly not plain text. The character set (backticks, `!`, `^`, mixed alphanumerics) matches **Base85 with the `!-u` alphabet** (also known as ASCII85 variant). The string was decoded using **CyberChef** with the "From Base85" operation (Alphabet: `!-u`, Remove non-alphabet chars: enabled):
 
-![](image.png)
+![](machines/superhuman/image.png)
 
 **Decoded output:**
 > `salome doesn't want me, I'm so sad... i'm sure god is dead... I drank 6 liters of Paulaner.... too drunk lol. I'll write her a poem and she'll desire me. I'll name it salome_and_?? I don't know. I must not forget to save it and put a good extension because I don't have much storage.`

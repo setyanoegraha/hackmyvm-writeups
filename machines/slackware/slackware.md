@@ -401,7 +401,7 @@ trYth1sPasS1993
 
 The image was then visually identified as Patrick Volkerding, the founder of the Slackware Linux distribution.
 
-![image.png](image.png)
+![image.png](machines/slackware/image.png)
 
 A targeted username list was generated based on this identity using username-anarchy.
 

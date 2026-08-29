@@ -511,7 +511,7 @@ Edoculture
 3. **Username Harvesting**:
 A manual review of the blog post at `/wordpress/index.php/2023/12/05/the-story-behind-vivifytech/` provided visual evidence of potential usernames associated with the company. Including the CEO in the first page.
 
-![alt text](image.png)
+![alt text](machines/vivifytech/image.png)
 
 The following names were compiled into a users.txt file for brute force attempts.
 

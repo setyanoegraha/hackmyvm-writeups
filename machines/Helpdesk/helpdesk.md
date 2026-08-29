@@ -66,7 +66,7 @@ The attack surface focuses primarily on the web application.
 
 Accessing the web server at `http://192.168.100.105/` revealed a HelpDesk Ticketing System portal:
 
-![](image.png)
+![](machines/Helpdesk/image.png)
 
 The landing page displays a maintenance notice stating: *"This portal is currently under maintenance. Internal teams should use the intranet interface to access support tickets."* This message provides a hint that there might be internal administrative interfaces accessible through directory enumeration.
 

@@ -199,7 +199,7 @@ Finished
 
 Browsing to `http://192.168.100.139/` presented the main "SNOMED DEMONS" page:
 
-![](image.png)
+![](machines/demons/image.png)
 
 Inspecting the HTML source of the index page revealed a hidden comment:
 

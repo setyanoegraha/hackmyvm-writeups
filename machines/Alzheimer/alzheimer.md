@@ -78,7 +78,7 @@ Attempts to access the HTTP service directly resulted in connection timeouts, in
 curl: (28) Failed to connect to 192.168.100.49 port 80 after 135301 ms: Could not connect to server
 ```
 
-![image.png](image.png)
+![image.png](machines/Alzheimer/image.png)
 
 The browser confirmed the connection timeout, displaying an "ERR_CONNECTION_TIMED_OUT" error for 192.168.100.49.
 

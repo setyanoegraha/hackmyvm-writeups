@@ -151,7 +151,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 The scan identifies a page named secret.php. Navigating to this page displays a message indicating that the current user lacks administrative permissions to execute commands.
 
-![](image.png)
+![](machines/newbee/image.png)
 
 ## Vulnerability Discovery
 

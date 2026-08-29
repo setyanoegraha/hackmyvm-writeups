@@ -84,7 +84,7 @@ The RPC services (ports 111 and 51568) are standard Linux services but don't pre
 
 Navigating to `http://192.168.100.94` revealed the ApPHP MicroBlog installation with a custom theme titled "Drifting Blues Tech":
 
-![port80](image.png)
+![port80](machines/Driftingblues9/image.png)
 
 The homepage displayed a blog post from "Admin" dated May 09, 2021, announcing that "drifting blues tech is sold to vvmlist.github.io." This provides contextual information but no direct exploitation path.
 

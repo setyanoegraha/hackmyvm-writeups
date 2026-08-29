@@ -220,7 +220,7 @@ The user lucas can execute `/usr/bin/base64` with sudo privileges without a pass
 ### GTFOBins Research
 Consulting GTFOBins for base64 privilege escalation methods:
 
-![](image.png)
+![](machines/Baseme/image.png)
 
 The image shows that base64 can be used to read arbitrary files when executed with sudo privileges using the syntax: `base64 /path/to/input-file | base64 --decode`
 

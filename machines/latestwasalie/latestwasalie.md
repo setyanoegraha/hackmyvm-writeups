@@ -91,7 +91,7 @@ Content-Type: text/html
 192.168.100.172 latestwasalie.hmv
 ```
 
-![](image.png)
+![](machines/latestwasalie/image.png)
 
 4. Reviewing the page source exposed this deployment clue, which suggested the username `adm`.
 

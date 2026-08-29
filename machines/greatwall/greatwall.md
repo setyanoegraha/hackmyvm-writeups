@@ -107,7 +107,7 @@ wall:x:1000:1000:wall,,,:/home/wall:/bin/bash
 
 2. Subsequent testing confirmed that the application also supported the http scheme, indicating a Remote File Inclusion (RFI) or SSRF vulnerability. A malicious PHP payload was crafted to test code execution.
 
-![](image.png)
+![](machines/greatwall/image.png)
 
 3. To host the payload, a local Python HTTP server was started on port 80.
 

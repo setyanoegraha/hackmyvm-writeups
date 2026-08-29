@@ -66,7 +66,7 @@ Nmap done: 1 IP address (1 host up) scanned in 19.22 seconds
 
 Navigating to `http://192.168.100.99/` revealed a registration/login panel:
 
-![](image.png)
+![](machines/System/image.png)
 
 The web interface presents a simple form titled "HackMyVM Panel" with two input fields for Email and Password, along with a "Register" button. This clean interface suggested potential backend vulnerabilities worth investigating.
 

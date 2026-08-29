@@ -52,7 +52,7 @@ Nmap done: 1 IP address (1 host up) scanned in 38.84 seconds
 ```
 The web server on port 80 contains a basic landing page about the history of Bash, but the source code reveals no hidden leads.
 
-![alt text](image.png)
+![alt text](machines/Gameshell/image.png)
 
 However, port **7681** hosts `ttyd`, a web-based terminal.
 

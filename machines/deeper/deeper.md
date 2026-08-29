@@ -91,7 +91,7 @@ Accessing the HTTP service via curl shows a minimalist landing page with an inte
 </html>
 ```
 
-![](image.png)
+![](machines/deeper/image.png)
 
 The comment "GO 'deeper'" is a clear hint to explore subdirectories. The page displays an atmospheric image of a lit tunnel, which thematically aligns with the challenge of going progressively deeper into the system.
 

@@ -199,7 +199,7 @@ j2                      [Status: 200, Size: 189769, Words: 15060, Lines: 1017, D
 
 The Apache directory listing at `/scout/j2/docs/` contained two immediately interesting files: `pass.txt` and `shellfile.ods`.
 
-![](image.png)
+![](machines/arroutada/image.png)
 
 ---
 

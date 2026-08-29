@@ -94,7 +94,7 @@ The file contained a base64-encoded comment that was decoded to reveal a themati
 
 The main web page was accessed and displayed the Apache server's landing page:
 
-![](image.png)
+![](machines/apaches/image.png)
 
 ---
 

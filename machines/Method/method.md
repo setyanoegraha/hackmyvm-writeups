@@ -68,7 +68,7 @@ The nginx server title "Test Page for the Nginx HTTP Server on Fedora" suggests 
 
 Accessing the web server at `http://192.168.100.98` via browser reveals the default nginx welcome page:
 
-![](image.png)
+![](machines/Method/image.png)
 
 The page displays the standard nginx welcome message with information about the default `index.html` page location (`/var/www/html`) and nginx configuration file path (`/etc/nginx/nginx.conf`). This confirms the server is running nginx on a Debian-based system.
 

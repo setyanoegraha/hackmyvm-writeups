@@ -101,7 +101,7 @@ Key endpoints discovered: `index.php`, `login.php`, `item.php`, and `config.php`
 
 Accessing the main index page revealed a Vocaloid-themed application with Chinese text:
 
-![](image.png)
+![](machines/Meltdown/image.png)
 
 The page displays "炉心融解" (The core of the furnace melts) and shows a list of items including characters like "Hatsune Miku", "Kagamine Rin", and "Kagamine Ren". A login prompt indicates authentication is required for additional features.
 

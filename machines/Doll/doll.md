@@ -346,7 +346,7 @@ User bela may run the following commands on doll:
 
 Consulting GTFOBins (a curated list of Unix binaries that can be exploited for privilege escalation), the entry for `fzf` was found:
 
-![fzf gtfo](image.png)
+![fzf gtfo](machines/Doll/image.png)
 
 The GTFOBins entry confirms that `fzf` with the `--listen` parameter can be exploited for privilege escalation. The vulnerability lies in the `execute` functionality that allows arbitrary command execution through HTTP POST requests to the listening service.
 

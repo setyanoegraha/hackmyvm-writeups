@@ -60,7 +60,7 @@ The scan revealed two open ports:
 
 Accessing the web server on port 80 revealed the default Apache2 Ubuntu installation page, confirming the service was operational.
 
-![webserver apache2](image.png)
+![webserver apache2](machines/Vulny/image.png)
 
 ### Directory Enumeration
 

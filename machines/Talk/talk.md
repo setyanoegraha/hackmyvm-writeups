@@ -69,7 +69,7 @@ Two services were identified:
 
 Accessing the web application on port 80 revealed a login page for a chat application:
 
-![](image.png)
+![](machines/Talk/image.png)
 
 The login form showed "Login to your account" with username and password fields, and was developed by "PJCaraig © 2018" as indicated at the bottom of the page.
 

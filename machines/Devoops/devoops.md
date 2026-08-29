@@ -58,7 +58,7 @@ PORT     STATE SERVICE VERSION
 ### Web Application Analysis
 Accessing http://192.168.100.35:3000/ reveals a Vue.js + Express.js development environment:
 
-![](image.png)
+![](machines/Devoops/image.png)
 
 The application's source code shows it's running Vite 6.2.0:
 

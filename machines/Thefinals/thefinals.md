@@ -66,7 +66,7 @@ Nmap done: 1 IP address (1 host up) scanned in 17.39 seconds
 
 Accessing the web server on port 80 revealed a themed landing page:
 
-![](image.png)
+![](machines/Thefinals/image.png)
 
 The page displayed "THE FINALS" game arenas with various locations (Monaco, Seoul, Skyway Stadium, Las Vegas, SYS$HORIZON, Kyoto, Fortune Stadium, Bernal). At the bottom of the page, a domain name was discovered: **THEFINALS.hmv**
 

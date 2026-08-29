@@ -127,7 +127,7 @@ Testing the `locker.php` endpoint revealed it processes image parameters:
 
 Testing with the discovered parameter from the main page:
 
-![](image.png)
+![](machines/Locker/image.png)
 
 The application displays different locker images based on the `image` parameter:
 - Image 1 shows a heart-shaped padlock

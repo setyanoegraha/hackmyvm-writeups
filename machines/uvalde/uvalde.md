@@ -146,7 +146,7 @@ Key intelligence extracted from this file:
 
 Browsing to port 80 reveals a Bootstrap "Agency" theme landing page served by Apache 2.4.54.
 
-![](image.png)
+![](machines/uvalde/image.png)
 
 Directory brute-forcing with Feroxbuster uncovered several interesting endpoints, most notably `login.php`, `user.php` (which redirects to `login.php`), and `create_account.php`.
 

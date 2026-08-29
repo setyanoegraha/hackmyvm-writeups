@@ -81,7 +81,7 @@ Anonymous FTP access was disabled, so I moved on to web application enumeration.
 
 Visiting the web server on port 80 displayed the default Apache2 Debian page, which appeared unusual as it suggested the web server might be hosting additional content in other directories or virtual hosts.
 
-![](image.png)
+![](machines/medusa/image.png)
 
 To discover hidden directories, I performed directory brute-forcing using Gobuster with a comprehensive wordlist.
 

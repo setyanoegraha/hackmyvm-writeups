@@ -66,7 +66,7 @@ Nmap done: 1 IP address (1 host up) scanned in 20.61 seconds
 
 Accessing port 80 via a web browser revealed an "Online Food Ordering System V2" application:
 
-![port 80](image.png)
+![port 80](machines/Luz/image.png)
 
 The application features a typical food ordering interface with navigation options including Home, Cart, About, Login, and Admin Login.
 

@@ -62,7 +62,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.37 seconds
 
 Accessing the web service on port 80 revealed an "Under Construction" page for **Midnight Coffee**:
 
-![80](image.png)
+![80](machines/Coffeeshop/image.png)
 
 Examining the HTML source code revealed an interesting directory structure reference:
 

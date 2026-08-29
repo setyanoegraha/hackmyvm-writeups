@@ -62,7 +62,7 @@ Nmap done: 1 IP address (1 host up) scanned in 578.78 seconds
 
 Accessing the web server on port 80 revealed the OpenEMR login interface:
 
-![openemr](image.png)
+![openemr](machines/Driftingblues8/image.png)
 
 The login page confirms the presence of OpenEMR, a widely-used open-source medical records application that has historically been plagued with security vulnerabilities.
 

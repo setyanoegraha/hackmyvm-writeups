@@ -249,7 +249,7 @@ Hi I had to change the name of the todo list becouse directory busting is too ea
 
 The message contains a hex string: `2f 74 30 64 30 5f 6c 31 73 74 5f 66 30 72 5f 66 31 72 35 74`. This was decoded using CyberChef with the **"From Hex"** recipe (Auto delimiter), confirming the hidden web endpoint:
 
-![](image.png)
+![](machines/first/image.png)
 
 > **CyberChef output:** `/t0d0_l1st_f0r_f1r5t`
 

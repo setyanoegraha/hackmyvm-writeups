@@ -78,7 +78,7 @@ Content-Type: text/html; charset=UTF-8
 
 Visiting the website confirms it is a standard WordPress installation.
 
-![](image.png)
+![](machines/beloved/image.png)
 
 Using `wpscan`, we enumerate the WordPress installation. Key findings include:
 - **WordPress Version:** 5.7.2

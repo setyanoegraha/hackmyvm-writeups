@@ -122,7 +122,7 @@ The HTTP response headers and error messages provided crucial hints. The respons
 
 Navigating to port 8888 in a web browser revealed an Apollo Server landing page, immediately identifying the service as a GraphQL API endpoint.
 
-![](image.png)
+![](machines/flute/image.png)
 
 Examining the page source code confirmed the Apollo Server implementation. The HTML contained references to Apollo's CDN assets and indicated the server was running in non-production mode, as evidenced by the embedded configuration: `window.landingPage = "%7B%22isProd%22%3Afalse%7D"`.
 

@@ -86,7 +86,7 @@ Finished
 2. **Vulnerability Discovery and Initial Access**
 Careful inspection of the web server content yields critical information. A specific detail found on the main web page indicates a method to unlock further access.
 
-![](image.png)
+![](machines/savesanta/image.png)
 
 Following the discovery of this information, a secondary port scan is performed. This reveals that port 63673 is now open and accessible.
 

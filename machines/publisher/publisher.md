@@ -55,7 +55,7 @@ Nmap done: 1 IP address (1 host up) scanned in 24.61 seconds
 
 The scan reveals a web server on port 80. Navigating to this port using a web browser shows the application interface.
 
-![alt text](image.png)
+![alt text](machines/publisher/image.png)
 
 The application appears to be running SPIP. A directory enumeration is conducted to find hidden paths and confirm the presence of the CMS.
 

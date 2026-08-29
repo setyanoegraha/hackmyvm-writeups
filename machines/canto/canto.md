@@ -561,7 +561,7 @@ erik@canto:~$ ls -la /usr/bin/cpulimit
 -rwxr-xr-x 1 root root 31424 Jul 15  2023 /usr/bin/cpulimit
 ```
 
-![](image.png)
+![](machines/canto/image.png)
 
 The `cpulimit` utility can be used to execute arbitrary commands by passing them as arguments. By running `/bin/sh` through `cpulimit` with sudo, I obtained a root shell and captured the final flags.
 

@@ -47,7 +47,7 @@ Nmap done: 1 IP address (1 host up) scanned in 17.88 seconds
 
 The scan reveals a PHP CLI server running on port 8080. Visiting the page shows a simple chat interface.
 
-![](image.png)
+![](machines/insomnia/image.png)
 
 ## Vulnerability Discovery
 

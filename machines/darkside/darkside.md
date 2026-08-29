@@ -57,7 +57,7 @@ Nmap done: 1 IP address (1 host up) scanned in 35.41 seconds
 
 3. Opening TCP port 80 in a browser confirmed the target web application.
 
-![](image.png)
+![](machines/darkside/image.png)
 
 4. I enumerated directories to identify hidden web content.
 

@@ -160,7 +160,7 @@ A benign XML payload was submitted to confirm how the server processes input:
 
 The server responds with a PHP `SimpleXMLElement Object`, revealing that the backend uses **PHP's `simplexml_load_string()`** function to parse the XML directly without disabling external entity resolution:
 
-![](image.png)
+![](machines/yuan112/image.png)
 
 > **Note:** The response format `SimpleXMLElement Object ( [0] => Hello World )` is the PHP `print_r()` / `var_dump()` output of a `SimpleXMLElement` object. This confirms the parser is PHP's built in SimpleXML extension — a well known target for XXE injection when external entity loading is not explicitly disabled via `LIBXML_NOENT` prevention or `libxml_disable_entity_loader(true)`.
 

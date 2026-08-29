@@ -64,7 +64,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.52 seconds
 
 Navigating to `http://192.168.100.95:3000` revealed a simple login interface:
 
-![](image.png)
+![](machines/Azer/image.png)
 
 The login page accepts username and password inputs. Initial testing without credentials produced an interesting error message:
 

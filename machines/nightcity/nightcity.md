@@ -172,7 +172,7 @@ This message hints at the existence of a "robin" user or resource on the system.
 
 The /secret directory is accessible via HTTP and contains indexed image files:
 
-![](image.png)
+![](machines/nightcity/image.png)
 
 Three JPEG files are present in this directory: most-wanted.jpg (128K), some-light.jpg (214K), and veryImportant.jpg (185K). These are downloaded for offline analysis.
 

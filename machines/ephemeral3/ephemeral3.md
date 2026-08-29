@@ -117,7 +117,7 @@ If you have any questions just email me at henry@ephemeral.com
 
 Browsing to `http://192.168.100.150/agency/` reveals a static agency website themed "AgencyPerfect":
 
-![](image.png)
+![](machines/ephemeral3/image.png)
 
 The **Contact** section of the site exposes additional details:
 
