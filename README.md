@@ -3,7 +3,7 @@
 <div align="center">
 
 ![Platform](https://img.shields.io/badge/Platform-HackMyVM-critical?style=flat-square)
-![Machines](https://img.shields.io/badge/Machines-116-blue?style=flat-square)
+![Machines](https://img.shields.io/badge/Machines-155-blue?style=flat-square)
 ![Hades Lab](https://img.shields.io/badge/Hades_Lab-32_Modules-informational?style=flat-square)
 ![Venus Lab](https://img.shields.io/badge/Venus_Lab-50_Modules-informational?style=flat-square)
 ![Documentation](https://img.shields.io/badge/Status-Active-success?style=flat-square)
@@ -17,7 +17,7 @@
 
 ## Overview
 
-This repository contains comprehensive technical documentation for penetration testing exercises conducted on the HackMyVM platform. The collection represents systematic security analysis across 116 virtual machines and 82 laboratory modules, emphasizing methodological rigor and professional reporting standards over simple flag acquisition.
+This repository contains comprehensive technical documentation for penetration testing exercises conducted on the HackMyVM platform. The collection represents systematic security analysis across 155 virtual machines and 82 laboratory modules, emphasizing methodological rigor and professional reporting standards over simple flag acquisition.
 
 ## Portfolio Philosophy
 
@@ -43,7 +43,7 @@ These reports are designed for security engineers, penetration testers, red team
 ```
 hackmyvm-writeups/
 │
-├── machines/                    # 116 Virtual Machine Penetration Tests
+├── machines/                    # 155 Virtual Machine Penetration Tests
 │   ├── Alzheimer/
 │   │   ├── alzheimer.md         # Complete technical writeup
 │   │   └── image*.png           # Visual evidence and screenshots
@@ -63,7 +63,7 @@ hackmyvm-writeups/
 
 **Repository Statistics:**
 
-- 116 completed machine writeups with full technical documentation
+- 155 completed machine writeups with full technical documentation
 - 32 Hades laboratory modules focused on Linux privilege escalation
 - 50 Venus laboratory modules covering web and system exploitation
 - Comprehensive visual evidence integrated throughout all reports
@@ -132,7 +132,7 @@ The repository employs a structured documentation pipeline that ensures consiste
 - Visual proof verified for accuracy and completeness
 - Final report formatted according to standardized template
 
-This workflow ensures that each of the 116 machine reports maintains consistent quality and professional presentation standards.
+This workflow ensures that each of the 155 machine reports maintains consistent quality and professional presentation standards.
 
 
 ---
@@ -191,7 +191,7 @@ The writeups in this repository demonstrate proficiency across the complete pene
 
 ## Machines Inventory
 
-### Completed Virtual Machines (116)
+### Completed Virtual Machines (155)
 
 <details>
 <summary><b>View Complete Machine List</b></summary>
@@ -199,17 +199,41 @@ The writeups in this repository demonstrate proficiency across the complete pene
 | Machine | Difficulty | Primary Attack Vectors |
 |---------|-----------|------------------------|
 | Alzheimer | Beginner | Password forensics, privilege escalation |
+| animetronic | Beginner | Directory brute force, sensitive backup analysis, sudo privilege escalation |
+| apaches | Intermediate | Apache 2.4.49 path traversal and RCE (CVE-2021-41773), sudo abuse |
 | Aria | Beginner | Custom shell interaction, file upload bypass, RPC exploitation, steganography |
+| arroutada | Beginner | Web routing vulnerabilities |
 | Art | Beginner | File upload vulnerabilities, web exploitation |
+| artig | Beginner | Anonymous FTP credential disclosure, Redis authentication, WordPress plugin RCE, sudo privesc |
+| atom | Beginner | Text editor exploitation |
+| aurora | Beginner | Service enumeration |
 | Azer | Beginner | Web exploitation techniques |
 | Bah | Beginner | Local File Inclusion, SSH key extraction |
 | Baseme | Beginner | Base64 encoding manipulation, command injection |
+| beloved | Beginner | Relationship-based challenges |
+| blackhat | Intermediate | Advanced hacking scenarios |
+| breakout | Intermediate | Container/jail escape |
+| bruteforcelab | Beginner | SSH brute-force, hydra password recovery, sudo misconfiguration |
+| buster | Beginner | Brute-force techniques |
+| canto | Beginner | WordPress Canto plugin vulnerability, LFI, credential harvesting, SUID binary exploitation |
+| chromatica | Beginner | User-Agent bypass, web application command injection, sudo privilege escalation |
+| codeshield | Beginner | Anonymous FTP document disclosure, credential recovery, sudo misconfiguration |
 | Coffeeshop | Beginner | Web application vulnerabilities |
+| comingsoon | Beginner | Placeholder page exploitation |
+| connection | Beginner | Network service abuse |
 | Convert | Beginner | File conversion exploitation |
 | Coolpg | Beginner | PostgreSQL exploitation, SQL injection |
 | Crack | Beginner | Hash cracking, password analysis |
+| crazymed | Beginner | Medical system vulnerabilities |
+| crossroads | Beginner | Path traversal challenges |
+| cve1 | Intermediate | CVE exploitation practice |
+| darkside | Beginner | Public voting backup data leak, credential recovery, sudo command abuse |
 | Decode | Beginner | Encoding analysis and decryption |
+| deeper | Beginner | Careless credential storage, web interface analysis, sudo privilege escalation |
+| dejavu | Beginner | Pattern recognition |
+| demons | Intermediate | Multi-service exploitation |
 | Devoops | Intermediate | Git repository exploitation, DevOps misconfigurations |
+| djinn | Advanced | Complex multi-stage attacks |
 | Doc | Beginner | Document processing vulnerabilities |
 | Doll | Intermediate | Binary exploitation, buffer overflow |
 | DoubleTrouble | Intermediate | Multi-stage exploitation |
@@ -220,69 +244,8 @@ The writeups in this repository demonstrate proficiency across the complete pene
 | Driftingblues8 | Series | Advanced web exploitation |
 | Driftingblues9 | Series | Complex attack chains |
 | DrippingBlues | Series | Web security challenges |
-| Fuzzz | Intermediate | Web fuzzing, input validation bypass |
-| Gameshell | Beginner | Interactive shell exploitation |
-| Gameshell2 | Beginner | Advanced shell manipulation |
-| Gameshell3 | Beginner | Shell escape techniques |
-| Gift | Beginner | File transfer protocols, steganography |
-| Gigachad | Intermediate | Advanced exploitation scenarios |
-| Hannah | Beginner | User enumeration, lateral movement |
-| Helium | Intermediate | Container escape, Docker exploitation |
-| Helpdesk | Beginner | Support system vulnerabilities |
-| Hommie | Beginner | SUID binary abuse |
-| Hostname | Beginner | DNS and hostname manipulation |
-| Hotel | Beginner | Web service exploitation |
-| Hundred | Beginner | Multi-user enumeration |
-| Hunter | Beginner | OSINT techniques, reconnaissance |
-| Icecream | Beginner | SMB share exploitation, Nginx Unit API abuse, sudo privilege escalation |
-| Jan | Beginner | Cron job exploitation |
-| Ll104567 | Intermediate | Binary reverse engineering |
-| Locker | Beginner | Encryption bypass techniques |
-| Luz | Beginner | Steganography, cryptographic analysis |
-| Meltdown | Advanced | Kernel vulnerability exploitation (CVE-2017-5754) |
-| Method | Beginner | Methodical enumeration |
-| Motto | Beginner | Configuration analysis |
-| Noob | Beginner | Fundamental penetration testing methodology |
-| Observer | Beginner | LFI via custom Golang application, SSH key extraction, bash history privilege escalation |
-| Oliva | Beginner | Web framework vulnerabilities |
-| Pdf | Beginner | PDF metadata exploitation |
-| Preload | Intermediate | Library preloading exploitation |
-| Pwned | Beginner | Multi-vector exploitation |
-| React | Intermediate | React.js application security testing |
-| Skid | Beginner | Script analysis, enumeration techniques |
-| Sysadmin | Beginner | System administration misconfiguration exploitation |
-| System | Beginner | System service exploitation |
-| T800 | Advanced | Complex privilege escalation scenarios |
-| Talk | Beginner | Inter-process communication vulnerabilities |
-| Thefinals | Intermediate | CTF-style challenges |
-| Thirteen | Beginner | ROT13 encoding LFI, FTP default credentials, Python FTP server RCE |
-| Todd | Beginner | Credential harvesting techniques |
-| Tpn | Intermediate | VPN configuration exploitation |
-| Translator | Beginner | Translation service vulnerabilities |
-| Twisted | Intermediate | Python application framework exploitation |
-| University | Beginner | Educational platform attack vectors |
-| Victorique | Beginner | Custom binary analysis |
-| Vinylizer | Beginner | Media processing vulnerabilities |
-| Visions | Beginner | Visual cryptography challenges |
-| Vulny | Beginner | Intentionally vulnerable service exploitation |
-| Warez | Beginner | File sharing service exploitation |
-| Warrior | Intermediate | Advanced attack scenario simulation |
-| Webmaster | Beginner | Web server misconfiguration exploitation |
-| arroutada | Beginner | Web routing vulnerabilities |
-| atom | Beginner | Text editor exploitation |
-| aurora | Beginner | Service enumeration |
-| beloved | Beginner | Relationship-based challenges |
-| blackhat | Intermediate | Advanced hacking scenarios |
-| breakout | Intermediate | Container/jail escape |
-| buster | Beginner | Brute-force techniques |
-| comingsoon | Beginner | Placeholder page exploitation |
-| connection | Beginner | Network service abuse |
-| crazymed | Beginner | Medical system vulnerabilities |
-| crossroads | Beginner | Path traversal challenges |
-| cve1 | Intermediate | CVE exploitation practice |
-| dejavu | Beginner | Pattern recognition |
-| demons | Intermediate | Multi-service exploitation |
-| djinn | Advanced | Complex multi-stage attacks |
+| economists | Beginner | Anonymous FTP PDF metadata analysis, username harvesting, hydra brute force, sudo abuse |
+| encrypt | Beginner | SSL/TLS certificate credential disclosure, SSH access, custom SUID bash binary abuse |
 | ephemeral3 | Series | Temporary service exploitation |
 | faust | Intermediate | Literature-themed challenges |
 | find | Beginner | File discovery techniques |
@@ -292,28 +255,104 @@ The writeups in this repository demonstrate proficiency across the complete pene
 | friendly | Beginner | Social engineering vectors |
 | friendly2 | Beginner | Advanced social engineering |
 | friendly3 | Beginner | Multi-stage social engineering |
+| Fuzzz | Intermediate | Web fuzzing, input validation bypass |
+| Gameshell | Beginner | Interactive shell exploitation |
+| Gameshell2 | Beginner | Advanced shell manipulation |
+| Gameshell3 | Beginner | Shell escape techniques |
+| gameshell5 | Intermediate | Interactive shell escape, service exploitation, kernel privilege escalation |
+| Gift | Beginner | File transfer protocols, steganography |
+| Gigachad | Intermediate | Advanced exploitation scenarios |
+| greatwall | Beginner | Local File Inclusion (LFI), sensitive data exposure, sudo privilege escalation |
+| Hannah | Beginner | User enumeration, lateral movement |
+| Helium | Intermediate | Container escape, Docker exploitation |
+| Helpdesk | Beginner | Support system vulnerabilities |
+| hero | Beginner | Exposed OpenSSH private key on web server, SSH access, sudo abuse |
 | hidden | Beginner | Steganography and hidden data |
+| Hommie | Beginner | SUID binary abuse |
+| Hostname | Beginner | DNS and hostname manipulation |
+| Hotel | Beginner | Web service exploitation |
+| Hundred | Beginner | Multi-user enumeration |
+| Hunter | Beginner | OSINT techniques, reconnaissance |
+| Icecream | Beginner | SMB share exploitation, Nginx Unit API abuse, sudo privilege escalation |
 | insomnia | Intermediate | Sleep-based vulnerabilities |
 | isengard | Intermediate | Fantasy-themed exploitation |
 | jabita | Beginner | Web service challenges |
+| Jan | Beginner | Cron job exploitation |
+| latestwasalie | Intermediate | Insecure Docker registry credential recovery, poisoned container deployment, sudo privesc |
 | lazzycorp | Beginner | Corporate infrastructure |
+| liceo | Beginner | Anonymous FTP note disclosure, credential harvesting, sudo privilege escalation |
+| literal | Beginner | SQL injection across subdomains, hash extraction and cracking, sudo abuse |
+| Ll104567 | Intermediate | Binary reverse engineering |
+| Locker | Beginner | Encryption bypass techniques |
+| Luz | Beginner | Steganography, cryptographic analysis |
 | mathdop | Beginner | Mathematical challenges |
 | medusa | Intermediate | Multi-headed attack vectors |
+| Meltdown | Advanced | Kernel vulnerability exploitation (CVE-2017-5754) |
+| Method | Beginner | Methodical enumeration |
+| Motto | Beginner | Configuration analysis |
+| nebula | Beginner | Web enumeration, sensitive PDF metadata analysis, credential extraction, sudo privesc |
+| newbee | Beginner | Hidden command execution interface, command injection, sudo misconfiguration |
+| nexus | Beginner | Port enumeration, web vulnerability analysis, credential harvesting, sudo privesc |
+| nightcity | Beginner | Anonymous FTP steganography, credential recovery, sudo privilege escalation |
+| Noob | Beginner | Fundamental penetration testing methodology |
+| Observer | Beginner | LFI via custom Golang application, SSH key extraction, bash history privilege escalation |
+| Oliva | Beginner | Web framework vulnerabilities |
+| p4l4nc4 | Beginner | Leet-speak directory enumeration, credential disclosure, SUID binary exploitation |
+| Pdf | Beginner | PDF metadata exploitation |
+| pingme | Beginner | Network traffic analysis of ping utility, command injection, sudo abuse |
+| pipy | Intermediate | SPIP 4.2.0 deserialization RCE via oubli parameter, sudo privilege escalation |
+| Preload | Intermediate | Library preloading exploitation |
+| publisher | Beginner | Outdated SPIP CMS RCE exploitation, credential recovery, sudo privilege escalation |
+| Pwned | Beginner | Multi-vector exploitation |
+| quick | Beginner | Web application enumeration, command injection, sudo privilege escalation |
+| quick2 | Beginner | Web application vulnerability analysis, credential disclosure, sudo abuse |
+| quick3 | Beginner | Customer management portal exploitation, credential recovery, sudo privesc |
+| quick4 | Beginner | Robots.txt administrative area discovery, web exploitation, sudo abuse |
+| quick5 | Beginner | Subdomain fuzzing, web vulnerability analysis, sudo privilege escalation |
+| React | Intermediate | React.js application security testing |
 | ripper | Intermediate | Data extraction techniques |
 | roosterrun | Beginner | Race condition exploitation |
+| savesanta | Beginner | Hidden web directory discovery, command execution interface, sudo abuse |
+| Skid | Beginner | Script analysis, enumeration techniques |
+| slackware | Beginner | Non-standard port enumeration, web vulnerability analysis, sudo privilege escalation |
+| slowman | Beginner | Anonymous FTP information disclosure, username harvesting, SSH brute force, sudo abuse |
 | stars | Beginner | Rating system vulnerabilities |
 | superhuman | Advanced | Complex privilege escalation |
+| Sysadmin | Beginner | System administration misconfiguration exploitation |
+| System | Beginner | System service exploitation |
+| T800 | Advanced | Complex privilege escalation scenarios |
+| Talk | Beginner | Inter-process communication vulnerabilities |
 | teacher | Beginner | Educational platform exploitation |
+| Thefinals | Intermediate | CTF-style challenges |
 | thewall | Intermediate | Barrier bypass techniques |
+| Thirteen | Beginner | ROT13 encoding LFI, FTP default credentials, Python FTP server RCE |
+| Todd | Beginner | Credential harvesting techniques |
+| Tpn | Intermediate | VPN configuration exploitation |
+| Translator | Beginner | Translation service vulnerabilities |
 | tron | Intermediate | Grid-based challenges |
 | twelve | Beginner | Numeric-themed exploitation |
+| Twisted | Intermediate | Python application framework exploitation |
 | umz | Beginner | Custom service exploitation |
+| University | Beginner | Educational platform attack vectors |
+| up | Beginner | Image upload filter bypass, ROT13 predictable obfuscation analysis, sudo privesc |
 | uvalde | Beginner | Geographic-themed challenges |
+| Victorique | Beginner | Custom binary analysis |
+| Vinylizer | Beginner | Media processing vulnerabilities |
+| Visions | Beginner | Visual cryptography challenges |
+| vivifytech | Beginner | WordPress enumeration, plugin vulnerability exploitation, sudo privilege escalation |
+| Vulny | Beginner | Intentionally vulnerable service exploitation |
 | w140 | Beginner | Numeric identifier challenges |
+| Warez | Beginner | File sharing service exploitation |
+| Warrior | Intermediate | Advanced attack scenario simulation |
+| Webmaster | Beginner | Web server misconfiguration exploitation |
+| whitedoor | Beginner | Anonymous FTP enumeration, remote service vulnerability exploitation, sudo abuse |
 | wmessage | Beginner | Messaging service exploitation |
+| xmas | Beginner | Unrestricted PDF upload bypass with PHP payload, reverse shell, sudo privilege escalation |
 | yuan111 | Series | Progressive difficulty series |
 | yuan112 | Series | Advanced series challenges |
 | yuan113 | Series | Expert series challenges |
+| yuan114 | Series | Web vulnerability exploitation, system script logic error abuse, sudo privesc |
+| za1 | Beginner | Typecho CMS vulnerability exploitation, PHP deserialization, sudo privilege escalation |
 
 </details>
 
@@ -471,7 +510,7 @@ For professional inquiries or collaboration proposals, contact information can b
 
 ### Current Status (April 2026)
 
-- 116 machine writeups completed with full documentation
+- 155 machine writeups completed with full documentation
 - 32 Hades laboratory modules documented
 - 50 Venus laboratory modules documented
 - Standardized executive summary format implemented across all reports
