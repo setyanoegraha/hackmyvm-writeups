@@ -536,7 +536,7 @@ For professional inquiries or collaboration proposals, contact information can b
 <div align="center">
 
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen?style=flat-square)
-![Last Updated](https://img.shields.io/badge/Last_Updated-April_2026-blue?style=flat-square)
+![Last Updated](https://img.shields.io/badge/Last_Updated-August_2026-blue?style=flat-square)
 
 **Professional Penetration Testing Documentation**
 
