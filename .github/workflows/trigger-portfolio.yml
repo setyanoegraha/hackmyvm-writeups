@@ -1,0 +1,16 @@
+name: trigger-portfolio
+
+on:
+  push:
+    branches: ['**']
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger portfolio redeploy
+        run: |
+          gh api repos/setyanoegraha/setyanoegraha.github.io/dispatches \
+            -f event_type=deploy-portfolio
+        env:
+          GH_TOKEN: ${{ secrets.SETYANOEGRAHA_PAT }}
