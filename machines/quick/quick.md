@@ -78,11 +78,11 @@ Starting gobuster in directory enumeration mode
 
 While navigating the website, the presence of a "page" parameter in the URL suggested a potential File Inclusion vulnerability.
 
-![](machines/quick/image.png)
+![](images/img.png)
 
 Initial tests for Local File Inclusion did not provide any useful data. Therefore, the focus shifted to testing for Remote File Inclusion by attempting to make the server request a file from an external source.
 
-![](image-1.png)
+![](images/img-1.png)
 
 To verify the Remote File Inclusion vulnerability, a local HTTP server was started to monitor for incoming requests from the target.
 
@@ -94,7 +94,7 @@ Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...
 
 The target successfully requested the test file, confirming that the application was vulnerable to Remote File Inclusion.
 
-![](image-2.png)
+![](images/img-2.png)
 
 The logs on the local server showed the successful GET request from the target IP.
 
@@ -130,7 +130,7 @@ listening on [any] 4444 ...
 
 The reverse shell was triggered by passing the URL of the hosted payload to the vulnerable parameter.
 
-![](image-3.png)
+![](images/img-3.png)
 
 The payload was successfully requested by the target server.
 
@@ -237,7 +237,7 @@ www-data@quick:/$
 
 According to GTFOBins, a PHP binary with the SUID bit can be exploited to obtain a root shell.
 
-![](image-4.png)
+![](images/img-4.png)
 
 The exploit was executed by using the pcntl_exec function to spawn a new shell while maintaining the effective user ID of root.
 

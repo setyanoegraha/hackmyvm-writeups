@@ -79,7 +79,7 @@ Nmap done: 1 IP address (1 host up) scanned in 19.04 seconds
 
 The line `Git repository found!` with the remote `https://github.com/LSP1025923/thinkphp.git` is like finding the blueprints to a bank vault. Here's why this is a game-changer:
 
-![git](machines/Tpn/image.png)
+![git](images/img.png)
 
 **Why I immediately got excited seeing this**: Most penetration tests involve "black box" testing where you don't know how the application works internally. But an exposed Git repository means we can do "white box" analysis - we can read the source code and understand exactly how the application works, where the vulnerabilities are, and how to exploit them.
 
@@ -87,7 +87,7 @@ The line `Git repository found!` with the remote `https://github.com/LSP1025923/
 
 Let's see what we're dealing with:
 
-![8080](image-1.png)
+![8080](images/img-1.png)
 
 **Initial Assessment**: The page says "This is a cyberpunk-style RCE built using ThinkPHP" and mentions RCE (Remote Code Execution). This confirms:
 1. This is intentionally vulnerable (educational/CTF environment)  
@@ -112,7 +112,7 @@ Instead of randomly testing URLs and trying common exploits, I now have access t
 
 I start by examining the controllers since they handle user input. Looking at `/app/admin/controller/Admin.php`:
 
-![no sanitasi](image-2.png)
+![no sanitasi](images/img-2.png)
 
 ```php
 <?php
@@ -142,7 +142,7 @@ class Admin extends BaseController
 
 Let me examine what `Check1` middleware does by looking at `/app/middleware/Check1.php`:
 
-![app/middleware/check1](image-3.png)
+![app/middleware/check1](images/img-3.png)
 
 ```php
 public function handle($request, \Closure $next)
@@ -201,7 +201,7 @@ I search through the codebase for any controller that sets session variables. Bu
 
 Looking at `/app/index/controller/Token.php`:
 
-![app/index/controller/token](image-5.png)
+![app/index/controller/token](images/img-4.png)
 
 ```php
 public function token()
@@ -235,7 +235,7 @@ This is why I access `http://192.168.100.41:8080/index/token/token`
 
 Before I can exploit this, I need to understand how URLs work. Looking at `/config/app.php`:
 
-![config/app](image-7.png)
+![config/app](images/img-6.png)
 
 ```php
 'app_map' => ["think"=>"admin"],
@@ -251,11 +251,11 @@ So `/think/admin/hello` becomes:
 
 Looking at the routing attempt in `/app/admin/route/app.php`:
 
-![app/admin/route/app](image-6.png)
+![app/admin/route/app](images/img-5.png)
 
 The developer even tried to make exploitation easier with a custom route but it didn't work - I have to use the full URL path.
 
-![config/route.php](image-8.png)
+![config/route.php](images/img-7.png)
 
 This shows the standard ThinkPHP routing configuration.
 - `'default_route_pattern' => '[1-9]',`:
@@ -266,7 +266,7 @@ The Solution: To bypass this restriction, we ignore the "broken" path route and 
 
 There's another middleware that might block dangerous functions. Looking at `/app/middleware/Check.php`:
 
-![app/middleware/check](image-9.png)
+![app/middleware/check](images/img-8.png)
 
 ```php
 $pattern = '/\b(eval|exec|system|shell_exec|popen|proc_open|assert|base64_decode|file_get_contents|phpinfo)\b/i';
@@ -283,7 +283,7 @@ if (preg_match($pattern, request()->url())) {
 
 Let me verify the vulnerable endpoint is protected without authentication:
 
-![alt text](image-10.png)
+![alt text](images/img-9.png)
 
 Accessing `http://192.168.100.41:8080/think/admin/hello` gives me the Chinese error message from the middleware. Perfect - this confirms the protection is active and I need to bypass it.
 
@@ -291,7 +291,7 @@ Accessing `http://192.168.100.41:8080/think/admin/hello` gives me the Chinese er
 
 I need to get to the token generation page at `/index/token/token`:
 
-![alt text](image-11.png)
+![alt text](images/img-10.png)
 
 This shows a Chinese form asking for a "member name". Based on my source code analysis, I know I need to submit `admin`.
 
@@ -299,7 +299,7 @@ This shows a Chinese form asking for a "member name". Based on my source code an
 
 After submitting `admin` in the browser:
 
-![alt text](image-12.png)
+![alt text](images/img-11.png)
 
 **SUCCESS!** The page shows "获取成功: " (Success) followed by a long SHA1 token. This means:
 1. My session `sb` is now set to this token value
@@ -310,7 +310,7 @@ After submitting `admin` in the browser:
 
 Let me try accessing the protected endpoint again:
 
-![alt text](image-13.png)
+![alt text](images/img-12.png)
 
 **This is NOT just a "blank page" - here's what I actually see and why it's significant**:
 
@@ -347,7 +347,7 @@ Now for the critical moment. I'll test if I can execute commands:
 - `passthru()` executes the `id` command
 - The output should appear on the page
 
-![bingo](image-14.png)
+![bingo](images/img-13.png)
 
 **BINGO!** The page shows `uid=33(www-data) gid=33(www-data) groups=33(www-data)`. 
 
@@ -356,7 +356,7 @@ Now for the critical moment. I'll test if I can execute commands:
 2. I'm executing commands as the `www-data` user (web server)
 3. I can run any system command through this interface
 
-![alt text](image-15.png)
+![alt text](images/img-14.png)
 
 This image shows my preparation/testing phase where I'm planning the RCE exploitation using `passthru()`.
 

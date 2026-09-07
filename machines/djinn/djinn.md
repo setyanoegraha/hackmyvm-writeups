@@ -202,7 +202,7 @@ Three valuable intelligence pieces emerge. `creds.txt` contains a plaintext user
 
 Attempting to access port 1337 via a browser results in a browser-level protocol error because the service speaks a raw custom ASCII protocol over TCP, not HTTP.
 
-![](machines/djinn/image.png)
+![](images/img.png)
 
 The browser reports `ERR_INVALID_HTTP_RESPONSE` because the server is not an HTTP service — it is a raw TCP socket service that immediately pushes a plain-text ASCII banner the moment a connection is established.
 
@@ -375,7 +375,7 @@ SSH is now accessible. Port knocking is confirmed to be implemented on this mach
 
 The Werkzeug web server on port 7331 serves a Bootstrap-based landing page. The page title according to Nmap is "Lost in space."
 
-![](image-1.png)
+![](images/img-1.png)
 
 The page is branded with the name **mzfr** in the top-left corner, which corresponds to the developer mentioned in `message.txt`. The page prominently displays the text **"Let's see how good your are."** (note the intentional or unintentional grammatical error — "your" instead of "you're"). The page footer reads "Cover template for Bootstrap, by @mdo," confirming this is a standard Bootstrap cover template customized for the challenge. The navigation links (Home, Features, Contact) lead nowhere; this is a static landing page. The underlying HTML source exposes the internal path structure.
 

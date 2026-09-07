@@ -99,17 +99,17 @@ The enumeration discovered several endpoints:
 Manual examination of the discovered web application revealed a hacker-themed panel with three main functionalities.
 
 **Homepage (`/`):**
-![](machines/Skid/image.png)
+![](images/img.png)
 
 The homepage displays "Jeremy's Ultimate Hacker Panel" with the tagline "Only real hackers are allowed in my site" and contains navigation links to "Run Nmap Scan" and "Generate Reverse Shell" functionalities.
 
 **Nmap Scanner (`/scan`):**
-![](image-1.png)
+![](images/img-1.png)
 
 The scan endpoint provides an interface for running Nmap scans with a target input field and scan button.
 
 **Reverse Shell Generator (`/payload`):**
-![](image-2.png)
+![](images/img-2.png)
 
 The payload endpoint offers a reverse shell generator with IP and Port input fields for creating reverse shell payloads.
 
@@ -120,7 +120,7 @@ The payload endpoint offers a reverse shell generator with IP and Port input fie
 ### Command Injection Discovery
 Testing the `/scan` endpoint for potential command injection vulnerabilities by injecting the `; id` command into the target field:
 
-![](image-3.png)
+![](images/img-3.png)
 
 The injection was successful, revealing command execution with the following output:
 ```

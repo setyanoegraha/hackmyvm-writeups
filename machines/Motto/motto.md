@@ -138,7 +138,7 @@ Nmap done: 1 IP address (1 host up) scanned in 84.84 seconds
 
 Accessing port 80 reveals a simple browser-based game titled "Mazesec" (点击方块小游戏 - "Click on the block mini-game"):
 
-![80](machines/Motto/image.png)
+![80](images/img.png)
 
 This appears to be a rabbit hole - a decoy application with no exploitable vulnerabilities or useful information for the attack path.
 
@@ -146,7 +146,7 @@ This appears to be a rabbit hole - a decoy application with no exploitable vulne
 
 The primary target is the Golang web application on port 9090. The landing page displays a "Mottos" application with user-generated content:
 
-![9090](image-1.png)
+![9090](images/img-1.png)
 
 The application shows a table with usernames and their mottos in both Chinese and English. The interface includes three navigation links:
 - **查看我的Motto** (Check out my Motto)
@@ -155,7 +155,7 @@ The application shows a table with usernames and their mottos in both Chinese an
 
 Attempting to access `/myinfo` without authentication redirects to the login page:
 
-![login](image-2.png)
+![login](images/img-2.png)
 
 The login page presents two options:
 - **登录 Log in** - Login button
@@ -169,7 +169,7 @@ The login page presents two options:
 
 Since no default credentials were found, registration is required to access the application's authenticated features:
 
-![register](image-3.png)
+![register](images/img-3.png)
 
 The registration form requires:
 - **昵称 (nickname)**: Display name
@@ -184,7 +184,7 @@ After successful registration and login, access is granted to authenticated page
 
 This page displays the current user's motto entries:
 
-![mymotto](image-4.png)
+![mymotto](images/img-4.png)
 
 The page shows a table with columns for "Username" and "Motto", displaying mottos created by the authenticated user. The message "暂无数据 No data available" appears when no mottos have been created yet.
 
@@ -192,7 +192,7 @@ The page shows a table with columns for "Username" and "Motto", displaying motto
 
 The user information page allows modification of the nickname field:
 
-![myinfo](image-5.png)
+![myinfo](images/img-5.png)
 
 The form displays:
 - **昵称 (nickname)**: Current nickname value
@@ -203,11 +203,11 @@ The form displays:
 
 During testing, modifying the nickname to a single quote (`'`) caused the `/mymottos` page to display an empty result:
 
-![gone](image-6.png)
+![gone](images/img-6.png)
 
 When the nickname is changed to just `'`:
 
-![](image-7.png)
+![](images/img-7.png)
 
 The motto data disappears completely, indicating that the single quote is breaking the SQL query. This behavior is a strong indicator of **SQL injection vulnerability** in the nickname parameter.
 

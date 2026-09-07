@@ -105,17 +105,17 @@ local: README.txt remote: README.txt
 
 4. **Web Enumeration**: Navigating to the web server revealed a standard home page.
 
-![alt text](machines/whitedoor/image.png)
+![alt text](images/img.png)
 
 Further inspection of the web application led to the discovery of an entry point that appeared to allow for remote command execution.
 
-![alt text](image-1.png)
+![alt text](images/img-1.png)
 
 ## Initial Access
 
 1. **Exploitation**: By leveraging the identified vulnerability, a reverse shell payload was crafted to gain a foothold on the system.
 
-![alt text](image-2.png)
+![alt text](images/img-2.png)
 
 A listener was started on the local machine to capture the incoming connection.
 

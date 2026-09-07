@@ -151,13 +151,13 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 The scan identifies a page named secret.php. Navigating to this page displays a message indicating that the current user lacks administrative permissions to execute commands.
 
-![](machines/newbee/image.png)
+![](images/img.png)
 
 ## Vulnerability Discovery
 
 Upon inspecting the source code of index.php, a suspicious comment is discovered that suggests the existence of a hidden parameter.
 
-![](image-1.png)
+![](images/img-1.png)
 
 A fuzzing attack is performed using ffuf to identify the correct parameter name.
 
@@ -562,7 +562,7 @@ password.png: PNG image data, 205 x 15, 8-bit/color RGBA, non-interlaced
 
 The image is heavily pixelated.
 
-![](image-2.png)
+![](images/img-2.png)
 
 ## Privilege Escalation
 
@@ -594,7 +594,7 @@ To recover the root password, the researcher uses the Depix tool to depixelate t
 
 The resulting image clearly displays the root password: hellofromtheotherside.
 
-![](image-3.png)
+![](images/img-3.png)
 
 The researcher authenticates as root and retrieves the final flags.
 

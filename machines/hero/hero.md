@@ -156,11 +156,11 @@ BbdbAKYEtIX75k6CL27CAAAACnNoYXdhQGhlcm8BAgM=
 
 3. Analysis of port 5678 indicates the presence of n8n, a workflow automation tool. Accessing the web interface allows for the creation of a new account and subsequent login.
 
-![alt text](machines/hero/image.png)
+![alt text](images/img.png)
 
 4. A new workflow is constructed to facilitate remote command execution.
 
-![alt text](image-1.png)
+![alt text](images/img-1.png)
 
 5. A netcat listener is established on the attacker machine to receive the incoming connection.
 
@@ -172,7 +172,7 @@ listening on [any] 4444 ...
 
 6. Upon executing the workflow, a reverse shell is successfully obtained.
 
-![alt text](image-2.png)
+![alt text](images/img-2.png)
 
 ```bash
 connect to [172.20.131.21] from (UNKNOWN) [172.20.128.1] 62086

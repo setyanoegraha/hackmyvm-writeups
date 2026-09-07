@@ -199,7 +199,7 @@ Finished
 
 Browsing to `http://192.168.100.139/` presented the main "SNOMED DEMONS" page:
 
-![](machines/demons/image.png)
+![](images/img.png)
 
 Inspecting the HTML source of the index page revealed a hidden comment:
 
@@ -328,7 +328,7 @@ DemonsCloseCall
 
 The page references images from a subdirectory `./weare/` — navigating to `/hell/weare/` revealed an open directory listing:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The directory listing at `http://192.168.100.139/hell/weare/` exposes two files: `Agares.jpg` (31K) and `Aim.jpg` (120K). Critically, these names — **Agares** and **Aim** — match real demonic entities from demonology and directly foreshadow the **two user accounts** on the target system (`agares` and `aim`).
 
@@ -372,25 +372,25 @@ The file was opened in `hexedit` and the byte at the `DPB` offset was patched fr
 
 **Before patch** — `DPB` field visible in the hex dump:
 
-![](image-2.png)
+![](images/img-2.png)
 
 **After patch** — `DPX` field confirming the byte was successfully changed:
 
-![](image-3.png)
+![](images/img-3.png)
 
 ### Extracting the SSH Private Key from the VBA Module
 
 With the protection bypassed, the patched `.mdb` file was opened in **Microsoft Access** using *Open Exclusive* mode. Inside the VBA editor, the module `DemonNumberTwo` was located. Right-clicking it and selecting **DemonsVBAMacroTools Properties...** navigated to the project protection settings:
 
-![](image-5.png)
+![](images/img-5.png)
 
 In the **Protection** tab, the "Lock project for viewing" checkbox was unchecked and the password fields were cleared and reconfirmed:
 
-![](image-6.png)
+![](images/img-6.png)
 
 After saving and reopening the project, the VBA source of the `DemonNumberTwo` module became fully readable. The `KeyGood()` function stores an **OpenSSH private key** split and concatenated across multiple `KEY` string assignments, interleaved with `NoKey` junk strings as obfuscation:
 
-![](image-4.png)
+![](images/img-4.png)
 
 The VBA code visible in the editor shows:
 ```vba
@@ -501,7 +501,7 @@ key8_8.jpg             100%  332KB   6.3MB/s   00:00
 
 The image reveals a custom demon-themed mechanical keyboard on a blood-red background, with specific keys decorated with demonic artwork:
 
-![](image-7.png)
+![](images/img-7.png)
 
 Visually analysing the marked/highlighted keys on the keyboard yields the characters: **`3`, `4`, `o`, `d`, `f`, `n`, `m`**. This is consistent with the note in the machine context: the characters `34odfnm` are the building blocks of the password.
 
@@ -543,7 +543,7 @@ L'utente agares può eseguire i seguenti comandi su Demons:
 
 `agares` can run `/bin/byebug` as **any user including root** without restrictions. `byebug` is a Ruby debugger. Checking GTFOBins for an exploitation vector:
 
-![](image-8.png)
+![](images/img-8.png)
 
 As documented on GTFOBins, `byebug` inherits privileges when run via `sudo` and provides a `system()` call that can spawn an interactive shell. The technique is to write a minimal Ruby script and pass it to `byebug`, then invoke `system("/bin/bash")` from the interactive debugger prompt.
 

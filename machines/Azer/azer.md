@@ -64,11 +64,11 @@ Nmap done: 1 IP address (1 host up) scanned in 28.52 seconds
 
 Navigating to `http://192.168.100.95:3000` revealed a simple login interface:
 
-![](machines/Azer/image.png)
+![](images/img.png)
 
 The login page accepts username and password inputs. Initial testing without credentials produced an interesting error message:
 
-![](image-1.png)
+![](images/img-1.png)
 
 **Error Analysis:**
 ```
@@ -84,7 +84,7 @@ This error reveals critical information:
 
 Testing with a simple username input (`AAAAAA`) without a password showed that our input was reflected in the error message:
 
-![](image-2.png)
+![](images/img-2.png)
 
 **Reflected Input:**
 ```
@@ -102,7 +102,7 @@ This confirms the username is concatenated directly into the command line. The a
 
 Testing with `; id` did not produce the expected command execution:
 
-![](image-3.png)
+![](images/img-3.png)
 
 **Output:**
 ```
@@ -115,7 +115,7 @@ The simple semicolon injection failed, likely due to how the script processes ar
 
 Using command substitution syntax `; $(id)` successfully achieved remote code execution:
 
-![](image-4.png)
+![](images/img-4.png)
 
 **Output:**
 ```

@@ -62,7 +62,7 @@ Nmap done: 1 IP address (1 host up) scanned in 578.78 seconds
 
 Accessing the web server on port 80 revealed the OpenEMR login interface:
 
-![openemr](machines/Driftingblues8/image.png)
+![openemr](images/img.png)
 
 The login page confirms the presence of OpenEMR, a widely-used open-source medical records application that has historically been plagued with security vulnerabilities.
 
@@ -162,7 +162,7 @@ The wordlist was successfully retrieved and saved for later use.
 
 Visiting `http://192.168.100.92/admin.php` exposed critical version information:
 
-![version](image-1.png)
+![version](images/img-1.png)
 
 **Confirmed Version:** OpenEMR 5.0.1 (3)
 
@@ -312,7 +312,7 @@ The custom wordlist proved essential—without it, the password would have been 
 
 Using the cracked credentials (`admin:.:[REDACTED]`), successful authentication was achieved:
 
-![dashboard admin](image-2.png)
+![dashboard admin](images/img-2.png)
 
 The dashboard confirms administrative access to the OpenEMR system, enabling further exploitation.
 

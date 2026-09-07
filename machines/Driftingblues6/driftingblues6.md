@@ -210,7 +210,7 @@ Content-Type: text/html; charset=utf-8
 
 This revealed a Textpattern CMS login page, indicating the need for valid credentials to proceed.
 
-![alt text](image-3.png)
+![alt text](images/img.png)
 
 ## Initial Access
 
@@ -283,7 +283,7 @@ mayer:lionheart
 
 Using the discovered credentials, I successfully logged into the Textpattern CMS admin panel at `http://192.168.100.22/textpattern/textpattern/`.
 
-![alt text](image-4.png)
+![alt text](images/img-1.png)
 
 ### Vulnerability Exploitation
 
@@ -319,7 +319,7 @@ Instead of using the existing exploits, I leveraged the file upload functionalit
 
 I modified the reverse shell to connect back to my attack machine and uploaded it through the Textpattern file management interface at `http://192.168.100.22/textpattern/textpattern/index.php?event=file`.
 
-![alt text](image-5.png)
+![alt text](images/img-2.png)
 
 #### Reverse Shell Execution
 
@@ -333,7 +333,7 @@ listening on [any] 4444 ...
 
 After accessing the uploaded PHP file through the web interface, 
 
-![alt text](image-6.png)
+![alt text](images/img-3.png)
 
 I successfully obtained a reverse shell:
 

@@ -62,7 +62,7 @@ The scan revealed:
 
 Visiting port 80 confirmed the presence of a qdPM login page, version 9.2.
 
-![](machines/Bah/image.png)
+![](images/img.png)
 
 ## Vulnerability Discovery
 
@@ -233,7 +233,7 @@ To determine which subdomains were active, `ffuf` was used to fuzz the list.
 
 The subdomain `party.bah.hmv` returned a different response size compared to the others. Accessing it via the browser revealed a "Shell In A Box" login interface.
 
-![](image-1.png)
+![](images/img-1.png)
 
 ## Initial Access
 

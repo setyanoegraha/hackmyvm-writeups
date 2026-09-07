@@ -133,7 +133,7 @@ After gaining WordPress admin access, exploration of the media library revealed 
 `http://192.168.100.20/wp-admin/upload.php`
 
 A PNG file `dblogo.png` was found that wasn't displayed on the main website.
-![alt text](image-1.png)
+![alt text](images/img.png)
 
 ### Steganographic Analysis
 
@@ -230,7 +230,7 @@ The master password was successfully identified. Opening the database with `keep
 ┌──(ouba㉿CLIENT-DESKTOP)-[~]
 └─$ keepassxc keyfile.kdbx
 ```
-![alt text](image-2.png)
+![alt text](images/img-1.png)
 ---
 
 ### File Monitoring Exploitation

@@ -78,7 +78,7 @@ Attempts to access the HTTP service directly resulted in connection timeouts, in
 curl: (28) Failed to connect to 192.168.100.49 port 80 after 135301 ms: Could not connect to server
 ```
 
-![image.png](machines/Alzheimer/image.png)
+![image.png](images/img.png)
 
 The browser confirmed the connection timeout, displaying an "ERR_CONNECTION_TIMED_OUT" error for 192.168.100.49.
 
@@ -384,7 +384,7 @@ The most significant finding was `/usr/sbin/capsh` with SUID permissions, which 
 ### GTFOBins Research
 Research using GTFOBins revealed the exploitation method for the capsh binary:
 
-![image-1.png](image-1.png)
+![image-1.png](images/img-1.png)
 
 The GTFOBins page clearly showed that capsh can spawn an interactive system shell when executed with the SUID bit set, using the command: `capsh --gid=0 --uid=0 --`
 

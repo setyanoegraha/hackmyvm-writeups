@@ -199,7 +199,7 @@ j2                      [Status: 200, Size: 189769, Words: 15060, Lines: 1017, D
 
 The Apache directory listing at `/scout/j2/docs/` contained two immediately interesting files: `pass.txt` and `shellfile.ods`.
 
-![](machines/arroutada/image.png)
+![](images/img.png)
 
 ---
 
@@ -247,7 +247,7 @@ shellfile.ods: OpenDocument Spreadsheet
 
 The directory listing also showed several `z*` files with zero byte sizes, except for `z206` which contained 27 bytes.
 
-![](image-1.png)
+![](images/img-1.png)
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/arroutada]
@@ -322,7 +322,7 @@ Session completed.
 
 8. Opening `shellfile.ods` in LibreOffice Calc with password `j[REDACTED]` revealed the document's contents. Cell H7 contained the path `/thejabasshell.php`, which the spreadsheet author had labelled "PATH:" in the adjacent cell.
 
-![](image-2.png)
+![](images/img-2.png)
 
 ---
 
@@ -624,7 +624,7 @@ User drito may run the following commands on arroutada:
 
 20. The GTFOBins entry for `xargs` documents that `xargs -a /dev/null /bin/sh` spawns an interactive shell inheriting the caller's privileges. Running this with `sudo` and substituting `/bin/bash` produced an immediate root shell.
 
-![](image-3.png)
+![](images/img-3.png)
 
 ```bash
 drito@arroutada:~/web$ sudo /usr/bin/xargs -a /dev/null /bin/bash

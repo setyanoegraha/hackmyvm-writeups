@@ -663,7 +663,7 @@ cnb@921567b128b2:~$ find / -type f -perm -4000 -exec ls -la {} \; 2>/dev/null
 
 `/usr/local/bin/wget` has the **SUID bit set** and is owned by root. Consulting GTFOBins for the `wget` SUID entry:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The GTFOBins entry for `wget` (SUID) shows that because effective privileges are not dropped, the `--use-askpass` option can be abused to execute an arbitrary script as root. The technique is:
 
@@ -741,7 +741,7 @@ drwxrwsr-x. 1 root mail   22 Mar 12  2025 ..
 
 The file `data.xlsx` became 0 bytes after the accidental transfer operation. The data was recovered from a community writeup reference. The spreadsheet contained quarterly sales data (年份=Year, 季度=Quarter, 时间代码=Time Code, 销售量=Sales Volume) from 2015 Q1 through 2020 Q4:
 
-![](machines/mathdop/image.png)
+![](images/img.png)
 
 ### Solving the Time Series Decomposition
 
@@ -891,7 +891,7 @@ fi
 
 **Attack vector:** The `date` command is in the whitelist. The GNU `date -f` option reads a file and attempts to parse each line as a date expression — this is a known file-read technique catalogued on GTFOBins:
 
-![](image-2.png)
+![](images/img-2.png)
 
 The GTFOBins entry for `date` (SUID / file read) shows:
 - **Version requirement**: GNU

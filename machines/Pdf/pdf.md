@@ -62,7 +62,7 @@ The scan identified:
 #### Port 80 - PDF Evolution Website
 The main website displays a professional presentation about PDF format evolution:
 
-![](machines/Pdf/image.png)
+![](images/img.png)
 
 The website presents a visually appealing timeline and information about PDF format development. Analysis of the source code revealed an interesting HTML comment hint:
 
@@ -79,7 +79,7 @@ This hidden comment suggests the existence of a hint file with a `.txt` extensio
 #### Port 8080 - File Management System
 The secondary service presents a login interface for a file management system:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The interface shows a clean, professional design with the message "Enter the access token to unlock the system." The source code analysis reveals the authentication mechanism:
 
@@ -180,7 +180,7 @@ This question references Douglas Adams' "The Hitchhiker's Guide to the Galaxy," 
 ### Authentication Bypass
 Using the discovered token "42" to authenticate to the File Management System:
 
-![](image-2.png)
+![](images/img-2.png)
 
 The post-authentication interface reveals the system's functionality. The interface shows examples of accessing files using MD5 hashes:
 - `c4ca4238a0b923820dcc509a6f75849b.pdf` (MD5 hash of "1")
@@ -259,7 +259,7 @@ The fuzzing revealed that document 57 (`72b32a1f754ba1c09b3695e0cb6cde7f`) had a
 ### Credential Discovery through PDF Analysis
 Accessing document 57 through the web interface:
 
-![](image-3.png)
+![](images/img-3.png)
 
 The document displays "Document Number: 57" and appears to be part of a "Corporate document archive" based on the visible content. To extract potentially hidden information, the PDF was downloaded for metadata analysis:
 

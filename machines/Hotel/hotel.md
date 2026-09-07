@@ -496,7 +496,7 @@ Total loading time: 0 seconds (0 sec/Mb)
 
 The terminal replay reveals the password being typed. Here's the screenshot captured from the ttylog playback:
 
-![image-1.png](image-1.png)
+![image-1.png](images/img.png)
 
 **Critical Finding:** The ttylog file reveals that the user `person` typed their password in plaintext.
 

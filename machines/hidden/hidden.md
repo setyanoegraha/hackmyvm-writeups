@@ -53,7 +53,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.07 seconds
 
 Visiting port 80 shows a "Welcome to level 1" message and an image asking to be decoded.
 
-![80](machines/hidden/image.png)
+![80](images/img.png)
 
 Checking the source code reveals a hint about the format `xxx.xxxxxx.xxx` and the image filename `decodethis_pls.png`.
 
@@ -80,7 +80,7 @@ Checking the source code reveals a hint about the format `xxx.xxxxxx.xxx` and th
 
 The image contains a Rosicrucian cipher.
 
-![rosicrucian](image-2.png)
+![rosicrucian](images/img-2.png)
 
 Decoding the cipher yields `SYS.HIDDEN.HMV`, which matches the hint format. We add this domain to our `/etc/hosts` file.
 
@@ -203,7 +203,7 @@ User www-data may run the following commands on hidden:
     (toreto) NOPASSWD: /usr/bin/perl
 ```
 
-![gtfo_perl](image-1.png)
+![gtfo_perl](images/img-1.png)
 
 We exploit this to pivot to the `toreto` user.
 
@@ -276,7 +276,7 @@ User atenea may run the following commands on hidden:
     (root) NOPASSWD: /usr/bin/socat
 ```
 
-![socat_gtfo](image-3.png)
+![socat_gtfo](images/img-3.png)
 
 We can use `socat` to spawn a root shell.
 

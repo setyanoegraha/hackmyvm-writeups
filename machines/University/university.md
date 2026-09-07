@@ -92,7 +92,7 @@ Resolving deltas: 100% (19/19), done.
 
 Accessing the GitHub repository directly:
 
-![](machines/University/image.png)
+![](images/img.png)
 
 ---
 
@@ -182,7 +182,7 @@ if(move_uploaded_file($_FILES['fpic']['tmp_name'],$picpath))
 
 A minimal PHP web shell was created to achieve remote code execution:
 
-![shell php](image-1.png)
+![shell php](images/img-1.png)
 
 The web shell was uploaded to all required fields to satisfy the logical AND condition in the upload script:
 

@@ -72,11 +72,11 @@ Three ports were open: SSH on 22, a standard Apache instance on port 80, and a s
 
 Port 80 presented only the standard Apache2 Debian default page, containing no application logic or useful attack surface.
 
-![](machines/cve1/image.png)
+![](images/img.png)
 
 Port 9090, however, hosted a custom PHP application titled "Nuclei War Now!" that exposed two forms: one to save arbitrary content as a `.yaml` file on the server, and another to open and display a stored `.yaml` file by name.
 
-![](image-1.png)
+![](images/img-1.png)
 
 Inspecting the raw HTTP response from port 9090 revealed a critical comment embedded in the HTML source.
 
@@ -322,7 +322,7 @@ User wicca may run the following commands on cve-pt1:
 
 `wicca` could run `/usr/bin/tee` as root without a password. GTFOBins documents this as a privileged file write primitive: since `tee` reads from stdin and writes to any file given as an argument, and since it runs with root's privileges when invoked via `sudo`, it can overwrite or create any file on the system.
 
-![](image-2.png)
+![](images/img-2.png)
 
 **12. Writing a Permissive Sudoers Rule**
 

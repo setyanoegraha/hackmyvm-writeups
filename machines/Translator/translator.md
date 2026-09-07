@@ -76,7 +76,7 @@ Accessing the web application at `http://192.168.100.78`, we discover an "HMV Tr
 
 Testing for command injection vulnerabilities, we attempt to inject shell metacharacters into the translation input. When we send the payload `; id`, the application processes it and reveals unexpected behavior:
 
-![](machines/Translator/image.png)
+![](images/img.png)
 
 **Translation result:** `; rw`
 
@@ -86,7 +86,7 @@ The characters are being transformed (`id` → `rw`), indicating the application
 
 To confirm command execution, we need to reverse the translation. Since `id` becomes `rw` through the Atbash cipher, we send the payload `; rw`, which will be transformed back to `; id` when processed:
 
-![](image-1.png)
+![](images/img-1.png)
 
 **Translation result:** `; id uid=33(www-data) gid=33(www-data) groufs=33(www-data)`
 
@@ -122,7 +122,7 @@ To bypass the Atbash cipher, we need to pre-encode our payload. Applying the rev
 
 We submit the pre-encoded version through the web interface:
 
-![](image-2.png)
+![](images/img-2.png)
 
 The application translates it back to the original command and executes it, establishing our reverse shell.
 
@@ -208,7 +208,7 @@ $ulti = system('echo '.$ultima_linea.'| tr "php" "wtf"');
 
 An unusual file named `hvxivg` stands out. Testing it through the translation web interface reveals its meaning:
 
-![](image-3.png)
+![](images/img-3.png)
 
 **Decoded:** `hvxivg` translates to `secret`
 
@@ -225,7 +225,7 @@ Mb kzhhdliw rh z[REDACTED]
 
 The content appears to be encoded using the same translation algorithm. We submit this string to the web interface to decode it:
 
-![](image-5.png)
+![](images/img-4.png)
 
 **Decoded message:** `My password is a[REDACTED]`
 
@@ -334,7 +334,7 @@ The `choom` utility is designed to display and adjust the OOM (Out-Of-Memory) ki
 
 Consulting [GTFOBins](https://gtfobins.github.io/gtfobins/choom/) for exploitation techniques:
 
-![](image-6.png)
+![](images/img-5.png)
 
 **Exploitation Method:** `choom -n 0 /bin/bash`
 

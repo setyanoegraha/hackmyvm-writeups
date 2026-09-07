@@ -66,7 +66,7 @@ The attack surface focuses primarily on the web application.
 
 Accessing the web server at `http://192.168.100.105/` revealed a HelpDesk Ticketing System portal:
 
-![](machines/Helpdesk/image.png)
+![](images/img.png)
 
 The landing page displays a maintenance notice stating: *"This portal is currently under maintenance. Internal teams should use the intranet interface to access support tickets."* This message provides a hint that there might be internal administrative interfaces accessible through directory enumeration.
 
@@ -127,7 +127,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 The `debug.php` file was investigated but only contained fake credentials (`service_user:SuperSecretDev123!`) that proved to be a rabbit hole with no valid application.
 
-![](image-1.png)
+![](images/img-1.png)
 
 The login page at `/login.php` presents a standard authentication form requiring a username and password.
 
@@ -290,13 +290,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 Using the discovered credentials, successful authentication was achieved at `/login.php`, which redirected to the administrative panel at `/panel.php`:
 
-![](image-2.png)
+![](images/img-2.png)
 
 The **Remote Command Panel** provides a web interface labeled "Execute Diagnostic Command" that accepts system commands. This is an extremely dangerous feature that allows arbitrary command execution on the underlying server.
 
 Testing with the `id` command confirmed command execution capabilities:
 
-![](image-3.png)
+![](images/img-3.png)
 
 The output shows execution context as the `www-data` user: `uid=33(www-data) gid=33(www-data) groups=33(www-data)`
 
@@ -540,7 +540,7 @@ User helpdesk may run the following commands on helpdesk:
 
 The exploitation technique leverages pip's ability to execute arbitrary Python code during package installation via `setup.py`. Consulting GTFOBins for pip exploitation:
 
-![](image-5.png)
+![](images/img-4.png)
 
 Creating a malicious `setup.py` file:
 

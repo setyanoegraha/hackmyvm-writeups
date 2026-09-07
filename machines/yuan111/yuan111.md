@@ -57,7 +57,7 @@ The scan revealed two open ports:
 
 Visiting the web server on port 80 showed a page referencing "Rockyou.txt" in the title, hinting at a potential password cracking scenario.
 
-![](machines/yuan111/image.png)
+![](images/img.png)
 
 ## Vulnerability Discovery
 

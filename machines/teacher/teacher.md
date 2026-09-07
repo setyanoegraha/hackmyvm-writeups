@@ -271,8 +271,8 @@ Content-Type: text/html; charset=UTF-8
 ...
 ```
 as shown in the picture.
-![alt text](image-1.png)
-The URL-decoded payload is ![alt text](image-2.png). This is now stored inside the log. When `log.php` is loaded by the PHP engine, the stored PHP code **is executed**. Proof of RCE:
+![alt text](images/img-1.png)
+The URL-decoded payload is ![alt text](images/img-2.png). This is now stored inside the log. When `log.php` is loaded by the PHP engine, the stored PHP code **is executed**. Proof of RCE:
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/teacher]
@@ -464,7 +464,7 @@ mrteacher    ALL=(ALL:ALL) NOPASSWD: ALL
 
 The screenshot below shows the final state of the `/etc/sudoers` file as edited in `gedit`:
 
-![sudoers](machines/teacher/image.png)
+![sudoers](images/img.png)
 
 As confirmed in the image: **line 23** reads `mrteacher    ALL=(ALL:ALL) NOPASSWD: ALL` — granting `mrteacher` unrestricted passwordless sudo access to all commands.
 

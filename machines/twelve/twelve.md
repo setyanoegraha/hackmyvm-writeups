@@ -76,7 +76,7 @@ The presence of a Werkzeug server on a non-standard port immediately draws atten
 
 Navigating to the application on port 1212 reveals a simple web interface for converting decimal integers to duodecimal (base-12) format. The interface is clean and functional, presenting an input field for decimal values and a conversion button.
 
-![](machines/twelve/image.png)
+![](images/img.png)
 
 **Template Injection Discovery**
 

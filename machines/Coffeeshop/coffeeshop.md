@@ -62,7 +62,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.37 seconds
 
 Accessing the web service on port 80 revealed an "Under Construction" page for **Midnight Coffee**:
 
-![80](machines/Coffeeshop/image.png)
+![80](images/img.png)
 
 Examining the HTML source code revealed an interesting directory structure reference:
 
@@ -217,7 +217,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 Accessing the login page at `http://midnight.coffee/shop/login.php`:
 
-![login page](image-1.png)
+![login page](images/img-1.png)
 
 At this point, we have a login form but no credentials. This calls for subdomain enumeration to discover additional resources.
 
@@ -293,7 +293,7 @@ Content-Type: text/html
 
 Accessing the development subdomain at `http://dev.midnight.coffee` revealed **hardcoded credentials** in the page source:
 
-![dev.midnight.coffee](image-2.png)
+![dev.midnight.coffee](images/img-2.png)
 
 The development page contained exposed credentials for the shop login interface. This is a common security misconfiguration where developers leave sensitive information in staging or development environments.
 
@@ -301,7 +301,7 @@ The development page contained exposed credentials for the shop login interface.
 
 Using the discovered credentials to authenticate at `http://midnight.coffee/shop/login.php` granted access to the dashboard:
 
-![dashboard](image-3.png)
+![dashboard](images/img-3.png)
 
 **Critical Information Obtained:**
 The dashboard revealed **SSH credentials** for the `tuna` user along with connection details.
@@ -593,7 +593,7 @@ puts "C0FF33 SHOPS R L33T"
 
 Consulting GTFOBins (https://gtfobins.org/gtfobins/ruby/) for Ruby privilege escalation techniques:
 
-![gtfo_ruby](image-4.png)
+![gtfo_ruby](images/img-4.png)
 
 GTFOBins confirms that Ruby's `-e` flag can execute arbitrary code, including spawning a root shell.
 

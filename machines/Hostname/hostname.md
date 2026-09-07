@@ -66,7 +66,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.67 seconds
 
 Accessing the web server at `http://192.168.100.102` revealed a panda-themed interface with a form requesting a "Secret Word":
 
-![](machines/Hostname/image.png)
+![](images/img.png)
 
 #### HTML Source Code Analysis
 
@@ -155,16 +155,16 @@ The decoded value `Kung_Fu_P4nda` aligns with the "Kung Fu Panda" theme and serv
 The HTML button was initially disabled, preventing form submission. Using browser developer tools (Inspect Element), the `disabled="po"` attribute was removed to enable the button:
 
 **Before modification:**
-![](image-4.png)
+![](images/img-3.png)
 
 **After removing the disabled attribute:**
-![](image-2.png)
+![](images/img-2.png)
 
 ### Password Extraction
 
 After enabling the button and submitting the form with the secret word `Kung_Fu_P4nda`, the application responded with a JavaScript alert containing credentials:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The alert message revealed: `!ts[REDACTED]`
 

@@ -107,7 +107,7 @@ wall:x:1000:1000:wall,,,:/home/wall:/bin/bash
 
 2. Subsequent testing confirmed that the application also supported the http scheme, indicating a Remote File Inclusion (RFI) or SSRF vulnerability. A malicious PHP payload was crafted to test code execution.
 
-![](machines/greatwall/image.png)
+![](images/img.png)
 
 3. To host the payload, a local Python HTTP server was started on port 80.
 
@@ -119,7 +119,7 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 
 4. The payload was then triggered by navigating to the target URL with the page parameter pointing to the local server.
 
-![](image-1.png)
+![](images/img-1.png)
 
 5. The local server logs confirmed that the target machine successfully requested the malicious file.
 
@@ -129,11 +129,11 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 
 6. Execution of the payload was confirmed on the web page.
 
-![](image-2.png)
+![](images/img-2.png)
 
 7. A reverse shell payload was then prepared to gain interactive access to the system.
 
-![](image-3.png)
+![](images/img-3.png)
 
 8. A Netcat listener was established on port 22. This specific port was used because other ports appeared to be restricted.
 
@@ -145,7 +145,7 @@ listening on [any] 22 ...
 
 9. The reverse shell was triggered through the web interface.
 
-![](image-4.png)
+![](images/img-4.png)
 
 10. The connection was successfully received, and a full TTY shell was established using Python.
 

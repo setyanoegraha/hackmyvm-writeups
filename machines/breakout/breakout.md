@@ -122,7 +122,7 @@ The comment contains a string of `+`, `-`, `>`, `<`, `.`, and `[`, `]` character
 
 The Brainfuck string was decoded using the dCode online interpreter at `dcode.fr`. The interpreter executed the program and produced cleartext output.
 
-![](image-1.png)
+![](images/img-1.png)
 
 As visible in the dCode results panel, the decoded output is:
 
@@ -350,11 +350,11 @@ This gives us a confirmed local username: **cyber**.
 
 With the username `cyber` from SMB enumeration and the decoded Brainfuck password `.2uqPEfj3D<P'a-3`, we navigated to the **Usermin** panel at `https://192.168.100.145:20000/`. Usermin is a web-based interface for Unix user-level tasks, distinct from the administrator-facing Webmin.
 
-![](machines/breakout/image.png)
+![](images/img.png)
 
 Authentication was performed using the credentials `cyber` / `.2uqPEfj3D<P'a-3`. The login succeeded and dropped us into the Usermin dashboard. The top navigation bar confirmed the session was authenticated as the `cyber` user.
 
-![](image-2.png)
+![](images/img-2.png)
 
 The Usermin toolbar displays several icons including a terminal emulator icon (`>_`). Clicking this icon opens an interactive shell session running as the `cyber` user directly within the browser — no SSH or reverse shell required.
 
@@ -441,7 +441,7 @@ The backup file contains a single line: `Ts&4&YurgtRX(=~h` — the **old root pa
 
 With the recovered password, we navigated to the **Webmin** panel at `https://192.168.100.145:10000/`. Webmin is the administrator-facing counterpart to Usermin, running MiniServ 1.981.
 
-![](image-3.png)
+![](images/img-3.png)
 
 Authentication was attempted using `root` / `Ts&4&YurgtRX(=~h`. The login succeeded, granting full administrative access to the Webmin interface. Using the Webmin terminal, a root shell was obtained:
 

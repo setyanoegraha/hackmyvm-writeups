@@ -212,7 +212,7 @@ drwxrwxrwt 146 root root   36864 Apr 10 22:21 ..
 
 The "2023 Weak Passwords Report" document is particularly valuable, as it contains a list of the most common weak passwords used throughout 2023. Extraction from this document yields the following candidates:
 
-![](image-2.png)
+![](images/img-2.png)
 
 A password file is created from the weak passwords identified in the document:
 
@@ -235,9 +235,9 @@ Xxxxxxxxxx01
 
 The corporate website hosts an "About Us" section displaying company leadership with full names. Multiple team members are identified through both the about page and testimonials:
 
-![](machines/codeshield/image.png)
+![](images/img.png)
 
-![](image-1.png)
+![](images/img-1.png)
 
 The website explicitly references Kevin Valdez as an intern who assisted with website development, providing an additional user account lead. A comprehensive username list is compiled from all identified personnel:
 

@@ -281,7 +281,7 @@ GIF89a
 
 The shell is uploaded through the profile update page of an employee account, such as Nick Greenhorn.
 
-![](machines/quick4/image.png)
+![](images/img.png)
 
 A Netcat listener is established on the local machine to catch the incoming connection.
 
@@ -293,11 +293,11 @@ listening on [any] 4444 ...
 
 After logging in as Nick Greenhorn, the application reveals the renamed file path for the uploaded profile picture.
 
-![](image-1.png)
+![](images/img-1.png)
 
 Navigating to the newly created file triggers the reverse shell execution.
 
-![](image-2.png)
+![](images/img-2.png)
 
 The connection is received, and the shell is upgraded to a full interactive TTY for better stability.
 

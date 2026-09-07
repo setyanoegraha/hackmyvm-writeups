@@ -146,7 +146,7 @@ Key intelligence extracted from this file:
 
 Browsing to port 80 reveals a Bootstrap "Agency" theme landing page served by Apache 2.4.54.
 
-![](machines/uvalde/image.png)
+![](images/img.png)
 
 Directory brute-forcing with Feroxbuster uncovered several interesting endpoints, most notably `login.php`, `user.php` (which redirects to `login.php`), and `create_account.php`.
 
@@ -188,7 +188,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 Registering a test account at `create_account.php` and inspecting the browser's DevTools **Network** tab revealed a critical information leak: upon successful registration, the server redirected to `success.php` with a Base64-encoded query parameter containing the credentials in plaintext.
 
-![](image-1.png)
+![](images/img-1.png)
 
 The redirect URL contained: `success.php?dXNlcm5hbWU9Z29vZCZwYXNzd29yZD1nb29kMjAyNkA1Njc2`
 

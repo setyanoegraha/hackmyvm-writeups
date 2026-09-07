@@ -69,7 +69,7 @@ Two services were identified:
 
 Accessing the web application on port 80 revealed a login page for a chat application:
 
-![](machines/Talk/image.png)
+![](images/img.png)
 
 The login form showed "Login to your account" with username and password fields, and was developed by "PJCaraig © 2018" as indicated at the bottom of the page.
 
@@ -311,7 +311,7 @@ nona@talk:~$ sudo /usr/bin/lynx -exec
 
 Once inside the lynx browser, the `g` key was pressed to access the "Go to URL" function, and the following was entered:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The image shows the lynx browser interface with the URL input field containing `LYNXEXEC:/bin/bash`. This leverages lynx's ability to execute local programs when the `-exec` flag is used, effectively providing a shell with root privileges. After entering this command, double enter was pressed to execute it.
 

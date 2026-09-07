@@ -129,16 +129,16 @@ ftp> exit
 
 After reading it, the `id_rsa` is just, idk. The others? Look quite good.
 
-![alt text](machines/Hundred/image.png)
+![alt text](images/img.png)
 
 But in the `users.txt`, I suspected `hmv` was the user of the target.
 
-![alt text](image-1.png)
+![alt text](images/img-1.png)
 
 The interesting fact is I can't login via ssh using `id_rsa.pem`. 
 So I need another way. 
 
-![alt text](image-2.png)
+![alt text](images/img-2.png)
 
 looking source code in the in the web, got me 2 interesting things.
 I guess that was file that contain directory?
@@ -175,7 +175,7 @@ decrypt it using `id_rsa.pem` found earlier.
 
 Another directory!
 
-![alt text](image-3.png)
+![alt text](images/img-3.png)
 
 However, nothing useful inside, let's try to enumerate the dir.
 
@@ -223,7 +223,7 @@ But it asking for passphrase, and i dont know.
 
 Back to this page, looks like `logo.jpg` is downloadable
 
-![alt text](image-4.png)
+![alt text](images/img-4.png)
 
 ```bash
 
