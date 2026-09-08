@@ -244,7 +244,7 @@ mysecretsound.wav      100%[==========================>] 200.01K  --.-KB/s    in
 I analyzed the audio file using Audacity to look for hidden information. By examining the spectrogram view, I discovered hidden text embedded in the audio frequencies:
 The initial spectrogram view showed patterns that suggested hidden data. By adjusting the view and selecting specific portions of the audio, I could reveal hidden text:
 
-![](image-4.png)
+![](images/img-1.png)
 
 **Critical Finding:** The spectrogram analysis revealed the string: `dan[REDACTED]`
 
@@ -305,7 +305,7 @@ paul@helium:~$ ls -la /usr/bin/ln
 
 I consulted GTFOBins for privilege escalation techniques using the `ln` command:
 
-![](image-3.png)
+![](images/img.png)
 
 The GTFOBins documentation shows that `ln` can be exploited for privilege escalation through the following method:
 - The technique involves overriding `ln` itself with a symlink to a shell

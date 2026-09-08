@@ -80,7 +80,7 @@ The Nmap results showed SSH and HTTP services. A Nikto scan was then executed to
 
 The Nikto scan successfully identified a potential Local File Inclusion (LFI) vulnerability through directory traversal on the `index.php` page.
 
-![](machines/quick2/image.png)
+![](images/img.png)
 
 To further map the web application structure, a Gobuster directory brute force was conducted.
 
@@ -113,17 +113,17 @@ Starting gobuster in directory enumeration mode
 /connect.php          (Status: 500) [Size: 0]
 ```
 
-![](image-1.png)
+![](images/img-1.png)
 
 ## Initial Access
 
 Investigation of the discovered pages revealed that the application takes user input and reflects it in the URL parameters, as seen in the following image.
 
-![](image-2.png)
+![](images/img-2.png)
 
 One specific file, `file.php`, appeared highly suspicious. A base64 encoded version of its content was retrieved and decoded to reveal the underlying source code.
 
-![](image-3.png)
+![](images/img-3.png)
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/quick2]

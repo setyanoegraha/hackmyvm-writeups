@@ -94,7 +94,7 @@ The file contained a base64-encoded comment that was decoded to reveal a themati
 
 The main web page was accessed and displayed the Apache server's landing page:
 
-![](machines/apaches/image.png)
+![](images/img.png)
 
 ---
 
@@ -883,7 +883,7 @@ The pocahontas user could execute the nano editor as geronimo without a password
 pocahontas@apaches:~$ sudo -u geronimo /bin/nano -s /bin/bash
 ```
 
-![](image-1.png)
+![](images/img-1.png)
 
 A shell was executed as the geronimo user:
 

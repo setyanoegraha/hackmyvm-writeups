@@ -120,7 +120,7 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 The port 80 service redirected to HTTPS, leading to the EyesOfNetwork login page.
 
-![alt text](image-2.png)
+![alt text](images/img.png)
 
 #### Port 66 Analysis
 
@@ -435,7 +435,7 @@ This script explains why the `/root` directory was exposed through the web serve
 
 With the admin credentials obtained, 
 
-![alt text](image-3.png)
+![alt text](images/img-1.png)
 
 the next step was to exploit the EyesOfNetwork application. Research revealed known RCE vulnerabilities in EyesOfNetwork versions 5.1-5.3.
 

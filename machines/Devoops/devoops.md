@@ -58,7 +58,7 @@ PORT     STATE SERVICE VERSION
 ### Web Application Analysis
 Accessing http://192.168.100.35:3000/ reveals a Vue.js + Express.js development environment:
 
-![](machines/Devoops/image.png)
+![](images/img.png)
 
 The application's source code shows it's running Vite 6.2.0:
 
@@ -349,7 +349,7 @@ This confirms that requests to `/execute` are proxied to `localhost:3001/api/exe
 ### JWT Token Forgery
 Using the discovered JWT secret to create an admin token:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The forged JWT token with admin privileges:
 ```

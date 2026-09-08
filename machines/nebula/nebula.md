@@ -53,7 +53,7 @@ Nmap done: 1 IP address (1 host up) scanned in 117.23 seconds
 
 Navigating to the web application revealed the Nebula Lexus Labs homepage, which served as the primary attack surface.
 
-![](image-2.png)
+![](images/img-2.png)
 
 To uncover hidden directories, feroxbuster was employed with a comprehensive wordlist. The scan revealed several interesting endpoints, including a login portal and a joinus directory.
 
@@ -100,15 +100,15 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 Inspection of the discovered PDF file at `/joinus/application_form.pdf` yielded a significant find: a URL link containing embedded credentials.
 
-![](machines/nebula/image.png)
+![](images/img.png)
 
 These credentials allowed for a successful login into the restricted dashboard of the web application.
 
-![](image-1.png)
+![](images/img-1.png)
 
 Within the dashboard, a search feature was identified at the `search_central.php` endpoint. Testing this parameter revealed a potential SQL injection vulnerability.
 
-![](image-3.png)
+![](images/img-3.png)
 
 To confirm and exploit this flaw, sqlmap was utilized. The tool successfully identified multiple injection techniques, including boolean based blind, time based blind, and UNION query methods.
 

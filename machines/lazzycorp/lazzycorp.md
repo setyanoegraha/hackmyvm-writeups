@@ -250,7 +250,7 @@ The blog pages (`/blog/blog.php`, `/blog/blog1.php`) were notable. They containe
 
 **DevLog #1 — Credential Chaos**
 
-![](machines/lazzycorp/image.png)
+![](images/img.png)
 
 > *Hidden HTML source comment:* `<!-- Arvind: He used note.jpg again. Let's see how long it lasts this time. -->`
 >
@@ -258,7 +258,7 @@ The blog pages (`/blog/blog.php`, `/blog/blog1.php`) were notable. They containe
 
 **DevLog #2 — Transfer Woes and Lost Data**
 
-![](image-1.png)
+![](images/img-1.png)
 
 > *Hidden HTML source comment:* `<!-- Hidden Hint: Sometimes the simplest transfer method—one that preserves every byte—protects the hidden secrets best. -->`
 >
@@ -266,7 +266,7 @@ The blog pages (`/blog/blog.php`, `/blog/blog1.php`) were notable. They containe
 
 **DevLog #3 — Reset Ritual**
 
-![](image-2.png)
+![](images/img-2.png)
 
 > *Hidden HTML source comment:* `<!-- Arvind: Reset script was never meant to be writeable by anyone... yet here we are. -->`
 >
@@ -314,11 +314,11 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 Logging into `http://192.168.100.135/auth-lazycorp-dev/login.php` with the recovered credentials (`dev` / `d3v[REDACTED]`) granted access to the dashboard:
 
-![](image-3.png)
+![](images/img-3.png)
 
 The dashboard exposed an **"Upload Site Module"** form with no content-type or extension validation. A PHP webshell was crafted and uploaded directly:
 
-![](image-4.png)
+![](images/img-4.png)
 
 The shell was uploaded and immediately reachable at `/auth-lazycorp-dev/uploads/shell.php`. RCE was confirmed:
 

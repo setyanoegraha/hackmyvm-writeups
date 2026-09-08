@@ -53,7 +53,7 @@ Nmap done: 1 IP address (1 host up) scanned in 17.00 seconds
 
 Visiting the web server on port 80 displays the "Master Control Program" page.
 
-![](machines/tron/image.png)
+![](images/img.png)
 
 Inspecting the source code reveals an interesting comment hidden within the HTML:
 
@@ -128,7 +128,7 @@ Checking `/robots.txt` reveals a list of directories and a large block of obfusc
 
 Investigating the `/MCP` directory shows a list of files.
 
-![](image-1.png)
+![](images/img-1.png)
 
 Downloading the files provides further clues. `tron.txt` contains a dialogue and a Base64-like string.
 
@@ -175,7 +175,7 @@ Decoding the string from `tron.txt` using Base64 reveals Brainfuck code.
 
 Executing this Brainfuck code outputs the string `player`.
 
-![](image-2.png)
+![](images/img-2.png)
 
 This likely identifies the username as `player`. To find the password, we return to the encoded string found in the HTML source code: `kzhh:SbWP9q94ZtE9qD`. Using the Atbash substitution provided in `30513.txt`, we can decode it.
 

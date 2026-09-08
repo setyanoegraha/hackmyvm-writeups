@@ -99,7 +99,7 @@ Finished
 
 The enumeration discovered index.php and dashboard.php, both returning HTTP 200.
 
-![](images/image.png)
+![](images/img.png)
 
 5. The source code of index.php was reviewed, revealing hardcoded administrator credentials:
 

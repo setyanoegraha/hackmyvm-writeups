@@ -67,7 +67,7 @@ The web service on port 80 is the most promising attack vector, especially given
 
 Accessing the web service on port 80 reveals an HTML-to-PDF conversion interface:
 
-![](machines/Convert/image.png)
+![](images/img.png)
 
 The web application provides a simple interface for converting web pages to PDF documents. Let me examine the HTML source code to understand how it works:
 
@@ -122,17 +122,17 @@ I tested the application with various inputs to understand its behavior:
 **Invalid URL Test:**
 When providing an improperly formatted URL, the application returns an error:
 
-![](image-2.png)
+![](images/img-2.png)
 
 **External URL Test:**
 When providing a valid external URL, the application returns an error indicating it may have restrictions on external requests:
 
-![](image-1.png)
+![](images/img-1.png)
 
 **Local URL Test (SSRF Check):**
 Testing if the application can access itself using `http://127.0.0.1/index.php`:
 
-![](image-3.png)
+![](images/img-3.png)
 
 Excellent! The application successfully converted its own page to PDF. This confirms:
 1. The application has Server-Side Request Forgery (SSRF) capabilities
@@ -315,7 +315,7 @@ Host the exploit files on an attacker-controlled web server:
 
 Navigate to the web application and submit the URL to our malicious HTML file:
 
-![](image-4.png)
+![](images/img-4.png)
 
 Input: `http://192.168.100.1:8080/exploit.html`
 
@@ -325,7 +325,7 @@ Click the "Convert" button to trigger the PDF generation process.
 
 The application successfully processed the HTML and cached our malicious font:
 
-![](image-5.png)
+![](images/img-5.png)
 
 The server logs confirm the requests:
 

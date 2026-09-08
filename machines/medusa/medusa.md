@@ -81,7 +81,7 @@ Anonymous FTP access was disabled, so I moved on to web application enumeration.
 
 Visiting the web server on port 80 displayed the default Apache2 Debian page, which appeared unusual as it suggested the web server might be hosting additional content in other directories or virtual hosts.
 
-![](machines/medusa/image.png)
+![](images/img.png)
 
 To discover hidden directories, I performed directory brute-forcing using Gobuster with a comprehensive wordlist.
 
@@ -147,11 +147,11 @@ door.php                [Status: 200, Size: 555, Words: 63, Lines: 19, Duration:
 
 The file door.php was discovered, which appeared to be an interactive page that prompted for a "magic word."
 
-![](image-1.png)
+![](images/img-1.png)
 
 Based on the Greek mythology theme (Medusa and Hades), I attempted the word "Kraken" as the magic word, which successfully revealed a domain name.
 
-![](image-2.png)
+![](images/img-2.png)
 
 The response indicated that I should add the domain to my local hosts file for proper virtual host resolution.
 
@@ -290,7 +290,7 @@ readme.txt              [Status: 200, Size: 144, Words: 10, Lines: 4, Duration: 
 
 Two interesting files were discovered: system.php and readme.txt. The readme.txt file contained information that could provide clues about the application's functionality.
 
-![](image-3.png)
+![](images/img-3.png)
 
 ### Local File Inclusion Discovery
 
@@ -390,7 +390,7 @@ Fri Apr  3 21:26:41 2026 [pid 578] [kraken] FAIL LOGIN: Client "::ffff:192.168.1
 
 The log file was accessible, confirming that the www-data user had read permissions. I proceeded to inject PHP code by attempting an FTP login with a username containing PHP execution commands.
 
-![](image-4.png)
+![](images/img-4.png)
 
 After injecting the payload through an FTP login attempt, I tested whether the log poisoning was successful by executing a simple command through the cmd parameter.
 

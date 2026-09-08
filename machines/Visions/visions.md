@@ -254,7 +254,7 @@ Alicia has sudo privileges to run `/usr/bin/nc` as user emma, providing a potent
 
 Further analysis of the `white.png` image revealed additional hidden credentials. Using online image editing tools like Photopea, contrast adjustment revealed concealed text.
 
-![sophia credentials](image-1.png)
+![sophia credentials](images/img.png)
 
 The contrast manipulation revealed credentials for user sophia: `sophia/see[REDACTED]`.
 

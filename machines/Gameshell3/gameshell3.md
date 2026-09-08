@@ -103,7 +103,7 @@ The presence of 10 consecutive ttyd services (ports 8001-8010) immediately sugge
 
 Navigating to `http://192.168.100.100:80` revealed an interactive web application titled "Random Gate":
 
-![Port 80 - Random Gate Application](image-2.png)
+![Port 80 - Random Gate Application](images/img-1.png)
 
 The webpage displayed 10 clickable doors numbered **8001 through 8010**, corresponding exactly to the ttyd services discovered during port scanning. The page's subtitle read: *"Click on a door to reveal your destiny!"*
 
@@ -145,7 +145,7 @@ Each port was manually inspected by navigating to `http://192.168.100.100:800X` 
 
 **Port 8001 Example:**
 
-![Port 8001 - Minesweeper Game (Not Playable)](image-3.png)
+![Port 8001 - Minesweeper Game (Not Playable)](images/img-2.png)
 
 Port 8001 displayed a terminal-based Minesweeper game with the following interface:
 
@@ -158,7 +158,7 @@ After testing all 10 ports, it was discovered that **only port 8004** hosted a f
 
 Port 8004 presented a fully interactive Minesweeper game at `http://192.168.100.100:8004`:
 
-![Port 8004 - Winning the Minesweeper Game](image-5.png)
+![Port 8004 - Winning the Minesweeper Game](images/img-4.png)
 
 After successfully completing the Minesweeper puzzle (avoiding all mines), the game displayed a congratulatory message:
 
@@ -290,7 +290,7 @@ debugfs 1.44.5 (15-Dec-2018)
 debugfs:  ls -l
 ```
 
-![debugfs Output - Hidden Files](image-4.png)
+![debugfs Output - Hidden Files](images/img-3.png)
 
 **Output from debugfs:**
 
@@ -370,7 +370,7 @@ Steghide failed because WAV files don't support steghide's steganography method 
 
 Research into DTMF analysis led to the discovery of online DTMF decoders. The audio file was uploaded to https://dtmf.netlify.app/ :
 
-![DTMF Decoder Output](machines/Gameshell3/image.png)
+![DTMF Decoder Output](images/img.png)
 
 The decoded string began with `*#*#6` followed by additional characters (redacted for security). This pattern strongly suggested a password or access code.
 

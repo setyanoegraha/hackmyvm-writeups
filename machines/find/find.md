@@ -228,7 +228,7 @@ The string at the end of the output, a dense sequence of symbols from the printa
 
 The extracted Malbolge code was submitted to the dCode online interpreter at `https://www.dcode.fr/malbolge-language` for execution.
 
-![decode](machines/find/image.png)
+![decode](images/img.png)
 
 As visible in the screenshot above, the dCode Malbolge Interpreter executed the code and produced the output `missyred` in the Results panel on the left side. This string, previously unknown, is the username to target on the SSH service, which directly answers the `robots.txt` hint "find user :)".
 
@@ -324,7 +324,7 @@ The `sudo` configuration grants `missyred` the ability to execute `/usr/bin/perl
 
 The GTFOBins entry for `perl` under the Sudo category confirms the exact command to use.
 
-![alt text](image-1.png)
+![alt text](images/img-1.png)
 
 As shown in the GTFOBins screenshot above (from `gtfobins.github.io`), the `Sudo` tab for `perl` states: "This function is performed by the privileged user if executed via sudo because the acquired privileges are not dropped." The listed payload is `perl -e 'exec "/bin/sh"'`. The actual command used here spawns `/bin/bash` instead of `/bin/sh` for a more interactive session.
 

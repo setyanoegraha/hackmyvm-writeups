@@ -91,7 +91,7 @@ Content-Type: text/html
 192.168.100.172 latestwasalie.hmv
 ```
 
-![](machines/latestwasalie/image.png)
+![](images/img.png)
 
 4. Reviewing the page source exposed this deployment clue, which suggested the username `adm`.
 
@@ -118,7 +118,7 @@ Date: Wed, 15 Apr 2026 09:55:17 GMT
 Content-Length: 87
 ```
 
-![](image-1.png)
+![](images/img-1.png)
 
 ## Initial Access
 
@@ -266,7 +266,7 @@ latestwasalie.hmv
 
 4. I wrote a web shell in the image and then pushed the poisoned image back to the registry tag used by deployment.
 
-![](image-2.png)
+![](images/img-2.png)
 
 ```bash
 ┌──(ouba㉿CLIENT-DESKTOP)-[/tmp/latestwasalie]

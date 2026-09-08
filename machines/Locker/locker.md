@@ -127,7 +127,7 @@ Testing the `locker.php` endpoint revealed it processes image parameters:
 
 Testing with the discovered parameter from the main page:
 
-![](machines/Locker/image.png)
+![](images/img.png)
 
 The application displays different locker images based on the `image` parameter:
 - Image 1 shows a heart-shaped padlock
@@ -135,11 +135,11 @@ The application displays different locker images based on the `image` parameter:
 - Image 3 shows a golden padlock
 - Image 4 and beyond return broken image placeholders
 
-![](image-1.png)
+![](images/img-1.png)
 
-![](image-2.png)
+![](images/img-2.png)
 
-![](image-3.png)
+![](images/img-3.png)
 
 ### Image Data Analysis
 Downloading and analyzing the image data revealed they were base64-encoded:

@@ -85,19 +85,19 @@ Starting gobuster in directory enumeration mode
 
 Navigating to the `/customer/` directory reveals a web portal for users. The first step involves registering a new account to observe the application behavior.
 
-![](machines/quick3/image.png)
+![](images/img.png)
 
 After successful registration and logging in, the user profile page is accessed. The URL structure suggests that user profiles are retrieved based on a numerical identifier.
 
-![](image-1.png)
+![](images/img-1.png)
 
 The profile is located at the endpoint `http://192.168.100.203/customer/user.php?id=29`. By modifying the ID parameter to 1, an Insecure Direct Object Reference vulnerability is confirmed as the profile for a different user is displayed.
 
-![](image-2.png)
+![](images/img-2.png)
 
 Further inspection of the page source code reveals sensitive information, specifically passwords belonging to other users.
 
-![](image-3.png)
+![](images/img-3.png)
 
 With this discovery, lists of potential usernames and passwords are compiled into local files for a brute force attack.
 

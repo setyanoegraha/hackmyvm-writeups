@@ -68,7 +68,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.28 seconds
 └─$ url=http://christmas.hmv
 ```
 
-![](machines/xmas/image.png)
+![](images/img.png)
 
 4. I enumerated paths and found upload reachable endpoints.
 
@@ -103,7 +103,7 @@ Target: http://christmas.hmv/
 
 1. The upload form claimed to accept PDF only, but it accepted a PHP payload and stored it in `/uploads`. The screenshot below captures the payload creation and upload context.
 
-![](image-1.png)
+![](images/img-1.png)
 
 2. I verified remote command execution through the uploaded web shell.
 

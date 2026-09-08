@@ -164,11 +164,11 @@ MySQL [trainers_db]> select * from users;
 
 Navigating to the discovered secret URL presents a login page. Using the credentials for gonzalo allows for successful authentication.
 
-![](machines/slowman/image.png)
+![](images/img.png)
 
 Inside the protected area, a link to a file named credentials.zip is found.
 
-![](image-1.png)
+![](images/img-1.png)
 
 The archive is downloaded for further analysis.
 

@@ -51,11 +51,11 @@ Nmap done: 1 IP address (1 host up) scanned in 39.49 seconds
 
 The web server on port 80 was visited, displaying the primary landing page for Quick Automotive.
 
-![alt text](machines/quick5/image.png)
+![alt text](images/img.png)
 
 Further inspection of the web application suggested the presence of virtual hosting.
 
-![alt text](image-1.png)
+![alt text](images/img-1.png)
 
 ## Subdomain Fuzzing
 
@@ -140,11 +140,11 @@ Starting gobuster in directory enumeration mode
 
 The apply.php page featured an application form that allowed users to upload documents.
 
-![alt text](image-2.png)
+![alt text](images/img-2.png)
 
 Attempts to upload standard PHP scripts or images resulted in a notification that the file was received, but no immediate execution occurred.
 
-![alt text](image-3.png)
+![alt text](images/img-3.png)
 
 ## Exploitation: CVE:2023:2255
 
@@ -154,23 +154,23 @@ Initial attempts focused on manually crafting a malicious ODT file by modifying 
 
 To ensure a successful exploitation, the approach was simplified by using LibreOffice Writer directly to create a macro:enabled document.
 
-![alt text](image-4.png)
+![alt text](images/img-4.png)
 
 A new document was created within the LibreOffice interface.
 
-![alt text](image-6.png)
+![alt text](images/img-6.png)
 
 The macro was written to execute a bash reverse shell command.
 
-![alt text](image-5.png)
+![alt text](images/img-5.png)
 
 The document settings were adjusted to trigger the macro automatically upon opening.
 
-![alt text](image-7.png)
+![alt text](images/img-7.png)
 
 Final verification of the document events was performed before saving.
 
-![alt text](image-8.png)
+![alt text](images/img-8.png)
 
 A listener was started on the local machine to capture the incoming connection.
 

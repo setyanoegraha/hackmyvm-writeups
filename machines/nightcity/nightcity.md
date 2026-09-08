@@ -172,7 +172,7 @@ This message hints at the existence of a "robin" user or resource on the system.
 
 The /secret directory is accessible via HTTP and contains indexed image files:
 
-![](machines/nightcity/image.png)
+![](images/img.png)
 
 Three JPEG files are present in this directory: most-wanted.jpg (128K), some-light.jpg (214K), and veryImportant.jpg (185K). These are downloaded for offline analysis.
 
@@ -262,7 +262,7 @@ GPS Position                    : 26 deg 21' 28.59" N, 127 deg 47' 0.99" E
 
 The some-light.jpg file contains GPS coordinates (26º21'28.59"N, 127º47'0.99"E) and an author field identifying "GothamCity," establishing the Batman-themed context.
 
-![](image-1.png)
+![](images/img-1.png)
 
 The veryImportant.jpg file contains no sensitive metadata:
 
@@ -542,7 +542,7 @@ StegSeek 0.6 - https://github.com/RickdeJager/StegSeek
 
 However, image brightness adjustment reveals hidden text within the image. Examining the pillar structure visible in the adjusted brightness version exposes the string: **ThatMadeMeL4ugh!**
 
-![](image-2.png)
+![](images/img-2.png)
 
 ### Lateral Movement to Joker Account
 

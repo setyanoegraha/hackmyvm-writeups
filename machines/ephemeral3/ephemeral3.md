@@ -117,11 +117,11 @@ If you have any questions just email me at henry@ephemeral.com
 
 Browsing to `http://192.168.100.150/agency/` reveals a static agency website themed "AgencyPerfect":
 
-![](machines/ephemeral3/image.png)
+![](images/img.png)
 
 The **Contact** section of the site exposes additional details:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The contact section reveals:
 - **Email**: `randy@ephemeral.com` → system username **randy**
@@ -365,7 +365,7 @@ User randy may run the following commands on ephemeral:
 
 The GTFOBins `curl` file write technique (Sudo method) applies directly here:
 
-![](image-2.png)
+![](images/img-2.png)
 
 As the screenshot from GTFOBins shows, the technique is:
 ```

@@ -57,7 +57,7 @@ Nmap done: 1 IP address (1 host up) scanned in 35.41 seconds
 
 3. Opening TCP port 80 in a browser confirmed the target web application.
 
-![](machines/darkside/image.png)
+![](images/img.png)
 
 4. I enumerated directories to identify hidden web content.
 
@@ -116,11 +116,11 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-05-04 15:59:
 
 2. Successful login exposed additional application content.
 
-![](image-1.png)
+![](images/img-1.png)
 
 3. The discovered value was decoded and mapped to a hidden endpoint path.
 
-![](image-2.png)
+![](images/img-2.png)
 
 4. Requesting the endpoint revealed a JavaScript check for a `side=darkside` cookie and redirected resource name.
 
@@ -264,9 +264,9 @@ User rijaba may run the following commands on darkside:
 rijaba@darkside:~$ sudo /usr/bin/nano /etc/sudoers
 ```
 
-![](image-3.png)
+![](images/img-3.png)
 
-![](image-4.png)
+![](images/img-4.png)
 
 3. I confirmed the policy change successfully granted full root level sudo access.
 

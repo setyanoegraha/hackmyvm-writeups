@@ -85,7 +85,7 @@ The server responds with standard Apache headers. The `Last-Modified` date indic
 
 Accessing the web application through a browser revealed a marketplace for vinyl records:
 
-![](machines/Vinylizer/image.png)
+![](images/img.png)
 
 The homepage displays a professional-looking vinyl records marketplace with featured products and navigation menu.
 
@@ -223,7 +223,7 @@ No backup files (.bak, .old, .swp) or text files were discovered, suggesting goo
 
 The login page was identified as the primary attack surface:
 
-![](image-1.png)
+![](images/img-1.png)
 
 #### Manual SQL Injection Testing
 

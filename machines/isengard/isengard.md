@@ -54,7 +54,7 @@ Nmap done: 1 IP address (1 IP address (1 host up) scanned in 38.28 seconds
 
 Browsing to port 80 reveals a Lord of the Rings themed page styled with green terminal text on a black background. Notably, the page also renders text written in **Tengwar** (the Elvish script referenced by the CSS comment), which encodes the hidden path `/y0ush4lln0tp4ss` as a thematic visual clue.
 
-![](machines/isengard/image.png)
+![](images/img.png)
 
 Inspecting the page's HTML source revealed minimal content and a reference to an embedded wizard image:
 
@@ -138,7 +138,7 @@ The comment `/* btw: in the robots.txt i have to put the url /y0ush4lln0tp4ss */
 
 Accessing `http://192.168.100.146/y0ush4lln0tp4ss/` displays a Gandalf meme. The image is named `l00kt0myc00ming.jpg`, and the page source also contains a commented-out reference to `2.jpg`. More significantly, the meme text reads **"LOOK TO MY COMING ON THE FIRST LIGHT OF THE THIRD DAY"** and **"AT DAWN LOOK TO THE EAST"**, which is a direct hint toward a subdirectory named `/east/`.
 
-![alt text](image-1.png)
+![alt text](images/img-1.png)
 
 The HTML source at this path confirmed the hints:
 
@@ -495,7 +495,7 @@ User sauron may run the following commands on isengard:
 
 Consulting GTFOBins for `curl` under the Sudo category reveals the **File write** technique. Because `curl` is executed via `sudo` and does not drop privileges, it can read any local file and write it to any destination path on the filesystem — including privileged locations such as `/etc/sudoers.d/`. The technique uses `curl file:///path/to/source -o /path/to/destination` to perform the arbitrary write.
 
-![alt text](image-2.png)
+![alt text](images/img-2.png)
 
 ### Crafting the Sudoers Drop-in File
 

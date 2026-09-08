@@ -60,7 +60,7 @@ The scan revealed two open ports:
 
 Accessing the web server on port 80 revealed the default Apache2 Ubuntu installation page, confirming the service was operational.
 
-![webserver apache2](machines/Vulny/image.png)
+![webserver apache2](images/img.png)
 
 ### Directory Enumeration
 
@@ -155,7 +155,7 @@ Standard WordPress directories were discovered, confirming the presence of a Wor
 Examining each discovered WordPress directory:
 
 **wp-content directory:**
-![alt text](image-1.png)
+![alt text](images/img-1.png)
 
 The wp-content directory listing revealed several subdirectories including:
 - languages/ (2020-10-15 11:01)
@@ -165,10 +165,10 @@ The wp-content directory listing revealed several subdirectories including:
 - uploads/ (2020-10-15 11:02)
 
 **wp-includes directory:**
-![alt text](image-2.png)
+![alt text](images/img-2.png)
 
 **wp-admin directory:**
-![alt text](image-3.png)
+![alt text](images/img-3.png)
 
 ### Critical File Discovery
 
@@ -464,7 +464,7 @@ adrian@vulny:~$ ls -la /usr/bin/flock
 
 Consulting GTFOBins for flock exploitation methods:
 
-![flock](image-4.png)
+![flock](images/img-4.png)
 
 The GTFOBins entry for flock confirmed that it could be used to spawn an interactive system shell when executed with sudo privileges.
 

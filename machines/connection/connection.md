@@ -77,7 +77,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.31 seconds
 
 Visiting port 80 revealed the default Apache Debian page.
 
-![](machines/connection/image.png)
+![](images/img.png)
 
 ## Initial Access
 
@@ -132,7 +132,7 @@ getting file \html\index.html of size 10701 as index.html (1161.1 KiloBytes/sec)
 ### Remote Code Execution (RCE)
 To verify the connection between the SMB share and the web server, a simple PHP shell was created.
 
-![](image-1.png)
+![](images/img-1.png)
 
 This file was uploaded to the `html` directory on the SMB share.
 
@@ -235,7 +235,7 @@ www-data@connection:/home/connection$ find / -type f -perm -4000 -exec ls -la {}
 ### Exploiting GDB
 Reference to GTFOBins confirmed that `gdb` with SUID permissions can be abused to escalate privileges.
 
-![](image-2.png)
+![](images/img-2.png)
 
 Using the technique described, privileges were escalated to root.
 

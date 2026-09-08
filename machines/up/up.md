@@ -83,11 +83,11 @@ by Ben "epi" Risher 🤓                 ver: 2.13.0
 
 1. The root directory contains an image upload interface.
 
-![](machines/up/image.png)
+![](images/img.png)
 
 2. Attempting to upload a PHP file directly results in an error message indicating that only JPG and GIF files are permitted.
 
-![](image-1.png)
+![](images/img-1.png)
 
 3. A fuzzer was used to discover hidden files within the /uploads/ directory, leading to the discovery of a robots.txt file.
 
@@ -251,7 +251,7 @@ User rodgar may run the following commands on debian:
 
 The gcc binary was used to spawn a root shell by utilizing the -wrapper flag.
 
-![](image-2.png)
+![](images/img-2.png)
 
 ```bash
 rodgar@debian:~$ sudo gcc -wrapper /bin/sh,-s x

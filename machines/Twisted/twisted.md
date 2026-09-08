@@ -418,7 +418,7 @@ gogogo.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 8 bit, mono 11
 
 The audio file contains morse code that decodes to:
 
-![](machines/Twisted/image.png)
+![](images/img.png)
 
 The decoded message reads: **"GODEEPER...COMEWITHME...LITTLERABBIT..."**
 
@@ -456,7 +456,7 @@ markus@twisted:/home/bonita$ /sbin/getcap -r / 2>/dev/null
 
 The `cap_dac_read_search` capability allows bypassing file read permissions. According to GTFOBins:
 
-![](image-1.png)
+![](images/img-1.png)
 
 This capability enables reading any file on the system, including Bonita's private SSH key:
 
@@ -552,7 +552,7 @@ bonita@twisted:~$ objdump -d beroot | grep -A 20 "<main>:"
 
 I converted the hex value to decimal:
 
-![convert](image-3.png)
+![convert](images/img-2.png)
 
 The hex value `0x16f8` equals `5[REDACTED]` in decimal.
 

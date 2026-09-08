@@ -189,7 +189,7 @@ The page source revealed references to a virtual host domain `za1.hmv`. This dom
 
 The blog interface rendered successfully after DNS resolution was established:
 
-![](machines/za1/image.png)
+![](images/img.png)
 
 ### Directory Enumeration
 
@@ -234,7 +234,7 @@ The enumeration successfully identified several interesting directories, most no
 
 Browsing to the `/usr/` directory revealed directory listing capabilities with visible database files:
 
-![](image-1.png)
+![](images/img-1.png)
 
 A database file named `64c0dcaf26f51.db` was identified and downloaded directly through the web interface:
 
@@ -293,15 +293,15 @@ The password for the `admin` account was recovered as `123456`. This credential 
 
 After logging into the administrative interface with recovered credentials, the blog post editor was accessed:
 
-![](image-2.png)
+![](images/img-2.png)
 
 An attempt to upload a PHP web shell with a `.phtml` extension was made. However, the CMS enforced file extension restrictions:
 
-![](image-3.png)
+![](images/img-3.png)
 
 The CMS settings in the administration panel options section was examined. The `options-general` configuration allowed modification of permitted upload file extensions:
 
-![](image-4.png)
+![](images/img-4.png)
 
 After adjusting the settings to permit `.phtml` uploads, the PHP web shell was successfully uploaded:
 
@@ -311,7 +311,7 @@ http://za1.hmv/usr/uploads/2026/04/1092100433.phtml
 
 The uploaded shell location was confirmed through the CMS interface:
 
-![](image-5.png)
+![](images/img-5.png)
 
 ### Remote Command Execution
 
@@ -418,7 +418,7 @@ The sudo configuration permitted the `www-data` user to execute `/usr/bin/awk` a
 
 The GTFObin technique for awk privilege escalation was exploited to spawn a shell with `za_1` user privileges:
 
-![](image-6.png)
+![](images/img-6.png)
 
 ```bash
 www-data@za_1:/home/za_1$ sudo -u za_1 /usr/bin/awk 'BEGIN {system("/bin/bash")}'

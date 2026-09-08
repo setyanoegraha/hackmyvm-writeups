@@ -52,14 +52,14 @@ Nmap done: 1 IP address (1 host up) scanned in 38.84 seconds
 ```
 The web server on port 80 contains a basic landing page about the history of Bash, but the source code reveals no hidden leads.
 
-![alt text](machines/Gameshell/image.png)
+![alt text](images/img.png)
 
 However, port **7681** hosts `ttyd`, a web-based terminal.
 
 Upon accessing the terminal, I was greeted by a "Gameshell" interface. 
 
 
-![alt text](image-1.png)
+![alt text](images/img-1.png)
 
 I gained a basic shell as `www-data` and began progressing through the game to **Level 8**, after began system enumeration.
 
@@ -161,7 +161,7 @@ Run it.
 ```
 After running `python3 soc.py`, I accessed `http://192.168.100.11:8888` in my browser and logged in with `admin:nimda`. I successfully gained access as the user **eviden**.
 
-![alt text](image-2.png)
+![alt text](images/img-2.png)
 
 ```bash
 eviden@GameShell:/$ id

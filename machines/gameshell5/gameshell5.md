@@ -112,7 +112,7 @@ script.js               [Status: 200, Size: 13483, Words: 135, Lines: 2, Duratio
 
 The script.js file is opened and found to be heavily obfuscated with complex variable names and function calls.
 
-![](machines/gameshell5/image.png)
+![](images/img.png)
 
 A deobfuscation tool located at https://deobfuscate.relative.im/ is used to process the code. The resulting cleartext script reveals several constants, including a site name, a login name, and a master password.
 
@@ -228,11 +228,11 @@ The encoded content is saved to a file and decoded back into a PNG image. This i
 └─$ open a.png
 ```
 
-![](image-1.png)
+![](images/img-1.png)
 
 The hint points toward the LessPass password manager. By entering the previously discovered credentials (site: shell:shockers.dsz, user: noob, master password: aBcDeFgHiJkLmNoP) into the LessPass application at https://lesspass.com/, a valid password for SSH access is generated.
 
-![](image-2.png)
+![](images/img-2.png)
 
 **4. Initial Access via SSH**
 

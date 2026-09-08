@@ -176,7 +176,7 @@ The **secret.txt** file provides a hexadecimal range (`0123456789ABCDEF`), indic
 
 To bypass this authentication mechanism, the network interface MAC address must be spoofed to match the required pattern. Using VirtualBox settings, the MAC address was manually changed to test various combinations:
 
-![](machines/Warrior/image.png)
+![](images/img.png)
 
 The MAC address was successfully changed to `0000000000AF` through VirtualBox's network adapter settings.
 
@@ -287,13 +287,13 @@ ID Age    Description        Urg
 
 The binary displays existing tasks by default. Research into Taskwarrior's capabilities via GTFOBins revealed that the `execute` subcommand can spawn system shells:
 
-![](image-1.png)
+![](images/img-1.png)
 
 According to GTFOBins, Taskwarrior's `execute` functionality allows running arbitrary external commands. When executed via `sudo`, this command runs with root privileges without dropping them.
 
 The `task` man page confirms this capability:
 
-![](image-2.png)
+![](images/img-2.png)
 
 The `task execute <external command>` subcommand executes specified commands directly, providing seamless integration for task automation. In this context, it allows arbitrary command execution as root.
 

@@ -64,13 +64,13 @@ Investigation of the web server on port 80 shows a basic utility for testing ICM
 
 Visual evidence from the packet analysis allows for the recovery of the username:
 
-![](machines/pingme/image.png)
-![](image-1.png)
+![](images/img.png)
+![](images/img-1.png)
 
 Further analysis of the captured traffic leads to the discovery of the corresponding password for the pinger account:
 
-![](image-2.png)
-![](image-3.png)
+![](images/img-2.png)
+![](images/img-3.png)
 
 Using the discovered credentials exfiltrated from the network traffic, an SSH session is established as the user pinger.
 
@@ -169,11 +169,11 @@ Packet 10
 
 The network traffic is intercepted using Wireshark to monitor the incoming packets:
 
-![](image-4.png)
+![](images/img-4.png)
 
 Once the transfer is complete, the captured data is exported from Wireshark to a text file for reconstruction:
 
-![](image-5.png)
+![](images/img-5.png)
 
 
 A Python script is utilized to automate the extraction of the hex values from the packet logs and reassemble the original RSA private key.

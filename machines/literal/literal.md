@@ -69,7 +69,7 @@ The nmap output reveals two open ports: SSH on port 22 and HTTP on port 80. Nota
 
 Accessing the web application at blog.literal.hmv reveals a personal blog interface with ASCII art content and a login functionality:
 
-![](machines/literal/image.png)
+![](images/img.png)
 
 The HTML source code displays a blog template for user "c4TLoUis" with several pages including a login endpoint at /login.php. Directory enumeration is conducted using feroxbuster to discover all accessible endpoints:
 
@@ -125,11 +125,11 @@ The directory enumeration reveals several key endpoints: register.php for accoun
 
 Upon accessing the authenticated dashboard at dashboard.php, a new endpoint is discovered at next_projects_to_do.php that displays project information. This endpoint is tested for SQL injection vulnerabilities:
 
-![](image-1.png)
+![](images/img-1.png)
 
 The next_projects_to_do.php page displays project data in what appears to be a database-backed query. Testing with the classic SQL injection payload `' OR 1=1-- -` confirms the vulnerability, dumping all records from the underlying query. Further testing reveals the query structure through ORDER BY enumeration using `Done' ORDER BY 6-- -`. Once the column count is determined to be 5, a UNION-based SELECT injection is constructed:
 
-![](image-2.png)
+![](images/img-2.png)
 
 Initial column enumeration confirms the UNION injection works with 5 columns:
 
@@ -137,7 +137,7 @@ Initial column enumeration confirms the UNION injection works with 5 columns:
 ' UNION SELECT 1,2,3,4,5-- -
 ```
 
-![](image-3.png)
+![](images/img-3.png)
 
 Database information is extracted through the payload:
 
@@ -145,7 +145,7 @@ Database information is extracted through the payload:
 ' UNION SELECT 1, database(), user(), @@version, 5-- -
 ```
 
-![](image-4.png)
+![](images/img-4.png)
 
 The information_schema.tables query reveals the database structure. The vulnerable endpoint is successfully extracting table names from the blog database:
 
@@ -153,7 +153,7 @@ The information_schema.tables query reveals the database structure. The vulnerab
 ' UNION SELECT 1, table_name, 3, 4, 5 FROM information_schema.tables WHERE table_schema = 'blog'-- -
 ```
 
-![](image-5.png)
+![](images/img-5.png)
 
 Column enumeration for the users table shows all available fields:
 
@@ -161,7 +161,7 @@ Column enumeration for the users table shows all available fields:
 ' UNION SELECT 1, column_name, 3, 4, 5 FROM information_schema.columns WHERE table_name = 'users'-- -
 ```
 
-![](image-6.png)
+![](images/img-6.png)
 
 User credentials are extracted from the users table using:
 
@@ -169,7 +169,7 @@ User credentials are extracted from the users table using:
 ' UNION SELECT 1, username, userpassword, 4, 5 FROM users-- -
 ```
 
-![](image-7.png)
+![](images/img-7.png)
 
 The complete user dataset including email addresses is dumped using:
 
@@ -177,7 +177,7 @@ The complete user dataset including email addresses is dumped using:
 ' UNION SELECT 1, username, userpassword, useremail, 5 FROM users-- -
 ```
 
-![](image-8.png)
+![](images/img-8.png)
 
 This extraction reveals 17 user accounts with bcrypt hashes and email addresses. Notably, several email addresses reference a different subdomain called forumtesting.literal.hmv, suggesting an additional attack surface.
 
@@ -249,7 +249,7 @@ The forumtesting.literal.hmv subdomain is added to the hosts file and investigat
 
 The forum application contains a category.php endpoint with a SQL injection vulnerability in the category_id parameter:
 
-![](image-9.png)
+![](images/img-9.png)
 
 sqlmap is used to automate exploitation of this vulnerability:
 
@@ -279,7 +279,7 @@ available databases [3]:
 ...
 ```
 
-![](image-10.png)
+![](images/img-10.png)
 
 The forumtesting database is dumped to extract sensitive information:
 

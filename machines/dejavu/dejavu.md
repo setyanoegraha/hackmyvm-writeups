@@ -98,7 +98,7 @@ Navigating to `http://192.168.100.149/info.php` and examining the `phpinfo()` ou
 
 The `SCRIPT_FILENAME` and `CONTEXT_DOCUMENT_ROOT` fields corroborate this, both resolving to the same hidden path.
 
-![](machines/dejavu/image.png)
+![](images/img.png)
 
 This is a deliberate obfuscation technique by the machine designer. The entire web application lives under a dot-prefixed directory name that would not show up in a standard `ls` on the server, and the Gobuster scan cannot find subdirectories relative to this concealed root using a typical wordlist alone.
 
@@ -114,7 +114,7 @@ Viewing the page source of `info.php` (not the rendered `phpinfo()` output but t
 </html>
 ```
 
-![](image-1.png)
+![](images/img-1.png)
 
 The comment `<!-- /S3cR3t -->` is not rendered in the browser but is visible in the raw source. This directly hints at a hidden path beneath the document root.
 
@@ -122,7 +122,7 @@ The comment `<!-- /S3cR3t -->` is not rendered in the browser but is visible in 
 
 Navigating to `http://192.168.100.149/S3cR3t/` exposes an Apache directory listing. The listing reveals two items of interest: a `files/` subdirectory (the upload destination) and `upload.php` (the upload handler itself), both timestamped to 2022-05-13.
 
-![](image-2.png)
+![](images/img-2.png)
 
 The presence of `upload.php` and a `files/` directory strongly suggests a file upload functionality that can be abused to place attacker-controlled code on the server. The fact that directory listing is enabled here is also a misconfiguration that allows confirmation of uploaded file names.
 
@@ -199,7 +199,7 @@ listening on [any] 4444 ...
 
 The shell is triggered by simply navigating the browser to the uploaded `revshell.phtml` file, causing Apache to execute the PHP code which sets `LD_PRELOAD` and calls `mail()`.
 
-![](image-3.png)
+![](images/img-3.png)
 
 ### Shell Received and Stabilized
 
@@ -279,7 +279,7 @@ User www-data may run the following commands on dejavu:
 
 `www-data` can run `/usr/sbin/tcpdump` as user `robert` without a password. This is a GTFOBins-documented privilege escalation vector: `tcpdump` supports a `-z` flag that executes an arbitrary post-rotation script after a capture file is written. When combined with `-G 1 -W 1` (rotate every 1 second, write only 1 file), it will execute the script almost immediately after any traffic is captured.
 
-![](image-4.png)
+![](images/img-4.png)
 
 The GTFOBins entry for `tcpdump` confirms the technique: `tcpdump -ln -i lo -w /dev/null -W 1 -G 1 -z /path/to/temp-file -Z root`. This requires that some traffic be captured on the chosen interface. The loopback interface (`lo`) is ideal since it carries local inter-process communication traffic.
 
@@ -434,7 +434,7 @@ Robert can execute `/usr/local/bin/exiftool` as `root` without any password. Exi
 
 The GTFOBins entry for `exiftool` documents the "Inherit" capability. ExifTool supports an `-if` flag that evaluates a Perl expression to conditionally process files. When this Perl code calls `exec()`, it replaces the running process with the specified command. Since `exiftool` is running as `root` via `sudo` and privileges are not dropped, the `exec()` call spawns a shell with full root privileges.
 
-![](image-5.png)
+![](images/img-5.png)
 
 The GTFOBins page notes that exiftool "can inherit functions from another" (Perl), "allows to run Perl code", and when executed via `sudo`, "this function is performed by the privileged user because the acquired privileges are not dropped." The attack surface covers Shell, Reverse shell, File read, Upload, and Download. The documented exploit format is `exiftool -if '...' /etc/passwd`.
 

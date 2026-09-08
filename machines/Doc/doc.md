@@ -65,9 +65,9 @@ Nmap done: 1 IP address (1 host up) scanned in 26.64 seconds
 
 Initial access to the web application via IP address revealed the landing page:
 
-![](machines/Doc/image.png)
+![](images/img.png)
 
-![](image-1.png)
+![](images/img-1.png)
 
 Upon inspecting the HTML source code, all resource references pointed to the domain `doc.hmv`:
 
@@ -100,13 +100,13 @@ The application requires domain-based access for proper functionality. The domai
 
 Accessing the application via the domain name resolved all resource loading issues:
 
-![](image-3.png)
+![](images/img-3.png)
 
 ### Identifying the Attack Surface
 
 The administrative login panel was located at `http://doc.hmv/admin/login.php`:
 
-![](image-2.png)
+![](images/img-2.png)
 
 This login form became the primary target for exploitation, as it represents the authentication gateway to privileged functionality.
 
@@ -408,17 +408,17 @@ Stopped: Tue Feb  3 06:41:24 2026
 
 Using the `adminyo:a[REDACTED]` credentials, administrative access to the web panel was achieved:
 
-![](image-4.png)
+![](images/img-4.png)
 
 ### File Upload Exploitation
 
 Within the administrative settings, a "Portal Cover" image upload feature was discovered:
 
-![](image-5.png)
+![](images/img-5.png)
 
 This file upload functionality lacks proper validation, allowing arbitrary PHP files to be uploaded. A simple PHP web shell was prepared:
 
-![](image-8.png)
+![](images/img-6.png)
 
 The web shell code used as shown in above.
 
@@ -666,7 +666,7 @@ bella@doc:~$ socat TCP-LISTEN:8080,fork,reuseaddr TCP:127.0.0.1:7890 &
 
 Now the pydoc server is accessible via `http://doc.hmv:8080`:
 
-![](image-9.png)
+![](images/img-7.png)
 
 **Step 3: Create malicious Python module**
 

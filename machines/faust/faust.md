@@ -79,11 +79,11 @@ We connect to port 6660 to see the full message.
 
 Visiting the web server on Port 80 shows the default "cool_cms" page.
 
-![](machines/faust/image.png)
+![](images/img.png)
 
 Scrolling down the page reveals the version of the CMS.
 
-![](image-1.png)
+![](images/img-1.png)
 
 The version is **CMS Made Simple**.
 
@@ -128,7 +128,7 @@ The scan identifies an `/admin` directory, which redirects to a login page.
 
 http://192.168.100.124/admin/login.php
 
-![](image-2.png)
+![](images/img-2.png)
 
 ## Vulnerability Discovery
 
@@ -265,7 +265,7 @@ L'utilisateur paul peut utiliser les commandes suivantes sur debian :
 
 Paul can run `/usr/bin/base32` as `nico`. We recall seeing a `.secret.txt` in Nico's home directory earlier.
 
-![](image-3.png)
+![](images/img-3.png)
 
 We use this permission to read the secret file.
 
